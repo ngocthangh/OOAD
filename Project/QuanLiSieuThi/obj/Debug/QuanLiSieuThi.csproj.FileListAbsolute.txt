@@ -1,0 +1,11 @@
+C:\Users\NguyenPC\Desktop\OOD\DoAn\Project\QuanLiSieuThi\QuanLiSieuThi\bin\Debug\QuanLiSieuThi.exe
+C:\Users\NguyenPC\Desktop\OOD\DoAn\Project\QuanLiSieuThi\QuanLiSieuThi\bin\Debug\QuanLiSieuThi.pdb
+C:\Users\NguyenPC\Desktop\OOD\DoAn\Project\QuanLiSieuThi\QuanLiSieuThi\obj\Debug\QuanLiSieuThi.csprojResolveAssemblyReference.cache
+C:\Users\NguyenPC\Desktop\OOD\DoAn\Project\QuanLiSieuThi\QuanLiSieuThi\obj\Debug\QuanLiSieuThi.frmTrangChu.resources
+C:\Users\NguyenPC\Desktop\OOD\DoAn\Project\QuanLiSieuThi\QuanLiSieuThi\obj\Debug\QuanLiSieuThi.Properties.Resources.resources
+C:\Users\NguyenPC\Desktop\OOD\DoAn\Project\QuanLiSieuThi\QuanLiSieuThi\obj\Debug\QuanLiSieuThi.csproj.GenerateResource.Cache
+C:\Users\NguyenPC\Desktop\OOD\DoAn\Project\QuanLiSieuThi\QuanLiSieuThi\obj\Debug\QuanLiSieuThi.exe.licenses
+C:\Users\NguyenPC\Desktop\OOD\DoAn\Project\QuanLiSieuThi\QuanLiSieuThi\obj\Debug\QuanLiSieuThi.exe
+C:\Users\NguyenPC\Desktop\OOD\DoAn\Project\QuanLiSieuThi\QuanLiSieuThi\obj\Debug\QuanLiSieuThi.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\QuanLiSieuThi\obj\Debug\QuanLiSieuThi.exe
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\QuanLiSieuThi\obj\Debug\QuanLiSieuThi.pdb
