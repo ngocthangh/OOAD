@@ -1,0 +1,9 @@
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataBussiness.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataBussiness.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataAccess.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataModel.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataAccess.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataModel.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.csprojResolveAssemblyReference.cache
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.pdb
