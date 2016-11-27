@@ -61,14 +61,6 @@ namespace QuanLySieuThi.Presentation
         {
             OpenForm<frmNhaCungCap>();
         }
-        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            OpenForm<frmNhanVien>();
-        }
-
-        private void btnPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            OpenForm<frmPhieuNhap>();
-        }
+        
     }
 }

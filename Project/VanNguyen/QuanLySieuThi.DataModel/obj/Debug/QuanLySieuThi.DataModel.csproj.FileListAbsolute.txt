@@ -2,3 +2,8 @@ C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataModel\bin\Debug\Quan
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataModel\bin\Debug\QuanLySieuThi.DataModel.pdb
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.dll
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataModel\bin\Debug\QuanLySieuThi.DataModel.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataModel\bin\Debug\QuanLySieuThi.DataModel.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.csprojResolveAssemblyReference.cache
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.pdb

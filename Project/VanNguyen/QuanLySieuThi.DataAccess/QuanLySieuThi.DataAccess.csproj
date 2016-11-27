@@ -47,8 +47,6 @@
     <Compile Include="HangHoaController.cs" />
     <Compile Include="LoaiHangController.cs" />
     <Compile Include="NhaCungCapController.cs" />
-    <Compile Include="NhanVienController.cs" />
-    <Compile Include="PhieuNhapController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

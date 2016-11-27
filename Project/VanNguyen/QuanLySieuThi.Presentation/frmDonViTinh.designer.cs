@@ -130,6 +130,7 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "frmDonViTinh";
             this.Text = "Quản Lí Đơn Vị Tính";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDonViTinh_FormClosing);
             this.Load += new System.EventHandler(this.frmDonViTinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

@@ -2,3 +2,7 @@ C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.Common\bin\Debug\QuanLyS
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.pdb
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.dll
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.pdb

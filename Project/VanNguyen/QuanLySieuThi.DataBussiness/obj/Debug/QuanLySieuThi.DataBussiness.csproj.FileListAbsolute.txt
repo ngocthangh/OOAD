@@ -7,3 +7,12 @@ C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\bin\Debug\
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.csprojResolveAssemblyReference.cache
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.dll
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.csprojResolveAssemblyReference.cache
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataBussiness.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataBussiness.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataAccess.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataModel.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataAccess.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataModel.pdb

@@ -7,3 +7,12 @@ C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\bin\Debug\Qua
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.dll
 C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.csprojResolveAssemblyReference.cache
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataAccess.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataAccess.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.Common.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataModel.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.Common.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataModel.pdb

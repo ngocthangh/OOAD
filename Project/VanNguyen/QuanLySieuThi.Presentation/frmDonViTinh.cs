@@ -86,6 +86,22 @@ namespace QuanLySieuThi.Presentation
             }
         }
 
-       
+        //Xác nhận Thoát Form mà không lưu
+        private void frmDonViTinh_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var dt = grcDonViTinh.DataSource as DataTable;
+            if (dt == null || dt.GetChanges() == null) return;
+            if (
+                XtraMessageBox.Show("Bạn có muốn lưu những thay đổi không?", "Thoát", MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!DonViTinhService.SaveChanges(dt.GetChanges()))
+                {
+                    XtraMessageBox.Show("Lưu thất bại", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Cancel = true;
+                }
+
+            }
+        }
     }
 }

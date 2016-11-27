@@ -223,8 +223,7 @@
             this.barButtonItem5.LargeGlyph = global::QuanLySieuThi.Presentation.Properties.Resources.users_icon;
             this.barButtonItem5.LargeWidth = 80;
             this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
-            // 
+       // 
             // barButtonItem6
             // 
             this.barButtonItem6.Caption = "Khách Hàng Thân Thiết";
@@ -283,7 +282,7 @@
             this.btnPhieuNhap.LargeGlyph = global::QuanLySieuThi.Presentation.Properties.Resources.import_icon1;
             this.btnPhieuNhap.LargeWidth = 80;
             this.btnPhieuNhap.Name = "btnPhieuNhap";
-            this.btnPhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuNhap_ItemClick);
+
             // 
             // barButtonItem13
             // 
