@@ -1,0 +1,9 @@
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataAccess.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataAccess.pdb
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.Common.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataModel.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.Common.pdb
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataModel.pdb
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.pdb

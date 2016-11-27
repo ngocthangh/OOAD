@@ -1,0 +1,4 @@
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.pdb
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.pdb

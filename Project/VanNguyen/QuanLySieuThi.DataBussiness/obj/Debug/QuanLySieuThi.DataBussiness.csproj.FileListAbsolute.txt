@@ -1,0 +1,9 @@
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataBussiness.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataBussiness.pdb
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataAccess.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataModel.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataAccess.pdb
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\bin\Debug\QuanLySieuThi.DataModel.pdb
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.csprojResolveAssemblyReference.cache
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataBussiness\obj\Debug\QuanLySieuThi.DataBussiness.pdb

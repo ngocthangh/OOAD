@@ -1,0 +1,4 @@
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataModel\bin\Debug\QuanLySieuThi.DataModel.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataModel\bin\Debug\QuanLySieuThi.DataModel.pdb
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.dll
+C:\Users\NguyenPC\Source\Repos\QLSTCODING\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.pdb
