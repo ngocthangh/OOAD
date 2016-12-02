@@ -6,3 +6,4 @@ E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieu
 E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataModel\bin\Debug\QuanLySieuThi.DataModel.pdb
 E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.dll
 E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.csprojResolveAssemblyReference.cache
