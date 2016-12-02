@@ -41,5 +41,9 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.Update("SP_NHACUNGCAP_UPD", nhaCungCap) == 1;
         }
+        public string AutoGenerateId()
+        {
+            return _connect.AutoGenerateId("SP_NHACUNGCAP_AUTOGENERATEID");
+        }
     }
 }

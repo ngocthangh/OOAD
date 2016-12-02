@@ -41,5 +41,9 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.Update("SP_HANGHOA_UPD", hanghoa) == 1;
         }
+        public string AutoGenerateId()
+        {
+            return _connect.AutoGenerateId("SP_HANGHOA_AUTOGENERATEID");
+        }
     }
 }
