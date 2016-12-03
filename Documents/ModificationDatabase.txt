@@ -1,0 +1,14 @@
+﻿Một số chỉnh sửa database:
+- Các bảng chi tiết sẽ có khóa chính 2 trường bao gồm mã và mã hàng hóa
+- Các chứng từ như hóa đơn, phiếu nhập, phiếu xuất phải có thêm trường số hóa đơn, số phiếu...
+- Sửa lại tất cả các bảng (ngoại trừ NHANVIEN, KHACHHANGTHANTHIET) có id tự tăng, chỉ có các chứng từ thì thuộc tính số phiếu sẽ sử dụng Proc AutoGenerateId để tạo.
+- Thêm thuộc tính đơn giá, thành tiền vào các bảng: CHITIETHOADON, CHITIETPHIEUNHAP
+
+NHẬT KÝ CÁC PHIÊN BẢN:
+
+1_1: First Version
+1_2: Đổi id các bảng CHUNGLOAIHANG, LOAIHANG, HANGHOA, DONVITINH thành tự tăng, chỉnh sửa các proc tương ứng.
+1_3: + Đổi id các bảng PHIEUNHAP, PHIEUXUAT, PHIEUKIEMKE, HOADON thành tự tăng và thêm trường 
+Số Phiếu, Số hóa đơn cho các bảng này, chỉnh sửa các proc tương ứng
+     + Đổi id các bảng còn lại thành tự tăng (NHACUNGCAP, CHUCVU), chỉnh sửa proc tương ứng.
+     + Thêm proc SP_HANGHOA_SEARCH
