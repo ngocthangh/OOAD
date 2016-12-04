@@ -61,6 +61,30 @@ namespace QuanLySieuThi.Presentation
         {
             OpenForm<frmNhaCungCap>();
         }
-        
+
+        private void buttonClick_DVTSearch(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<frmDonViTinhSearch>();
+        }
+
+        private void btnTimKiem_HangHoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<frmHangHoaSearch>();
+        }
+
+        private void btnNhaCungCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<frmNhaCungCapSearch>();
+        }
+
+        private void btnChungLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<frmChungLoaiHangSearch>();
+        }
+
+        private void btnLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<frmLoaiHangSearch>();
+        }
     }
 }

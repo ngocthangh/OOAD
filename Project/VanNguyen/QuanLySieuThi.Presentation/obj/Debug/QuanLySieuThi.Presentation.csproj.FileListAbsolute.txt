@@ -399,3 +399,9 @@ E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieu
 E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Presentation\bin\Debug\es\DevExpress.XtraCharts.v15.1.Wizard.resources.dll
 E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Presentation\bin\Debug\ja\DevExpress.XtraCharts.v15.1.Wizard.resources.dll
 E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Presentation\bin\Debug\ru\DevExpress.XtraCharts.v15.1.Wizard.resources.dll
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmDonViTinhSearch.resources
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.Properties.Resources1.resources
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmHangHoaSearch.resources
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmNhaCungCapSearch.resources
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmChungLoaiHangSearch.resources
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmLoaiHangSearch.resources

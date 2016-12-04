@@ -46,5 +46,9 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.AutoGenerateId("SP_DONVITINH_AUTOGENERATEID");
         }
+        public DataTable Search(string key)
+        {
+            return _connect.Search("SP_DONVITINH_SEARCH", key);
+        }
     }
 }

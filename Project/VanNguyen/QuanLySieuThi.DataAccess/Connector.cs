@@ -58,7 +58,29 @@ namespace QuanLySieuThi.DataAccess
             _connect.Close();
             return _dataTable.Copy();
         }
-
+        public DataTable Search(string sql, string key)
+        {
+            if (_connect.State == ConnectionState.Closed)
+                _connect.Open();
+            var command = new SqlCommand(sql, _connect);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@key", key);
+            var adapter = new SqlDataAdapter(command);
+            _dataTable.Clear();
+            adapter.Fill(_dataTable);
+            _connect.Close();
+            return _dataTable.Copy();
+        }
+        public void Delete(string sql, string idName, string idValue)
+        {
+            if (_connect.State == ConnectionState.Closed)
+                _connect.Open();
+            var command = new SqlCommand(sql, _connect);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@" + idName, idValue);
+            command.ExecuteNonQuery();
+            _connect.Close();
+        }
         public DataTable LoadData(string sql, string[] names, object[] values, int parameters)
         {
             if (_connect.State.Equals(ConnectionState.Closed))

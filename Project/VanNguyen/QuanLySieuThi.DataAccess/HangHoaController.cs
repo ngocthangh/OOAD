@@ -45,5 +45,21 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.AutoGenerateId("SP_HANGHOA_AUTOGENERATEID");
         }
+        public DataTable Search(string key)
+        {
+            return _connect.Search("SP_HANGHOA_SEARCH", key);
+        }
+        public bool Delete(string maHangHoa)
+        {
+            try
+            {
+                _connect.Delete("SP_HANGHOA_DEL", "MaHangHoa", maHangHoa);
+                return true;
+            }
+            catch (System.Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -6,3 +6,4 @@ E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieu
 E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.pdb
 E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.dll
 E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.pdb
+E:\GiaoTrinh\Nam4\Semester 1\OOD\DoAn\Project\trunk\Project\VanNguyen\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.csprojResolveAssemblyReference.cache
