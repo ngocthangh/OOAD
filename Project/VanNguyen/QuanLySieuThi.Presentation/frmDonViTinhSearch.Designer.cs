@@ -40,7 +40,6 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.grcDonViTinhSearch = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MaDVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenDVT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -167,22 +166,17 @@
             // gridView
             // 
             this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MaDVT,
             this.TenDVT});
             this.gridView.GridControl = this.grcDonViTinhSearch;
+            this.gridView.IndicatorWidth = 40;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridView.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
             this.gridView.OptionsSelection.MultiSelect = true;
-            // 
-            // MaDVT
-            // 
-            this.MaDVT.Caption = "Mã Đơn Vị Tính";
-            this.MaDVT.FieldName = "MaDVT";
-            this.MaDVT.Name = "MaDVT";
-            this.MaDVT.Visible = true;
-            this.MaDVT.VisibleIndex = 0;
+            this.gridView.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.gridView.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView_CustomDrawRowIndicator);
+            this.gridView.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView_ValidateRow);
             // 
             // TenDVT
             // 
@@ -190,7 +184,7 @@
             this.TenDVT.FieldName = "TenDVT";
             this.TenDVT.Name = "TenDVT";
             this.TenDVT.Visible = true;
-            this.TenDVT.VisibleIndex = 1;
+            this.TenDVT.VisibleIndex = 0;
             // 
             // frmDonViTinhSearch
             // 
@@ -202,6 +196,7 @@
             this.Controls.Add(this.groupControl1);
             this.Name = "frmDonViTinhSearch";
             this.Text = "Tìm Kiếm Đơn Vị Tính";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDonViTinhSearch_FormClosing);
             this.Load += new System.EventHandler(this.frmDonViTinhSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -231,7 +226,6 @@
         private DevExpress.XtraEditors.SimpleButton btnThem;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
-        private DevExpress.XtraGrid.Columns.GridColumn MaDVT;
         private DevExpress.XtraGrid.Columns.GridColumn TenDVT;
     }
 }

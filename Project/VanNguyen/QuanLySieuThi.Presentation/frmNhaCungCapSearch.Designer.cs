@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.grcNhaCungCap = new DevExpress.XtraEditors.GroupControl();
-            this.grcNhaCungCapSearch = new DevExpress.XtraGrid.GridControl();
-            this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtNhaCungCapSearch = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.MaNhaCungCap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.grcNhaCungCap = new DevExpress.XtraEditors.GroupControl();
+            this.grcNhaCungCapSearch = new DevExpress.XtraGrid.GridControl();
+            this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.TenNhaCungCap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoDienThoai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNhaCungCapSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -55,7 +55,6 @@
             this.grcNhaCungCap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcNhaCungCapSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNhaCungCapSearch.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -68,62 +67,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(670, 40);
             this.panelControl1.TabIndex = 0;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.btnXoa);
-            this.panelControl2.Controls.Add(this.btnThem);
-            this.panelControl2.Controls.Add(this.btnDong);
-            this.panelControl2.Controls.Add(this.btnLuu);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(0, 40);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(670, 33);
-            this.panelControl2.TabIndex = 1;
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.Controls.Add(this.grcNhaCungCap);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(0, 73);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(670, 291);
-            this.panelControl3.TabIndex = 2;
-            // 
-            // grcNhaCungCap
-            // 
-            this.grcNhaCungCap.Controls.Add(this.grcNhaCungCapSearch);
-            this.grcNhaCungCap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grcNhaCungCap.Location = new System.Drawing.Point(2, 2);
-            this.grcNhaCungCap.Name = "grcNhaCungCap";
-            this.grcNhaCungCap.Size = new System.Drawing.Size(666, 287);
-            this.grcNhaCungCap.TabIndex = 0;
-            this.grcNhaCungCap.Text = "Kết Quả Tìm Kiếm";
-            // 
-            // grcNhaCungCapSearch
-            // 
-            this.grcNhaCungCapSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grcNhaCungCapSearch.Location = new System.Drawing.Point(2, 20);
-            this.grcNhaCungCapSearch.MainView = this.gridView;
-            this.grcNhaCungCapSearch.Name = "grcNhaCungCapSearch";
-            this.grcNhaCungCapSearch.Size = new System.Drawing.Size(662, 265);
-            this.grcNhaCungCapSearch.TabIndex = 0;
-            this.grcNhaCungCapSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView});
-            // 
-            // gridView
-            // 
-            this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MaNhaCungCap,
-            this.TenNhaCungCap,
-            this.SoDienThoai,
-            this.DiaChi});
-            this.gridView.GridControl = this.grcNhaCungCapSearch;
-            this.gridView.Name = "gridView";
-            this.gridView.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView.OptionsCustomization.AllowQuickHideColumns = false;
-            this.gridView.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
-            this.gridView.OptionsSelection.MultiSelect = true;
             // 
             // txtNhaCungCapSearch
             // 
@@ -150,6 +93,18 @@
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.btnXoa);
+            this.panelControl2.Controls.Add(this.btnThem);
+            this.panelControl2.Controls.Add(this.btnDong);
+            this.panelControl2.Controls.Add(this.btnLuu);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl2.Location = new System.Drawing.Point(0, 40);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(670, 33);
+            this.panelControl2.TabIndex = 1;
             // 
             // btnXoa
             // 
@@ -191,13 +146,52 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // MaNhaCungCap
+            // panelControl3
             // 
-            this.MaNhaCungCap.Caption = "Mã Nhà Cung Cấp";
-            this.MaNhaCungCap.FieldName = "MaNhaCungCap";
-            this.MaNhaCungCap.Name = "MaNhaCungCap";
-            this.MaNhaCungCap.Visible = true;
-            this.MaNhaCungCap.VisibleIndex = 0;
+            this.panelControl3.Controls.Add(this.grcNhaCungCap);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl3.Location = new System.Drawing.Point(0, 73);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(670, 291);
+            this.panelControl3.TabIndex = 2;
+            // 
+            // grcNhaCungCap
+            // 
+            this.grcNhaCungCap.Controls.Add(this.grcNhaCungCapSearch);
+            this.grcNhaCungCap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grcNhaCungCap.Location = new System.Drawing.Point(2, 2);
+            this.grcNhaCungCap.Name = "grcNhaCungCap";
+            this.grcNhaCungCap.Size = new System.Drawing.Size(666, 287);
+            this.grcNhaCungCap.TabIndex = 0;
+            this.grcNhaCungCap.Text = "Kết Quả Tìm Kiếm";
+            // 
+            // grcNhaCungCapSearch
+            // 
+            this.grcNhaCungCapSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grcNhaCungCapSearch.Location = new System.Drawing.Point(2, 20);
+            this.grcNhaCungCapSearch.MainView = this.gridView;
+            this.grcNhaCungCapSearch.Name = "grcNhaCungCapSearch";
+            this.grcNhaCungCapSearch.Size = new System.Drawing.Size(662, 265);
+            this.grcNhaCungCapSearch.TabIndex = 0;
+            this.grcNhaCungCapSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView});
+            // 
+            // gridView
+            // 
+            this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.TenNhaCungCap,
+            this.SoDienThoai,
+            this.DiaChi});
+            this.gridView.GridControl = this.grcNhaCungCapSearch;
+            this.gridView.IndicatorWidth = 40;
+            this.gridView.Name = "gridView";
+            this.gridView.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView.OptionsCustomization.AllowQuickHideColumns = false;
+            this.gridView.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
+            this.gridView.OptionsSelection.MultiSelect = true;
+            this.gridView.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.gridView.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView_CustomDrawRowIndicator);
+            this.gridView.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView_ValidateRow);
             // 
             // TenNhaCungCap
             // 
@@ -233,10 +227,12 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "frmNhaCungCapSearch";
             this.Text = "frmNhaCungCapSearch";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNhaCungCapSearch_FormClosing);
             this.Load += new System.EventHandler(this.frmNhaCungCapSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNhaCungCapSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
@@ -245,7 +241,6 @@
             this.grcNhaCungCap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grcNhaCungCapSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNhaCungCapSearch.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,7 +260,6 @@
         private DevExpress.XtraEditors.SimpleButton btnThem;
         private DevExpress.XtraEditors.SimpleButton btnDong;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
-        private DevExpress.XtraGrid.Columns.GridColumn MaNhaCungCap;
         private DevExpress.XtraGrid.Columns.GridColumn TenNhaCungCap;
         private DevExpress.XtraGrid.Columns.GridColumn SoDienThoai;
         private DevExpress.XtraGrid.Columns.GridColumn DiaChi;

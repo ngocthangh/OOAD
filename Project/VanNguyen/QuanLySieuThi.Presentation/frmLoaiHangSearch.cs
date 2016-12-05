@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QuanLySieuThi.DataBussiness;
+using DevExpress.XtraEditors.Controls;
 
 namespace QuanLySieuThi.Presentation
 {
+    
     public partial class frmLoaiHangSearch : DevExpress.XtraEditors.XtraForm
     {
+        private DataTable _dtChungLoaiHang;
         public frmLoaiHangSearch()
         {
             InitializeComponent();
@@ -22,7 +25,12 @@ namespace QuanLySieuThi.Presentation
         private void grcLoaiHangSearch_Load(object sender, EventArgs e)
         {
             grcLoaiHangSearch.DataSource = LoaiHangService.LoadDataTable();
-            
+            _dtChungLoaiHang = ChungLoaiService.LoadDataTable();
+            LookUpEditChungLoaiHang.DataSource = _dtChungLoaiHang;
+            LookUpEditChungLoaiHang.ValueMember = "MaChungLoai";
+            LookUpEditChungLoaiHang.DisplayMember = "TenChungLoai";
+            LookUpEditChungLoaiHang.Columns.Add(new LookUpColumnInfo("MaChungLoai", "Mã chủng loại hàng"));
+            LookUpEditChungLoaiHang.Columns.Add(new LookUpColumnInfo("TenChungLoai", "Tên chủng loại hàng"));
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -87,6 +95,53 @@ namespace QuanLySieuThi.Presentation
         private void btnDong_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void frmLoaiHangSearch_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
+
+        private void gridView_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            var ChungLoaiHang = gridView.GetFocusedDataRow();
+            if (ChungLoaiHang.IsNull("TenLoaiHang") || string.IsNullOrWhiteSpace(ChungLoaiHang["TenLoaiHang"].ToString()))
+            {
+                e.ErrorText = "Tên loại hàng không được phép trống";
+                gridView.SetColumnError(gridView.Columns[0], e.ErrorText);
+                e.Valid = false;
+            }
+
+            if (ChungLoaiHang.IsNull("MaChungLoai") || string.IsNullOrWhiteSpace(ChungLoaiHang["MaChungLoai"].ToString()))
+            {
+                e.ErrorText = "Tên chủng loại hàng không được phép trống";
+                gridView.SetColumnError(gridView.Columns[1], e.ErrorText);
+                e.Valid = false;
+            }
+        }
+
+        private void frmLoaiHangSearch_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var dt = grcLoaiHangSearch.DataSource as DataTable;
+            if (dt == null || dt.GetChanges() == null) return;
+            if (
+                XtraMessageBox.Show("Bạn có muốn lưu những thay đổi không?", "Thoát", MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!LoaiHangService.SaveChanges(dt.GetChanges()))
+                {
+                    XtraMessageBox.Show("Lưu thất bại", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

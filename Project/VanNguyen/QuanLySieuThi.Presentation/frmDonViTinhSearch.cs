@@ -87,5 +87,41 @@ namespace QuanLySieuThi.Presentation
                 }
             }
         }
+
+        private void gridView_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
+
+        private void gridView_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            var category = gridView.GetFocusedDataRow();
+            if (category.IsNull("TenDVT") || string.IsNullOrWhiteSpace(category["TenDVT"].ToString()))
+            {
+                e.ErrorText = "Tên đơn vị tính không được phép trống";
+                gridView.SetColumnError(gridView.Columns[0], e.ErrorText);
+                e.Valid = false;
+            }
+        }
+
+        private void frmDonViTinhSearch_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var dt = grcDonViTinhSearch.DataSource as DataTable;
+            if (dt == null || dt.GetChanges() == null) return;
+            if (
+                XtraMessageBox.Show("Bạn có muốn lưu những thay đổi không?", "Thoát", MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!DonViTinhService.SaveChanges(dt.GetChanges()))
+                {
+                    XtraMessageBox.Show("Lưu thất bại", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Cancel = true;
+                }
+
+            }
+        }
     }
 }

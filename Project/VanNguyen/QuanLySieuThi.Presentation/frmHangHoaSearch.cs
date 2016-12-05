@@ -11,12 +11,16 @@ using DevExpress.XtraEditors;
 using QuanLySieuThi.DataBussiness;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraEditors.Controls;
 
 namespace QuanLySieuThi.Presentation
 {
     public partial class frmHangHoaSearch : DevExpress.XtraEditors.XtraForm
     {
         private int rowSelected;
+        private DataTable _dtDonViTinh;
+        private DataTable _dtLoaiHang;
+
         public frmHangHoaSearch()
         {
             InitializeComponent();
@@ -40,6 +44,21 @@ namespace QuanLySieuThi.Presentation
         private void frmHangHoaSearch_Load(object sender, EventArgs e)
         {
             grcHanghoaSearch.DataSource = HangHoaService.LoadDataTable();
+
+            _dtLoaiHang = LoaiHangService.LoadDataTable();
+            _dtDonViTinh = DonViTinhService.LoadDataTable();
+
+            LookUpEditLoaiHang.DataSource = _dtLoaiHang;
+            LookUpEditLoaiHang.ValueMember = "MaLoaiHang";
+            LookUpEditLoaiHang.DisplayMember = "TenLoaiHang";
+            LookUpEditLoaiHang.Columns.Add(new LookUpColumnInfo("MaLoaiHang", "Mã Loại Hàng"));
+            LookUpEditLoaiHang.Columns.Add(new LookUpColumnInfo("TenLoaiHang", "Tên Loại Hàng"));
+
+            LookUpEditDonViTinh.DataSource = _dtDonViTinh;
+            LookUpEditDonViTinh.ValueMember = "MaDVT";
+            LookUpEditDonViTinh.DisplayMember = "TenDVT";
+            LookUpEditDonViTinh.Columns.Add(new LookUpColumnInfo("MaDVT", "Mã Đơn Vị Tính"));
+            LookUpEditDonViTinh.Columns.Add(new LookUpColumnInfo("TenDVT", "Tên Đơn Vị Tính"));
         }
 
         private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
@@ -154,6 +173,14 @@ namespace QuanLySieuThi.Presentation
         private void btnDong_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void gridView_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            }
         }
     }
 }

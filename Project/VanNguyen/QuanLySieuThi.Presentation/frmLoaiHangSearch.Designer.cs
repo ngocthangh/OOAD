@@ -41,9 +41,9 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.grcLoaiHangSearch = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MaLoaiHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenLoaiHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaChungLoai = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LookUpEditChungLoaiHang = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiHangSearch.Properties)).BeginInit();
@@ -55,6 +55,7 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcLoaiHangSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookUpEditChungLoaiHang)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -171,6 +172,8 @@
             this.grcLoaiHangSearch.Location = new System.Drawing.Point(2, 20);
             this.grcLoaiHangSearch.MainView = this.gridView;
             this.grcLoaiHangSearch.Name = "grcLoaiHangSearch";
+            this.grcLoaiHangSearch.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.LookUpEditChungLoaiHang});
             this.grcLoaiHangSearch.Size = new System.Drawing.Size(687, 266);
             this.grcLoaiHangSearch.TabIndex = 0;
             this.grcLoaiHangSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -180,20 +183,17 @@
             // gridView
             // 
             this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MaLoaiHang,
             this.TenLoaiHang,
             this.MaChungLoai});
             this.gridView.GridControl = this.grcLoaiHangSearch;
+            this.gridView.IndicatorWidth = 40;
             this.gridView.Name = "gridView";
-            // 
-            // MaLoaiHang
-            // 
-            this.MaLoaiHang.Caption = "Mã Loại Hàng";
-            this.MaLoaiHang.FieldName = "MaLoaiHang";
-            this.MaLoaiHang.Name = "MaLoaiHang";
-            this.MaLoaiHang.Visible = true;
-            this.MaLoaiHang.VisibleIndex = 0;
-            this.MaLoaiHang.Width = 119;
+            this.gridView.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
+            this.gridView.OptionsSelection.MultiSelect = true;
+            this.gridView.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.gridView.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView_CustomDrawRowIndicator);
+            this.gridView.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView_ValidateRow);
             // 
             // TenLoaiHang
             // 
@@ -206,12 +206,20 @@
             // 
             // MaChungLoai
             // 
-            this.MaChungLoai.Caption = "Chủng Loại";
+            this.MaChungLoai.Caption = "Tên Chủng Loại Hàng";
+            this.MaChungLoai.ColumnEdit = this.LookUpEditChungLoaiHang;
             this.MaChungLoai.FieldName = "MaChungLoai";
             this.MaChungLoai.Name = "MaChungLoai";
             this.MaChungLoai.Visible = true;
             this.MaChungLoai.VisibleIndex = 2;
             this.MaChungLoai.Width = 375;
+            // 
+            // LookUpEditChungLoaiHang
+            // 
+            this.LookUpEditChungLoaiHang.AutoHeight = false;
+            this.LookUpEditChungLoaiHang.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LookUpEditChungLoaiHang.Name = "LookUpEditChungLoaiHang";
             // 
             // frmLoaiHangSearch
             // 
@@ -223,6 +231,8 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "frmLoaiHangSearch";
             this.Text = "frmLoaiHangSearch";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLoaiHangSearch_FormClosing);
+            this.Load += new System.EventHandler(this.frmLoaiHangSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -235,6 +245,7 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grcLoaiHangSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookUpEditChungLoaiHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,8 +265,8 @@
         private DevExpress.XtraEditors.SimpleButton btnDong;
         private DevExpress.XtraGrid.GridControl grcLoaiHangSearch;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
-        private DevExpress.XtraGrid.Columns.GridColumn MaLoaiHang;
         private DevExpress.XtraGrid.Columns.GridColumn TenLoaiHang;
         private DevExpress.XtraGrid.Columns.GridColumn MaChungLoai;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEditChungLoaiHang;
     }
 }

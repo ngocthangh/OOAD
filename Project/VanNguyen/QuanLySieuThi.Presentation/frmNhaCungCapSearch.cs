@@ -87,5 +87,54 @@ namespace QuanLySieuThi.Presentation
         {
             grcNhaCungCapSearch.DataSource = NhaCungCapService.LoadDataTable();
         }
+
+        private void gridView_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
+
+        private void gridView_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            var NhaCungCap = gridView.GetFocusedDataRow();
+            if (NhaCungCap.IsNull("TenNhaCungCap") || string.IsNullOrWhiteSpace(NhaCungCap["TenNhaCungCap"].ToString()))
+            {
+                e.ErrorText = "Tên chủng loại hàng không được phép trống";
+                gridView.SetColumnError(gridView.Columns[0], e.ErrorText);
+                e.Valid = false;
+            }
+
+            if (NhaCungCap.IsNull("DienThoai") || string.IsNullOrWhiteSpace(NhaCungCap["DienThoai"].ToString()))
+            {
+                e.ErrorText = "Số Điện Thoại không được phép trống";
+                gridView.SetColumnError(gridView.Columns[1], e.ErrorText);
+                e.Valid = false;
+            }
+
+            if (NhaCungCap.IsNull("DiaChi") || string.IsNullOrWhiteSpace(NhaCungCap["DiaChi"].ToString()))
+            {
+                e.ErrorText = "Địa Chỉ không được phép trống";
+                gridView.SetColumnError(gridView.Columns[2], e.ErrorText);
+                e.Valid = false;
+            }
+        }
+
+        private void frmNhaCungCapSearch_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var dt = grcNhaCungCapSearch.DataSource as DataTable;
+            if (dt == null || dt.GetChanges() == null) return;
+            if (
+                XtraMessageBox.Show("Bạn có muốn lưu những thay đổi không?", "Thoát", MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!DonViTinhService.SaveChanges(dt.GetChanges()))
+                {
+                    XtraMessageBox.Show("Lưu thất bại", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }

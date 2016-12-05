@@ -114,5 +114,10 @@ namespace QuanLySieuThi.Presentation
                 }
             }
         }
+
+        private void frmLoaiHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

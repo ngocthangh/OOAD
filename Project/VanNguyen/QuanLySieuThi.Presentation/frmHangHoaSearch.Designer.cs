@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTimKiem = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.grcHanghoaSearch = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MaHangHoa = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,24 +46,26 @@
             this.HanSuDung = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VAT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LoaiHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LookUpEditLoaiHang = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.DonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTimKiem = new DevExpress.XtraEditors.TextEdit();
-            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
+            this.LookUpEditDonViTinh = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dtNgayNhap = new DevExpress.XtraEditors.DateEdit();
-            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDong = new DevExpress.XtraEditors.SimpleButton();
-            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcHanghoaSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookUpEditLoaiHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookUpEditDonViTinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayNhap.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayNhap.Properties)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +82,32 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Tìm Kiếm Hàng Hóa";
             // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Image = global::QuanLySieuThi.Presentation.Properties.Resources.Zoom_icon;
+            this.btnTimKiem.Location = new System.Drawing.Point(476, 24);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiem.TabIndex = 2;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.buttonTimKiem_Click);
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(140, 26);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(320, 20);
+            this.txtTimKiem.TabIndex = 1;
+            this.txtTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyDown);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(13, 29);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(120, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Nhập Thông Tin Cần Tìm:";
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.grcHanghoaSearch);
@@ -88,25 +118,15 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Kết Quả Tìm Kiếm";
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.dtNgayNhap);
-            this.panelControl1.Controls.Add(this.btnThem);
-            this.panelControl1.Controls.Add(this.btnSua);
-            this.panelControl1.Controls.Add(this.btnXoa);
-            this.panelControl1.Controls.Add(this.btnDong);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 328);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(950, 34);
-            this.panelControl1.TabIndex = 2;
-            // 
             // grcHanghoaSearch
             // 
             this.grcHanghoaSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grcHanghoaSearch.Location = new System.Drawing.Point(2, 20);
             this.grcHanghoaSearch.MainView = this.gridView;
             this.grcHanghoaSearch.Name = "grcHanghoaSearch";
+            this.grcHanghoaSearch.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.LookUpEditLoaiHang,
+            this.LookUpEditDonViTinh});
             this.grcHanghoaSearch.Size = new System.Drawing.Size(946, 286);
             this.grcHanghoaSearch.TabIndex = 0;
             this.grcHanghoaSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -128,10 +148,12 @@
             this.LoaiHang,
             this.DonViTinh});
             this.gridView.GridControl = this.grcHanghoaSearch;
+            this.gridView.IndicatorWidth = 40;
             this.gridView.Name = "gridView";
             this.gridView.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
             this.gridView.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView_RowClick);
+            this.gridView.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView_CustomDrawRowIndicator);
             this.gridView.DoubleClick += new System.EventHandler(this.gridView_DoubleClick);
             // 
             // MaHangHoa
@@ -227,46 +249,49 @@
             // LoaiHang
             // 
             this.LoaiHang.Caption = "Loại Hàng";
+            this.LoaiHang.ColumnEdit = this.LookUpEditLoaiHang;
             this.LoaiHang.FieldName = "MaLoaiHang";
             this.LoaiHang.Name = "LoaiHang";
             this.LoaiHang.OptionsColumn.AllowEdit = false;
             this.LoaiHang.Visible = true;
             this.LoaiHang.VisibleIndex = 10;
             // 
+            // LookUpEditLoaiHang
+            // 
+            this.LookUpEditLoaiHang.AutoHeight = false;
+            this.LookUpEditLoaiHang.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LookUpEditLoaiHang.Name = "LookUpEditLoaiHang";
+            // 
             // DonViTinh
             // 
             this.DonViTinh.Caption = "Đơn Vị Tính";
+            this.DonViTinh.ColumnEdit = this.LookUpEditDonViTinh;
             this.DonViTinh.FieldName = "MaDVT";
             this.DonViTinh.Name = "DonViTinh";
             this.DonViTinh.OptionsColumn.AllowEdit = false;
             this.DonViTinh.Visible = true;
             this.DonViTinh.VisibleIndex = 11;
             // 
-            // labelControl1
+            // LookUpEditDonViTinh
             // 
-            this.labelControl1.Location = new System.Drawing.Point(13, 29);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(120, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Nhập Thông Tin Cần Tìm:";
+            this.LookUpEditDonViTinh.AutoHeight = false;
+            this.LookUpEditDonViTinh.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LookUpEditDonViTinh.Name = "LookUpEditDonViTinh";
             // 
-            // txtTimKiem
+            // panelControl1
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(140, 26);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(320, 20);
-            this.txtTimKiem.TabIndex = 1;
-            this.txtTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyDown);
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Image = global::QuanLySieuThi.Presentation.Properties.Resources.Zoom_icon;
-            this.btnTimKiem.Location = new System.Drawing.Point(476, 24);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
-            this.btnTimKiem.TabIndex = 2;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.Click += new System.EventHandler(this.buttonTimKiem_Click);
+            this.panelControl1.Controls.Add(this.dtNgayNhap);
+            this.panelControl1.Controls.Add(this.btnThem);
+            this.panelControl1.Controls.Add(this.btnSua);
+            this.panelControl1.Controls.Add(this.btnXoa);
+            this.panelControl1.Controls.Add(this.btnDong);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl1.Location = new System.Drawing.Point(0, 328);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(950, 34);
+            this.panelControl1.TabIndex = 2;
             // 
             // dtNgayNhap
             // 
@@ -285,6 +310,16 @@
             this.dtNgayNhap.Size = new System.Drawing.Size(131, 20);
             this.dtNgayNhap.TabIndex = 20;
             // 
+            // btnThem
+            // 
+            this.btnThem.Image = global::QuanLySieuThi.Presentation.Properties.Resources.add_1_icon;
+            this.btnThem.Location = new System.Drawing.Point(12, 5);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.TabIndex = 16;
+            this.btnThem.Text = "Thêm mới";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // btnSua
             // 
             this.btnSua.Image = global::QuanLySieuThi.Presentation.Properties.Resources.Actions_document_edit_icon;
@@ -294,16 +329,6 @@
             this.btnSua.TabIndex = 19;
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnDong
-            // 
-            this.btnDong.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonClose_Image;
-            this.btnDong.Location = new System.Drawing.Point(253, 6);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(75, 23);
-            this.btnDong.TabIndex = 18;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnXoa
             // 
@@ -315,15 +340,15 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnThem
+            // btnDong
             // 
-            this.btnThem.Image = global::QuanLySieuThi.Presentation.Properties.Resources.add_1_icon;
-            this.btnThem.Location = new System.Drawing.Point(12, 5);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 16;
-            this.btnThem.Text = "Thêm mới";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.btnDong.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonClose_Image;
+            this.btnDong.Location = new System.Drawing.Point(253, 6);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(75, 23);
+            this.btnDong.TabIndex = 18;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // frmHangHoaSearch
             // 
@@ -339,13 +364,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grcHanghoaSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookUpEditLoaiHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookUpEditDonViTinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayNhap.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayNhap.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -379,5 +406,7 @@
         private DevExpress.XtraEditors.SimpleButton btnSua;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnDong;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEditLoaiHang;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEditDonViTinh;
     }
 }
