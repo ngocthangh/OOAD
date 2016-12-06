@@ -20,8 +20,23 @@ namespace QuanLySieuThi.Presentation
 
         private void frmPhieuNhap_Load(object sender, EventArgs e)
         {
-            //var dt = PhieuNhapService.LoadDataTable();
-            //grcPhieuNhap.DataSource = dt;
+            grcPhieuNhap.DataSource = PhieuNhapService.LoadDataTable();
+        }
+
+        private void btnLapPhieuNhap_Click(object sender, EventArgs e)
+        {
+            frmPhieuNhapThemSua f = new frmPhieuNhapThemSua();
+            f.FormClosing += new FormClosingEventHandler(Reload);
+            f.ShowDialog();
+        }
+
+        private void Reload(object sender, FormClosingEventArgs e)
+        {
+            frmPhieuNhapThemSua f = (frmPhieuNhapThemSua)sender;
+            if (f.isDataChanged == true)
+            {
+                grcPhieuNhap.DataSource = PhieuNhapService.LoadDataTable();
+            }
         }
     }
 }

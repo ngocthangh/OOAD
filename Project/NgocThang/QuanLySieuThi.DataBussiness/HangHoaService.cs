@@ -14,6 +14,11 @@ namespace QuanLySieuThi.DataBussiness
             return Controller.GetByAll();
         }
 
+        //public static HangHoa GetById(string id)
+        //{
+        //    return Controller.GetById(id);
+        //}
+
         public static bool SaveChanges(DataTable dt)
         {
             return Controller.SaveChange(dt);

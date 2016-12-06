@@ -40,7 +40,12 @@ namespace QuanLySieuThi.DataAccess
 
         public bool Update(ChungLoai chungloai)
         {
-            return _connect.Update("SP_CHUNGLOAI_UPD", chungloai) == true;
+            return _connect.Update("SP_CHUNGLOAI_UPD", chungloai);
+        }
+
+        public string AutoGenerateId()
+        {
+            return _connect.AutoGenerateId("SP_DONVITINH_AUTOGENERATEID");
         }
     }
 }

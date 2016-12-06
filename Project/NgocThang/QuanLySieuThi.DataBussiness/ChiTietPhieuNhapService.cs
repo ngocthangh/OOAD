@@ -1,5 +1,5 @@
-﻿using QuanLySieuThi.DataModel;
-using QuanLySieuThi.DataAccess;
+﻿using QuanLySieuThi.DataAccess;
+using QuanLySieuThi.DataModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace QuanLySieuThi.DataBussiness
 {
-    public class PhieuNhapService
+    public class ChiTietPhieuNhapService
     {
-        private static readonly PhieuNhapController Controller = new PhieuNhapController();
+        private static readonly ChiTietPhieuNhapController Controller = new ChiTietPhieuNhapController();
 
         public static DataTable LoadDataTable()
         {
@@ -23,25 +23,20 @@ namespace QuanLySieuThi.DataBussiness
             if (dt == null) return false;
             return Controller.SaveChanges(dt);
         }
-        public static string AutoGenerateId()
-        {
-            return Controller.AutoGenerateId();
-        }
 
-        public static bool Insert(PhieuNhap phieuNhap)
-        {
-            return Controller.Insert(phieuNhap);
-        }
-        public static bool Update(PhieuNhap phieuNhap)
-        {
-            return Controller.Update(phieuNhap);
-        }
 
+        public static bool Insert(ChiTietPhieuNhap ctPhieuNhap)
+        {
+            return Controller.Insert(ctPhieuNhap);
+        }
+        public static bool Update(ChiTietPhieuNhap ctPhieuNhap)
+        {
+            return Controller.Update(ctPhieuNhap);
+        }
         public static bool Delete(string soPhieuNhap)
         {
             return Controller.Delete(soPhieuNhap);
         }
-
 
         public static DataTable GetById(string id)
         {

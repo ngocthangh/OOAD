@@ -16,19 +16,13 @@ namespace QuanLySieuThi.DataAccess
         public Connector(string sql)
         {
             _connect = new SqlConnection(ProjectConfig.ConnectionString);
-
             _dataTable = new DataTable();
             //var command = new SqlCommand(sql, _connect) {CommandType = CommandType.StoredProcedure};
             _adapter = new SqlDataAdapter(string.Format("select * from [{0}]", sql), _connect);
-            //_adapter = new SqlDataAdapter("select * from User", _connect);
             var commandBuilder = new SqlCommandBuilder(_adapter);
             _adapter.InsertCommand = commandBuilder.GetInsertCommand();
             _adapter.UpdateCommand = commandBuilder.GetUpdateCommand();
             _adapter.DeleteCommand = commandBuilder.GetDeleteCommand();
-
-            _connect.Open();
-            _adapter.Fill(_dataTable);
-            _connect.Close();
         }
         public DataTable getDataTable()
         {
@@ -41,10 +35,50 @@ namespace QuanLySieuThi.DataAccess
                 _connect.Open();
             var command = new SqlCommand(sql, _connect);
             command.CommandType = CommandType.StoredProcedure;
-            string id = (string)command.ExecuteScalar();
-            _connect.Close();
+            string id = "";
+            try
+            {
+                id = (string)command.ExecuteScalar();
+            }
+            catch(Exception ex)
+            {
+                id = "NULL";
+            }
+            finally
+            {
+                _connect.Close();
+            }
             return id;
         }
+
+        //public string InsertGetId(string stproc, object info, string ignore)
+        //{
+        //    string id = "";
+        //    if (_connect.State.Equals(ConnectionState.Closed))
+        //        _connect.Open();
+
+        //    var command = new SqlCommand(stproc, _connect) { CommandType = CommandType.StoredProcedure };
+        //    var bind = BindingObject(info);
+        //    for (var i = 0; i < bind.Names.Length; i++)
+        //    {
+        //        if (ignore != null && bind.Names[i] == ignore)
+        //            continue;
+        //        command.Parameters.AddWithValue(bind.Names[i], bind.Values[i]);
+        //    }
+        //    try
+        //    {
+        //        id = command.ExecuteScalar().ToString();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return null;
+        //    }
+        //    finally
+        //    {
+        //        _connect.Close();
+        //    }
+        //    return id;
+        //}
 
         public DataTable LoadData(string sql)
         {
@@ -73,15 +107,25 @@ namespace QuanLySieuThi.DataAccess
             return _dataTable.Copy();
         }
 
-        public void Delete(string sql, string idName, string idValue)
+        public bool Delete(string sql, string idName, string idValue)
         {
             if (_connect.State == ConnectionState.Closed)
                 _connect.Open();
             var command = new SqlCommand(sql, _connect);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@"+ idName, idValue);
-            command.ExecuteNonQuery();
-            _connect.Close();
+            try
+            {
+                command.ExecuteNonQuery();
+                return true;
+            }catch(Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                _connect.Close();
+            }
         }
 
         public DataTable LoadData(string sql, string[] names, object[] values, int parameters)
@@ -107,10 +151,28 @@ namespace QuanLySieuThi.DataAccess
             {
                 _connect.Close();
             }
-
             return dt;
-
         }
+
+        //public DataTable getById(string sql, string idName,string id)
+        //{
+        //    DataTable result;
+        //    if (_connect.State.Equals(ConnectionState.Closed))
+        //        _connect.Open();
+        //    var command = new SqlCommand(sql, _connect) { CommandType = CommandType.StoredProcedure };
+        //    command.Parameters.AddWithValue(idName, id);
+        //    try
+        //    {
+        //        result = command.ExecuteScalar();
+        //        _connect.Close();
+        //        return result;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        _connect.Close();
+        //        return null;
+        //    }
+        //}
 
         public bool SaveChanges(DataTable dt)
         {

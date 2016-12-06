@@ -39,7 +39,11 @@ namespace QuanLySieuThi.DataAccess
 
         public bool Update(NhaCungCap nhaCungCap)
         {
-            return _connect.Update("SP_NHACUNGCAP_UPD", nhaCungCap) == true;
+            return _connect.Update("SP_NHACUNGCAP_UPD", nhaCungCap);
+        }
+        public string AutoGenerateId()
+        {
+            return _connect.AutoGenerateId("SP_NHACUNGCAP_AUTOGENERATEID");
         }
     }
 }

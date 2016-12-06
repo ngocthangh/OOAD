@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grcNhanVien = new DevExpress.XtraGrid.GridControl();
             this.grvNhanVien = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,7 +42,7 @@
             this.DienThoai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenDangNhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MatKhau = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
@@ -294,7 +295,7 @@
             // 
             this.btnSua.Location = new System.Drawing.Point(705, 12);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(43, 22);
+            this.btnSua.Size = new System.Drawing.Size(42, 22);
             this.btnSua.StyleController = this.layoutControl3;
             this.btnSua.TabIndex = 5;
             this.btnSua.Text = "Sửa";
@@ -340,9 +341,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(740, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(739, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(10, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(11, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem6
@@ -350,7 +351,7 @@
             this.layoutControlItem6.Control = this.btnSua;
             this.layoutControlItem6.Location = new System.Drawing.Point(693, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(47, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(46, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 

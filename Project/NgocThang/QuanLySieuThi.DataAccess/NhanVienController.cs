@@ -61,6 +61,7 @@ namespace QuanLySieuThi.DataAccess
         //    return _connect.LoadData("sp_Book_FindBook", new[] { "@where" }, new object[] { where }, 1);
         //}
 
+
         public bool Insert(NhanVien nhanVien)
         {
             return _connect.Update("SP_NHANVIEN_INS", nhanVien);
@@ -84,15 +85,7 @@ namespace QuanLySieuThi.DataAccess
         }
         public bool Delete(string maNhanVien)
         {
-            try
-            {
-                _connect.Delete("SP_NHANVIEN_DEL", "MaNhanVien", maNhanVien);
-                return true;
-            }
-            catch(System.Exception ex)
-            {
-                return false;
-            }
+            return _connect.Delete("SP_NHANVIEN_DEL", "MaNhanVien", maNhanVien);
         }
     }
 }

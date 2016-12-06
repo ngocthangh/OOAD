@@ -39,7 +39,11 @@ namespace QuanLySieuThi.DataAccess
 
         public bool Update(LoaiHang loaihang)
         {
-            return _connect.Update("SP_CHUNGLOAI_UPD", loaihang) == true;
+            return _connect.Update("SP_CHUNGLOAI_UPD", loaihang);
+        }
+        public string AutoGenerateId()
+        {
+            return _connect.AutoGenerateId("SP_LOAIHANG_AUTOGENERATEID");
         }
     }
 }

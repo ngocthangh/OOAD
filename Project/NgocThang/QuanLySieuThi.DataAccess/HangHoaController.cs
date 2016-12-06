@@ -22,6 +22,11 @@ namespace QuanLySieuThi.DataAccess
             return _connect.LoadData("SP_HANGHOA_GETALL");
         }
 
+        //public HangHoa GetById(string id)
+        //{
+        //    return (HangHoa)_connect.getById("SP_HANGHOA_GETBYID", "@MaHangHoa", id);
+        //}
+
         public bool SaveChange(DataTable dt)
         {
             return _connect.SaveChanges(dt);
@@ -39,7 +44,11 @@ namespace QuanLySieuThi.DataAccess
 
         public bool Update(HangHoa hanghoa)
         {
-            return _connect.Update("SP_HANGHOA_UPD", hanghoa) == true;
+            return _connect.Update("SP_HANGHOA_UPD", hanghoa);
+        }
+        public string AutoGenerateId()
+        {
+            return _connect.AutoGenerateId("SP_HANGHOA_AUTOGENERATEID");
         }
     }
 }

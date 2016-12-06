@@ -8,45 +8,42 @@ using System.Threading.Tasks;
 
 namespace QuanLySieuThi.DataAccess
 {
-    public class PhieuNhapController
+    public class ChiTietPhieuNhapController
     {
         private readonly Connector _connect;
 
-        public PhieuNhapController()
+        public ChiTietPhieuNhapController()
         {
-            _connect = new Connector("PHIEUNHAP");
+            _connect = new Connector("CHITIETPHIEUNHAP");
         }
 
         public DataTable GetDataTable()
         {
             return _connect.getDataTable();
         }
-        public string AutoGenerateId()
-        {
-            return _connect.AutoGenerateId("SP_PHIEUNHAP_AUTOGENERATEID");
-        }
         public DataTable GetByAll()
         {
-            return _connect.LoadData("SP_PHIEUNHAP_GETALL");
+            return _connect.LoadData("SP_CHITIETPHIEUNHAP_GETALL");
         }
 
         public bool SaveChanges(DataTable dt)
         {
             return _connect.SaveChanges(dt);
         }
-        
-        public bool Insert(PhieuNhap phieuNhap)
+
+        public bool Insert(ChiTietPhieuNhap phieuNhap)
         {
-            return _connect.Update("SP_PHIEUNHAP_INS", phieuNhap);
+            return _connect.Update("SP_CHITIETPHIEUNHAP_INS", phieuNhap);
         }
-        
-        public bool Update(PhieuNhap phieuNhap)
+
+        public bool Update(ChiTietPhieuNhap phieuNhap)
         {
-            return _connect.Update("SP_PHIEUNHAP_UPD", phieuNhap);
+            return _connect.Update("SP_CHITIETPHIEUNHAP_UPD", phieuNhap);
         }
+
         public bool Delete(string soPhieuNhap)
         {
-            return _connect.Delete("SP_PHIEUNHAP_DEL", "SoPhieuNhap", soPhieuNhap);
+            return _connect.Delete("SP_CHITIETPHIEUNHAP_DEL", "SoPhieuNhap", soPhieuNhap);
         }
     }
 }

@@ -39,7 +39,12 @@ namespace QuanLySieuThi.DataAccess
 
         public bool Update(DonViTinh donvitinh)
         {
-            return _connect.Update("SP_DONVITINH_UPD", donvitinh) == true;
+            return _connect.Update("SP_DONVITINH_UPD", donvitinh);
+        }
+
+        public string AutoGenerateId()
+        {
+            return _connect.AutoGenerateId("SP_DONVITINH_AUTOGENERATEID");
         }
     }
 }

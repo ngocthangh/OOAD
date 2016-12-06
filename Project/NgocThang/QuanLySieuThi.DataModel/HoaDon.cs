@@ -4,7 +4,6 @@ namespace QuanLySieuThi.DataModel
 {
     public partial class HoaDon
     {
-        public string MaHoaDon { get; set; }
         public string MaNhanVien { get; set; }
         public Nullable<System.DateTime> NgayLap { get; set; }
         public string MaKhachHang { get; set; }
