@@ -12,3 +12,4 @@ NHẬT KÝ CÁC PHIÊN BẢN:
 Số Phiếu, Số hóa đơn cho các bảng này, chỉnh sửa các proc tương ứng
      + Đổi id các bảng còn lại thành tự tăng (NHACUNGCAP, CHUCVU), chỉnh sửa proc tương ứng.
      + Thêm proc SP_HANGHOA_SEARCH
+1_4: Bỏ mã trong các bảng HOADON, PHIEUNHAP, PHIEUXUAT, PHIEUKIEMKE
