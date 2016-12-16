@@ -38,5 +38,10 @@ namespace QuanLySieuThi.Presentation
                 grcPhieuNhap.DataSource = PhieuNhapService.LoadDataTable();
             }
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -404,3 +404,5 @@ D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Present
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.Properties.Resources.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.csproj.GenerateResource.Cache
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.exe.licenses
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmPhieuXuat.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmPhieuXuatThemSua.resources

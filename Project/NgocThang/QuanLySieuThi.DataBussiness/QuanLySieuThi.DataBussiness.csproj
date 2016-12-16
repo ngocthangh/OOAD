@@ -30,6 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietPhieuNhapService.cs" />
+    <Compile Include="ChiTietPhieuXuatService.cs" />
     <Compile Include="ChungLoaiService.cs" />
     <Compile Include="DonViTinhService.cs" />
     <Compile Include="HangHoaService.cs" />
@@ -48,6 +51,7 @@
     <Compile Include="NhaCungCapService.cs" />
     <Compile Include="NhanVienService.cs" />
     <Compile Include="PhieuNhapService.cs" />
+    <Compile Include="PhieuXuatService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

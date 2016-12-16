@@ -297,6 +297,7 @@
             this.barButtonItem14.Id = 14;
             this.barButtonItem14.LargeGlyph = global::QuanLySieuThi.Presentation.Properties.Resources.export_icon1;
             this.barButtonItem14.Name = "barButtonItem14";
+            this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
             // 
             // barButtonItem15
             // 

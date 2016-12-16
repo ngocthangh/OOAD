@@ -128,6 +128,18 @@
     <Compile Include="frmPhieuNhapThemSua.Designer.cs">
       <DependentUpon>frmPhieuNhapThemSua.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuXuat.Designer.cs">
+      <DependentUpon>frmPhieuXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuXuatThemSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuXuatThemSua.Designer.cs">
+      <DependentUpon>frmPhieuXuatThemSua.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTraCuuHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +188,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhieuNhapThemSua.resx">
       <DependentUpon>frmPhieuNhapThemSua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuXuat.resx">
+      <DependentUpon>frmPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuXuatThemSua.resx">
+      <DependentUpon>frmPhieuXuatThemSua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTraCuuHangHoa.resx">
       <DependentUpon>frmTraCuuHangHoa.cs</DependentUpon>
