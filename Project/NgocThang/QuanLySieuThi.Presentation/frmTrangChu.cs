@@ -38,7 +38,7 @@ namespace QuanLySieuThi.Presentation
 
         private void buttonClick_ThongTinHanghoa(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            OpenForm<frmHangHoa>();
+            OpenForm<frmHangHoaSearch>();
 
         }
 
@@ -59,7 +59,7 @@ namespace QuanLySieuThi.Presentation
 
         private void buttonClick_NhaCungCap(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            OpenForm<Form1>();
+            OpenForm<frmNhaCungCap>();
         }
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

@@ -74,6 +74,42 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChungLoaiHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChungLoaiHang.designer.cs">
+      <DependentUpon>frmChungLoaiHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChungLoaiHangSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChungLoaiHangSearch.Designer.cs">
+      <DependentUpon>frmChungLoaiHangSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDonViTinhSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDonViTinhSearch.Designer.cs">
+      <DependentUpon>frmDonViTinhSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHangHoaSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHangHoaSearch.Designer.cs">
+      <DependentUpon>frmHangHoaSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoaiHangSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiHangSearch.Designer.cs">
+      <DependentUpon>frmLoaiHangSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhaCungCapSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhaCungCapSearch.Designer.cs">
+      <DependentUpon>frmNhaCungCapSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNhanVienThemSua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,12 +121,6 @@
     </Compile>
     <Compile Include="frmPhieuNhap.designer.cs">
       <DependentUpon>frmPhieuNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmChungLoaiHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChungLoaiHang.designer.cs">
-      <DependentUpon>frmChungLoaiHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDonViTinh.cs">
       <SubType>Form</SubType>
@@ -140,12 +170,6 @@
     <Compile Include="frmPhieuXuatThemSua.Designer.cs">
       <DependentUpon>frmPhieuXuatThemSua.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTraCuuHangHoa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTraCuuHangHoa.designer.cs">
-      <DependentUpon>frmTraCuuHangHoa.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,14 +186,29 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChungLoaiHang.resx">
+      <DependentUpon>frmChungLoaiHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChungLoaiHangSearch.resx">
+      <DependentUpon>frmChungLoaiHangSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDonViTinhSearch.resx">
+      <DependentUpon>frmDonViTinhSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHangHoaSearch.resx">
+      <DependentUpon>frmHangHoaSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoaiHangSearch.resx">
+      <DependentUpon>frmLoaiHangSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhaCungCapSearch.resx">
+      <DependentUpon>frmNhaCungCapSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVienThemSua.resx">
       <DependentUpon>frmNhanVienThemSua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhieuNhap.resx">
       <DependentUpon>frmPhieuNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmChungLoaiHang.resx">
-      <DependentUpon>frmChungLoaiHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDonViTinh.resx">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
@@ -194,9 +233,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhieuXuatThemSua.resx">
       <DependentUpon>frmPhieuXuatThemSua.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTraCuuHangHoa.resx">
-      <DependentUpon>frmTraCuuHangHoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>

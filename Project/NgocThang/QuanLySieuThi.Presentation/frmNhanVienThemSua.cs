@@ -44,8 +44,7 @@ namespace QuanLySieuThi.Presentation
         {
             this.Text = "Thêm Nhân Viên Mới";
             txtMaNhanVien.Text = NhanVienService.AutoGenerateId();
-            btnSua.Enabled = false;
-            
+            btnThem.Text = "Thêm";
         }
         public void initSua()
         {
@@ -56,12 +55,12 @@ namespace QuanLySieuThi.Presentation
             dedNgaySinh.Text = NgaySinh.ToString("MM/dd/yyyy");
             txtCMND.Text = CMND;
             txtDienThoai.Text = DienThoai;
-            cbbChucVu.Text = ChucVu;
+            lueChucVu.Text = ChucVu;
             dedNgayVaoLam.Text = NgayVaoLam.ToString("MM/dd/yyyy");
             txtDiaChi.Text = DiaChi;
             txtTenDangNhap.Text = TenDangNhap;
             txtMatKhau.Text = MatKhau;
-            btnThem.Enabled = false;
+            btnThem.Text = "Sửa";
         }
 
         private void frmNhanVienThemSua_Load(object sender, EventArgs e)
@@ -77,10 +76,10 @@ namespace QuanLySieuThi.Presentation
             cbbGioiTinh.Properties.Items.Add("Nam");
             cbbGioiTinh.Properties.Items.Add("Nữ");
             cbbGioiTinh.Properties.Items.Add("Khác");
-            cbbChucVu.Properties.Items.Add("Nhân viên bán hàng");
-            cbbChucVu.Properties.Items.Add("Nhân viên kho");
-            cbbChucVu.Properties.Items.Add("Nhân viên nhân sự");
-            cbbChucVu.Properties.Items.Add("Nhân viên tài chính");
+            lueChucVu.Properties.ValueMember = "MaChucVu";
+            lueChucVu.Properties.DisplayMember = "TenChucVu";
+            lueChucVu.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenChucVu", 200, "Tên Chức Vụ"));
+            //lueChucVu.Properties.DataSource = ChucVuService
         }
         public bool validateForm()
         {
@@ -120,10 +119,10 @@ namespace QuanLySieuThi.Presentation
                 txtDienThoai.Focus();
                 return false;
             }
-            if (cbbChucVu.Text.Trim() == "")
+            if (lueChucVu.Text.Trim() == "")
             {
                 MessageBox.Show("Bạn chưa điền đủ thông tin!\nVui lòng chọn Chức Vụ!");
-                cbbChucVu.Focus();
+                lueChucVu.Focus();
                 return false;
             }
             if (dedNgayVaoLam.Text.Trim() == "") {
@@ -147,37 +146,81 @@ namespace QuanLySieuThi.Presentation
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (validateForm())
+            if(mode == MODE_ADDNEW)
             {
-                NhanVien nv = new NhanVien();
-                nv.MaNhanVien = txtMaNhanVien.Text.Trim();
-                nv.HoTen = txtHoTen.Text.Trim();
-                nv.NgaySinh = dedNgaySinh.DateTime;
-                nv.GioiTinh = cbbGioiTinh.Text.Trim();
-                nv.CMND = txtCMND.Text.Trim();
-                nv.DienThoai = txtDienThoai.Text.Trim();
-                nv.MaChucVu = "CV001";
-                nv.NgayVaoLam = dedNgayVaoLam.DateTime;
-                nv.DiaChi = txtDiaChi.Text;
-                nv.TenDangNhap = txtTenDangNhap.Text.Trim();
-                nv.MatKhau = txtMatKhau.Text.Trim();
-                try {
-                    if (NhanVienService.Insert(nv))
-                    {
-                        isDataChanged = true;
-                        isEdited = false;
-                        MessageBox.Show("Thêm thành công!");
-                    }
-                    
-                    else MessageBox.Show("Không thể thêm\nMã nhân viên đã tồn tại!");
-                }
-                catch(Exception ex1)
+                if (validateForm())
                 {
-                    MessageBox.Show("Thêm thất bại!");
+                    NhanVien nv = new NhanVien();
+                    nv.MaNhanVien = txtMaNhanVien.Text.Trim();
+                    nv.HoTen = txtHoTen.Text.Trim();
+                    nv.NgaySinh = dedNgaySinh.DateTime;
+                    nv.GioiTinh = cbbGioiTinh.Text.Trim();
+                    nv.CMND = txtCMND.Text.Trim();
+                    nv.DienThoai = txtDienThoai.Text.Trim();
+                    nv.MaChucVu = 1;
+                    nv.NgayVaoLam = dedNgayVaoLam.DateTime;
+                    nv.DiaChi = txtDiaChi.Text;
+                    nv.TenDangNhap = txtTenDangNhap.Text.Trim();
+                    nv.MatKhau = txtMatKhau.Text.Trim();
+                    try
+                    {
+                        if (NhanVienService.Insert(nv))
+                        {
+                            isDataChanged = true;
+                            isEdited = false;
+                            MessageBox.Show("Thêm thành công!");
+                        }
+
+                        else MessageBox.Show("Không thể thêm\nMã nhân viên đã tồn tại!");
+                    }
+                    catch (Exception ex1)
+                    {
+                        MessageBox.Show("Thêm thất bại!");
+                    }
+
                 }
-                
             }
-            
+            else
+            {
+                if (isEdited)
+                {
+                    if (validateForm())
+                    {
+                        NhanVien nv = new NhanVien();
+                        nv.MaNhanVien = txtMaNhanVien.Text.Trim();
+                        nv.HoTen = txtHoTen.Text.Trim();
+                        nv.NgaySinh = dedNgaySinh.DateTime;
+                        nv.GioiTinh = cbbGioiTinh.Text.Trim();
+                        nv.CMND = txtCMND.Text.Trim();
+                        nv.DienThoai = txtDienThoai.Text.Trim();
+                        nv.MaChucVu = 1;
+                        nv.NgayVaoLam = dedNgayVaoLam.DateTime;
+                        nv.DiaChi = txtDiaChi.Text;
+                        nv.TenDangNhap = txtTenDangNhap.Text.Trim();
+                        nv.MatKhau = txtMatKhau.Text.Trim();
+                        try
+                        {
+                            if (NhanVienService.Update(nv))
+                            {
+                                isDataChanged = true;
+                                isEdited = false;
+                                MessageBox.Show("Cập nhật thành công!");
+                            }
+                            else MessageBox.Show("Không thể cập nhật!");
+
+                        }
+                        catch (Exception ex1)
+                        {
+                            MessageBox.Show("Không thể cập nhật!");
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa sửa thông tin!");
+                }
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -192,48 +235,6 @@ namespace QuanLySieuThi.Presentation
             else
             {
                 this.Close();
-            }
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            if (isEdited)
-            {
-                if (validateForm())
-                {
-                    NhanVien nv = new NhanVien();
-                    nv.MaNhanVien = txtMaNhanVien.Text.Trim();
-                    nv.HoTen = txtHoTen.Text.Trim();
-                    nv.NgaySinh = dedNgaySinh.DateTime;
-                    nv.GioiTinh = cbbGioiTinh.Text.Trim();
-                    nv.CMND = txtCMND.Text.Trim();
-                    nv.DienThoai = txtDienThoai.Text.Trim();
-                    nv.MaChucVu = "CV001";
-                    nv.NgayVaoLam = dedNgayVaoLam.DateTime;
-                    nv.DiaChi = txtDiaChi.Text;
-                    nv.TenDangNhap = txtTenDangNhap.Text.Trim();
-                    nv.MatKhau = txtMatKhau.Text.Trim();
-                    try
-                    {
-                        if (NhanVienService.Update(nv))
-                        {
-                            isDataChanged = true;
-                            isEdited = false;
-                            MessageBox.Show("Cập nhật thành công!");
-                        }
-                        else MessageBox.Show("Không thể cập nhật!");
-
-                    }
-                    catch (Exception ex1)
-                    {
-                        MessageBox.Show("Không thể cập nhật!");
-                    }
-
-                }
-            }
-            else
-            {
-                MessageBox.Show("Bạn chưa sửa thông tin!");
             }
         }
         
@@ -251,7 +252,7 @@ namespace QuanLySieuThi.Presentation
                 dedNgaySinh.Text = "";
                 txtCMND.Text = "";
                 txtDienThoai.Text = "";
-                cbbChucVu.Text = "";
+                lueChucVu.Text = "";
                 dedNgayVaoLam.Text = "";
                 txtDiaChi.Text = "";
                 txtTenDangNhap.Text = "";
@@ -291,7 +292,7 @@ namespace QuanLySieuThi.Presentation
 
         private void cbbChucVu_TextChanged(object sender, EventArgs e)
         {
-            if (cbbChucVu.Text != ChucVu)
+            if (lueChucVu.Text != ChucVu)
             {
                 isEdited = true;
             }

@@ -40,7 +40,7 @@ namespace QuanLySieuThi.DataAccess
             {
                 id = (string)command.ExecuteScalar();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 id = "NULL";
             }
@@ -118,7 +118,7 @@ namespace QuanLySieuThi.DataAccess
             {
                 command.ExecuteNonQuery();
                 return true;
-            }catch(Exception ex)
+            }catch(Exception)
             {
                 return false;
             }

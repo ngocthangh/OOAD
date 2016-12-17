@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace QuanLySieuThi.Presentation
 {
-    public partial class frmTraCuuHangHoa : DevExpress.XtraEditors.XtraForm
+    public partial class frmChucVu : Form
     {
-        public frmTraCuuHangHoa()
+        public frmChucVu()
         {
             InitializeComponent();
         }

@@ -12,7 +12,7 @@ namespace QuanLySieuThi.DataModel
         public string DiaChi { get; set; }
         public string DienThoai { get; set; }
         public DateTime NgayVaoLam { get; set; }
-        public string MaChucVu { get; set; }
+        public int MaChucVu { get; set; }
         public string TenDangNhap { get; set; }
         public string MatKhau { get; set; }
     }

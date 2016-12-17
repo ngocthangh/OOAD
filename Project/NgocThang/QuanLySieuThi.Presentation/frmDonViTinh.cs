@@ -20,61 +20,65 @@ namespace QuanLySieuThi.Presentation
             InitializeComponent();
         }
 
-        private void grcDonViTinh_Load(object sender, EventArgs e)
+        //Hàm load dữ liệu
+        private void frmDonViTinh_Load(object sender, EventArgs e)
         {
-            var dt = DonViTinhService.LoadDataTable();
-            grcDonViTinh.DataSource = dt;
+            grcDonViTinh.DataSource = DonViTinhService.LoadDataTable();
+            gridView.Columns[0].Visible = false;
+            gridView.Columns[1].Caption = @"Tên đơn vị tính";
         }
 
-        //Button Thêm
-        private void buttonLuu_Click(object sender, EventArgs e)
+        //Hàm xác nhận giá trị của rows
+        private void gridView_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            var category = gridView.GetFocusedDataRow();
+            if (category.IsNull("TenDVT") || string.IsNullOrWhiteSpace(category["TenDVT"].ToString()))
+            {
+                e.ErrorText = "Tên đơn vị tính không được phép trống";
+                gridView.SetColumnError(gridView.Columns[1], e.ErrorText);
+                e.Valid = false;
+            }
+        }
+
+        //Button Lưu Đơn Vị Tính Mới
+        private void btnLuu_Click(object sender, EventArgs e)
         {
             var dt = grcDonViTinh.DataSource as DataTable;
-
-            if (dt == null || dt.GetChanges() == null)
-                return;
+            if (dt == null || dt.GetChanges() == null) return;
             if (DonViTinhService.SaveChanges(dt))
             {
-                XtraMessageBox.Show("Lưu Thành Công", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Lưu thành công", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 grcDonViTinh.DataSource = DonViTinhService.LoadDataTable();
             }
             else
             {
-                XtraMessageBox.Show("Lưu Thất Bại", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Lưu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        //Button Xóa
-        private void buttonXoa_Click(object sender, EventArgs e)
+        //Hàm xóa 1 dòng trong GridView
+        private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Bạn có chắc xóa (những) dòng này không?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
-                return;
-            grvDonViTinh.DeleteSelectedRows();
+            if (gridView.GetSelectedRows().Length >= 0)
+                if (XtraMessageBox.Show("Bạn có chắc muốn xóa (những) dòng này?", "Xác nhận", MessageBoxButtons.YesNo,
+                  MessageBoxIcon.Question) != DialogResult.Yes) return;
+            gridView.DeleteSelectedRows();
+
         }
 
-        //Button Đóng
-        private void buttonDong_Click(object sender, EventArgs e)
+        //Button Đóng của sổ hiển thị Form Đơn Vị Tính
+        private void btnDong_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        //Hàm Xác nhận Lưu khi thoát Form
-        private void frmDonViTinh_FormClosing(object sender, FormClosingEventArgs e)
+        private void gridView_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
         {
-            var dt = grcDonViTinh.DataSource as DataTable;
-            if (dt == null || dt.GetChanges() == null) return;
-            if (XtraMessageBox.Show("Bạn có muốn lưu những thay đổi không?", "Thoát", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                if (!DonViTinhService.SaveChanges(dt.GetChanges()))
-                {
-                    XtraMessageBox.Show("Lưu thất bại", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    e.Cancel = true;
-                }
-            }
+            e.ExceptionMode = ExceptionMode.NoAction;
         }
 
-        //Hàm Thêm tự động cột STT
-        private void grvDonViTinh_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        //Hàm tự sinh cột số thứ tự
+        private void gridView_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
             if (e.Info.IsRowIndicator && e.RowHandle >= 0)
             {
@@ -82,10 +86,22 @@ namespace QuanLySieuThi.Presentation
             }
         }
 
-        //Hàm Xác định ngoại lệ giá trị của hàng
-        private void grvDonViTinh_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
+        //Xác nhận Thoát Form mà không lưu
+        private void frmDonViTinh_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.ExceptionMode = ExceptionMode.NoAction;
+            var dt = grcDonViTinh.DataSource as DataTable;
+            if (dt == null || dt.GetChanges() == null) return;
+            if (
+                XtraMessageBox.Show("Bạn có muốn lưu những thay đổi không?", "Thoát", MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!DonViTinhService.SaveChanges(dt.GetChanges()))
+                {
+                    XtraMessageBox.Show("Lưu thất bại", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Cancel = true;
+                }
+
+            }
         }
     }
 }

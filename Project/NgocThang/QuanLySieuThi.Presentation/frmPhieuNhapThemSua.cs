@@ -19,6 +19,7 @@ namespace QuanLySieuThi.Presentation
         DataTable dtHangHoa;
         private decimal TongTien;
         public bool isDataChanged;
+        public bool isSaved;
         public frmPhieuNhapThemSua()
         {
             InitializeComponent();
@@ -26,7 +27,6 @@ namespace QuanLySieuThi.Presentation
             dtHangHoa = new DataTable();
             dtHangHoa.Columns.Add("MaHangHoa");
             dtHangHoa.Columns.Add("MaNhaCungCap");
-            dtHangHoa.Columns.Add("STT");
             dtHangHoa.Columns.Add("HangHoa");
             dtHangHoa.Columns.Add("NhaCungCap");
             dtHangHoa.Columns.Add("DonGiaNhap");
@@ -34,6 +34,7 @@ namespace QuanLySieuThi.Presentation
             dtHangHoa.Columns.Add("ThanhTien");
             TongTien = 0;
             isDataChanged = false;
+            isSaved = false;
         }
         
         private void frmPhieuNhapThemSua_Load(object sender, EventArgs e)
@@ -42,9 +43,15 @@ namespace QuanLySieuThi.Presentation
             tedNgayLap.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lueHangHoa.Properties.ValueMember = "MaHangHoa";
             lueHangHoa.Properties.DisplayMember = "TenHangHoa";
+            lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaHangHoa", 50, "Mã Hàng Hóa"));
+            lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenHangHoa", 100, "Tên Hàng Hóa"));
+            lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SoLuongNhap", 50, "Số Lượng Tồn"));
             lueHangHoa.Properties.DataSource = HangHoaService.LoadDataTable();
             lueNhaCungCap.Properties.ValueMember = "MaNhaCungCap";
             lueNhaCungCap.Properties.DisplayMember = "TenNhaCungCap";
+            lueNhaCungCap.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenNhaCungCap", 100, "Tên NCC"));
+            lueNhaCungCap.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DiaChi", 100, "Địa Chỉ"));
+            lueNhaCungCap.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DienThoai", 100, "Điện Thoại"));
             lueNhaCungCap.Properties.DataSource = NhaCungCapService.LoadDataTable();
         }
 
@@ -117,12 +124,11 @@ namespace QuanLySieuThi.Presentation
                 DataRow dr = dtHangHoa.NewRow();
                 dr[0] = lueHangHoa.EditValue;
                 dr[1] = lueNhaCungCap.EditValue;
-                dr[2] = grvHangHoa.RowCount + 1;
-                dr[3] = lueHangHoa.Text;
-                dr[4] = lueNhaCungCap.Text;
-                dr[5] = dongia;
-                dr[6] = soluong;
-                dr[7] = (dongia * soluong);
+                dr[2] = lueHangHoa.Text;
+                dr[3] = lueNhaCungCap.Text;
+                dr[4] = dongia;
+                dr[5] = soluong;
+                dr[6] = (dongia * soluong);
                 dtHangHoa.Rows.Add(dr);
                 grcHangHoa.DataSource = dtHangHoa;
             }
@@ -135,7 +141,6 @@ namespace QuanLySieuThi.Presentation
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string maPhieuNhap = "";
             if(grvHangHoa.RowCount <= 0)
             {
                 MessageBox.Show("Vui lòng chọn hàng hóa nhập");
@@ -184,9 +189,9 @@ namespace QuanLySieuThi.Presentation
                 }
                 else
                 {
-                    if (MessageBox.Show("Thông báo", "Phiếu nhập này đã được lưu, bạn muốn tạo phiếu nhập mới?", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show("Phiếu nhập này đã được lưu, bạn muốn tạo phiếu nhập mới?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        tedSoPhieuNhap.Text = PhieuNhapService.AutoGenerateId();
+                        btnNhapLai.PerformClick();
                     }
                 }
                 
@@ -199,22 +204,17 @@ namespace QuanLySieuThi.Presentation
             grvHangHoa.DeleteRow(grvHangHoa.FocusedRowHandle);
         }
 
-        private void grcHangHoa_DataSourceChanged(object sender, EventArgs e)
-        {
-            //TongTien = 0;
-            //for(int i = 0; i < grvHangHoa.RowCount; i++)
-            //{
-            //    TongTien += Decimal.Parse(grvHangHoa.GetRowCellValue(i, "ThanhTien").ToString());
-            //}
-            //tedTongTien.Text = TongTien.ToString();
-        }
-
         private void grvHangHoa_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if(e.Column.Name == "SoLuong")
             {
                 TongTien = 0;
                 int sl = int.Parse(grvHangHoa.GetRowCellValue(e.RowHandle, "SoLuong").ToString());
+                if(sl < 1)
+                {
+                    sl = 1;
+                    grvHangHoa.SetRowCellValue(e.RowHandle, "SoLuong", sl);
+                }
                 decimal dg = decimal.Parse(grvHangHoa.GetRowCellValue(e.RowHandle, "DonGiaNhap").ToString());
                 grvHangHoa.SetRowCellValue(e.RowHandle, "ThanhTien", (sl * dg));
                 for (int i = 0; i < grvHangHoa.RowCount; i++)
@@ -242,6 +242,22 @@ namespace QuanLySieuThi.Presentation
             {
                 btnXoa.Enabled = false;
                 btnLuu.Enabled = false;
+            }
+        }
+
+        private void btnNhapLai_Click(object sender, EventArgs e)
+        {
+            if (!isSaved)
+            {
+                if (MessageBox.Show("Thông tin chưa được lưu, xác nhận tạo phiếu mới?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    tedSoPhieuNhap.Text = PhieuXuatService.AutoGenerateId();
+                    while (grvHangHoa.RowCount > 0)
+                    { grvHangHoa.DeleteRow(0); }
+                    tedTongTien.Text = "0";
+                    lueHangHoa.Text = "";
+                    speSoLuong.Text = "0";
+                }
             }
         }
     }

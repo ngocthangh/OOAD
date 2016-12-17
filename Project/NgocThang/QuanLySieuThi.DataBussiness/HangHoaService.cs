@@ -14,11 +14,6 @@ namespace QuanLySieuThi.DataBussiness
             return Controller.GetByAll();
         }
 
-        //public static HangHoa GetById(string id)
-        //{
-        //    return Controller.GetById(id);
-        //}
-
         public static bool SaveChanges(DataTable dt)
         {
             return Controller.SaveChange(dt);
@@ -37,6 +32,19 @@ namespace QuanLySieuThi.DataBussiness
         public static DataTable GetById(string id)
         {
             return Controller.GetById(id);
+        }
+        public static string AutoGenerateId()
+        {
+            return Controller.AutoGenerateId();
+        }
+        public static DataTable Search(string key)
+        {
+            return Controller.Search(key);
+        }
+
+        public static bool Delete(string maHangHoa)
+        {
+            return Controller.Delete(maHangHoa);
         }
     }
 }
