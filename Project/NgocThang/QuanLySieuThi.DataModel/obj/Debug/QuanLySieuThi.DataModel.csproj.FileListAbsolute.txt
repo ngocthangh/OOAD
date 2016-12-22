@@ -6,3 +6,4 @@ D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.DataMod
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.DataModel\bin\Debug\QuanLySieuThi.DataModel.pdb
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.dll
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.csprojResolveAssemblyReference.cache

@@ -120,7 +120,7 @@ namespace QuanLySieuThi.Presentation
             frmHangHoa f = (frmHangHoa)sender;
             if (f.isDataChanged == true)
             {
-                grcHanghoaSearch.DataSource = DonViTinhService.LoadDataTable();
+                grcHanghoaSearch.DataSource = HangHoaService.LoadDataTable();
             }
         }
 

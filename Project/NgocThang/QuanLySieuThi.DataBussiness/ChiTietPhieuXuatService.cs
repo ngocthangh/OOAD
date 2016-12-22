@@ -40,8 +40,7 @@ namespace QuanLySieuThi.DataBussiness
 
         public static DataTable GetById(string id)
         {
-            //return Controller.GetById(id);
-            return null;
+            return Controller.GetById(id);
         }
     }
 }

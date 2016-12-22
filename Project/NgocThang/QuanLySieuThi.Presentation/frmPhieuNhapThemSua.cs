@@ -15,7 +15,6 @@ namespace QuanLySieuThi.Presentation
 {
     public partial class frmPhieuNhapThemSua : XtraForm
     {
-        private int index;
         DataTable dtHangHoa;
         private decimal TongTien;
         public bool isDataChanged;
@@ -23,12 +22,12 @@ namespace QuanLySieuThi.Presentation
         public frmPhieuNhapThemSua()
         {
             InitializeComponent();
-            index = 0;
             dtHangHoa = new DataTable();
             dtHangHoa.Columns.Add("MaHangHoa");
             dtHangHoa.Columns.Add("MaNhaCungCap");
             dtHangHoa.Columns.Add("HangHoa");
             dtHangHoa.Columns.Add("NhaCungCap");
+            dtHangHoa.Columns.Add("HanSuDung");
             dtHangHoa.Columns.Add("DonGiaNhap");
             dtHangHoa.Columns.Add("SoLuong");
             dtHangHoa.Columns.Add("ThanhTien");
@@ -71,6 +70,12 @@ namespace QuanLySieuThi.Presentation
                 lueHangHoa.Focus();
                 return;
             }
+            if (dedHanSuDung.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn hạn sử dụng!");
+                dedHanSuDung.Focus();
+                return;
+            }
             if (speSoLuong.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập số lượng!");
@@ -87,7 +92,7 @@ namespace QuanLySieuThi.Presentation
                     return;
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 MessageBox.Show("Số lượng phải là số\nVui lòng nhập lại!");
                 speSoLuong.Focus();
@@ -98,7 +103,7 @@ namespace QuanLySieuThi.Presentation
             {
                 dongia = Decimal.Parse(row.Row["GiaMua"].ToString());
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 MessageBox.Show("Không thể lấy đơn giá!");
                 return;
@@ -126,9 +131,10 @@ namespace QuanLySieuThi.Presentation
                 dr[1] = lueNhaCungCap.EditValue;
                 dr[2] = lueHangHoa.Text;
                 dr[3] = lueNhaCungCap.Text;
-                dr[4] = dongia;
-                dr[5] = soluong;
-                dr[6] = (dongia * soluong);
+                dr[4] = dedHanSuDung.DateTime.Date.ToString("dd/MM/yyyy");
+                dr[5] = dongia;
+                dr[6] = soluong;
+                dr[7] = (dongia * soluong);
                 dtHangHoa.Rows.Add(dr);
                 grcHangHoa.DataSource = dtHangHoa;
             }
@@ -161,6 +167,7 @@ namespace QuanLySieuThi.Presentation
                         ctpn.SoPhieuNhap = tedSoPhieuNhap.Text;
                         ctpn.MaHangHoa = grvHangHoa.GetRowCellValue(i, "MaHangHoa").ToString();
                         ctpn.MaNhaCungCap = int.Parse(grvHangHoa.GetRowCellValue(i, "MaNhaCungCap").ToString());
+                        ctpn.HanSuDung = DateTime.Parse(grvHangHoa.GetRowCellValue(i, "HanSuDung").ToString());
                         ctpn.SoLuong = int.Parse(grvHangHoa.GetRowCellValue(i, "SoLuong").ToString());
                         ctpn.DonGiaNhap = decimal.Parse(grvHangHoa.GetRowCellValue(i, "DonGiaNhap").ToString());
                         ctpn.ThanhTien = decimal.Parse(grvHangHoa.GetRowCellValue(i, "ThanhTien").ToString());
@@ -258,6 +265,13 @@ namespace QuanLySieuThi.Presentation
                     lueHangHoa.Text = "";
                     speSoLuong.Text = "0";
                 }
+            }
+        }
+        private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
         }
     }

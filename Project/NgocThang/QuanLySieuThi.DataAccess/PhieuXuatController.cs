@@ -48,5 +48,9 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.Delete("SP_PHIEUXUAT_DEL", "SoPhieuXuat", soPhieuXuat);
         }
+        public DataTable Search(string key = null, Nullable<DateTime> dateStart = null, Nullable<DateTime> dateEnd = null)
+        {
+            return _connect.LoadData("SP_PHIEUXUAT_SEARCH", new[] { "@key", "@dateStart", "@dateEnd" }, new object[] { key, dateStart, dateEnd }, 3);
+        }
     }
 }

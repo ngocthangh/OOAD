@@ -382,7 +382,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(173, 6);
+            this.btnSua.Location = new System.Drawing.Point(362, 5);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 3;
@@ -392,7 +392,7 @@
             // btnDong
             // 
             this.btnDong.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonClose_Image;
-            this.btnDong.Location = new System.Drawing.Point(252, 6);
+            this.btnDong.Location = new System.Drawing.Point(443, 5);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 23);
             this.btnDong.TabIndex = 2;
@@ -401,7 +401,7 @@
             // 
             // btnNhapLai
             // 
-            this.btnNhapLai.Location = new System.Drawing.Point(92, 6);
+            this.btnNhapLai.Location = new System.Drawing.Point(281, 5);
             this.btnNhapLai.Name = "btnNhapLai";
             this.btnNhapLai.Size = new System.Drawing.Size(75, 23);
             this.btnNhapLai.TabIndex = 1;
@@ -411,7 +411,7 @@
             // btnLuu
             // 
             this.btnLuu.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonSave_Image;
-            this.btnLuu.Location = new System.Drawing.Point(11, 6);
+            this.btnLuu.Location = new System.Drawing.Point(200, 5);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
             this.btnLuu.TabIndex = 0;

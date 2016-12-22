@@ -173,7 +173,7 @@ namespace QuanLySieuThi.Presentation
 
                         else MessageBox.Show("Không thể thêm\nMã nhân viên đã tồn tại!");
                     }
-                    catch (Exception ex1)
+                    catch (Exception)
                     {
                         MessageBox.Show("Thêm thất bại!");
                     }
@@ -209,7 +209,7 @@ namespace QuanLySieuThi.Presentation
                             else MessageBox.Show("Không thể cập nhật!");
 
                         }
-                        catch (Exception ex1)
+                        catch (Exception)
                         {
                             MessageBox.Show("Không thể cập nhật!");
                         }

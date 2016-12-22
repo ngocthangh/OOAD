@@ -410,3 +410,4 @@ D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Present
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmHangHoaSearch.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmLoaiHangSearch.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmNhaCungCapSearch.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmBaoCaoTonKho.resources

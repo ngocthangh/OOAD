@@ -39,6 +39,7 @@
             this.dedNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.txtHoTen = new DevExpress.XtraEditors.TextEdit();
             this.txtMaNhanVien = new DevExpress.XtraEditors.TextEdit();
+            this.lueChucVu = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -72,7 +73,6 @@
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem13 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.lueChucVu = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -87,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dedNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNhanVien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueChucVu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -118,7 +119,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueChucVu.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCMND
@@ -269,6 +269,23 @@
             this.txtMaNhanVien.StyleController = this.layoutControl1;
             this.txtMaNhanVien.TabIndex = 5;
             this.txtMaNhanVien.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDown);
+            // 
+            // lueChucVu
+            // 
+            this.lueChucVu.Location = new System.Drawing.Point(462, 120);
+            this.lueChucVu.Name = "lueChucVu";
+            this.lueChucVu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lueChucVu.Properties.Appearance.Options.UseFont = true;
+            this.lueChucVu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueChucVu.Properties.NullText = "";
+            this.lueChucVu.Properties.PopupSizeable = false;
+            this.lueChucVu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lueChucVu.Size = new System.Drawing.Size(230, 22);
+            this.lueChucVu.StyleController = this.layoutControl1;
+            this.lueChucVu.TabIndex = 16;
+            this.lueChucVu.TextChanged += new System.EventHandler(this.cbbChucVu_TextChanged);
+            this.lueChucVu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDown);
             // 
             // layoutControlGroup1
             // 
@@ -615,23 +632,6 @@
             this.emptySpaceItem13.Size = new System.Drawing.Size(413, 33);
             this.emptySpaceItem13.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // lueChucVu
-            // 
-            this.lueChucVu.Location = new System.Drawing.Point(462, 120);
-            this.lueChucVu.Name = "lueChucVu";
-            this.lueChucVu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lueChucVu.Properties.Appearance.Options.UseFont = true;
-            this.lueChucVu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueChucVu.Properties.NullText = "";
-            this.lueChucVu.Properties.PopupSizeable = false;
-            this.lueChucVu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueChucVu.Size = new System.Drawing.Size(230, 22);
-            this.lueChucVu.StyleController = this.layoutControl1;
-            this.lueChucVu.TabIndex = 16;
-            this.lueChucVu.TextChanged += new System.EventHandler(this.cbbChucVu_TextChanged);
-            this.lueChucVu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDown);
-            // 
             // frmNhanVienThemSua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -659,6 +659,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dedNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNhanVien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueChucVu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -690,7 +691,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueChucVu.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -15,7 +15,6 @@ namespace QuanLySieuThi.Presentation
 {
     public partial class frmPhieuXuatThemSua : XtraForm
     {
-        private int index;
         DataTable dtHangHoa;
         private decimal TongTien;
         public bool isDataChanged;
@@ -23,7 +22,6 @@ namespace QuanLySieuThi.Presentation
         public frmPhieuXuatThemSua()
         {
             InitializeComponent();
-            index = 0;
             dtHangHoa = new DataTable();
             dtHangHoa.Columns.Add("MaHangHoa");
             dtHangHoa.Columns.Add("STT");
@@ -75,7 +73,7 @@ namespace QuanLySieuThi.Presentation
                     return;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Số lượng phải là số\nVui lòng nhập lại!");
                 speSoLuong.Focus();
@@ -86,7 +84,7 @@ namespace QuanLySieuThi.Presentation
             {
                 dongia = Decimal.Parse(row.Row["GiaBan"].ToString());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Không thể lấy đơn giá!");
                 return;
@@ -125,9 +123,9 @@ namespace QuanLySieuThi.Presentation
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if(cbbNoiDungXuat.SelectedText == "")
+            if (cbbNoiDungXuat.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn nội dung xuất");
+                MessageBox.Show("Vui lòng chọn nội dung xuất!");
                 cbbNoiDungXuat.Focus();
                 return;
             }

@@ -42,15 +42,7 @@ namespace QuanLySieuThi.Presentation
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string key = txtTimKiem.Text;
-                if (key.Trim() != "")
-                {
-                    grcNhanVien.DataSource = NhanVienService.Search(key);
-                }
-                else
-                {
-                    grcNhanVien.DataSource = NhanVienService.LoadDataTable();
-                }
+                btnTimKiem.PerformClick();
             }
         }
 

@@ -25,7 +25,10 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.LoadData("SP_CHITIETPHIEUNHAP_GETALL");
         }
-
+        public DataTable GetById(string soPhieuNhap)
+        {
+            return _connect.LoadData("SP_CHITIETPHIEUNHAP_GETBYID", new[] { "@SoPhieuNhap" }, new object[] { soPhieuNhap }, 1);
+        }
         public bool SaveChanges(DataTable dt)
         {
             return _connect.SaveChanges(dt);
