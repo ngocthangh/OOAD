@@ -13,3 +13,4 @@ Số Phiếu, Số hóa đơn cho các bảng này, chỉnh sửa các proc tư�
      + Đổi id các bảng còn lại thành tự tăng (NHACUNGCAP, CHUCVU), chỉnh sửa proc tương ứng.
      + Thêm proc SP_HANGHOA_SEARCH
 1_4: Bỏ mã trong các bảng HOADON, PHIEUNHAP, PHIEUXUAT, PHIEUKIEMKE
+1_5: Thêm SP_PHIEUNHAP_SEARCH, SP_PHIEUXUAT_SEARCH, thêm CMND vào bảng KHACHHANGTHANTHIET
