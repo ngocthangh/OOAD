@@ -1,0 +1,10 @@
+C:\Users\H.Sinh\Desktop\QLSTCODING.git\trunk\QuanLySieuThi.DataModel\bin\Debug\QuanLySieuThi.DataModel.dll
+C:\Users\H.Sinh\Desktop\QLSTCODING.git\trunk\QuanLySieuThi.DataModel\bin\Debug\QuanLySieuThi.DataModel.pdb
+C:\Users\H.Sinh\Desktop\QLSTCODING.git\trunk\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.csprojResolveAssemblyReference.cache
+C:\Users\H.Sinh\Desktop\QLSTCODING.git\trunk\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.dll
+C:\Users\H.Sinh\Desktop\QLSTCODING.git\trunk\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.pdb
+C:\Users\H.Sinh\Desktop\OOAD.git\trunk\Project\HoangSinh\QuanLySieuThi.DataModel\bin\Debug\QuanLySieuThi.DataModel.dll
+C:\Users\H.Sinh\Desktop\OOAD.git\trunk\Project\HoangSinh\QuanLySieuThi.DataModel\bin\Debug\QuanLySieuThi.DataModel.pdb
+C:\Users\H.Sinh\Desktop\OOAD.git\trunk\Project\HoangSinh\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.csprojResolveAssemblyReference.cache
+C:\Users\H.Sinh\Desktop\OOAD.git\trunk\Project\HoangSinh\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.dll
+C:\Users\H.Sinh\Desktop\OOAD.git\trunk\Project\HoangSinh\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.pdb

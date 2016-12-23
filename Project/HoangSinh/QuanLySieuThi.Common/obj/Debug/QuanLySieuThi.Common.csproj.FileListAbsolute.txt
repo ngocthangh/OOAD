@@ -1,0 +1,5 @@
+C:\Users\H.Sinh\Desktop\QLSTCODING.git\trunk\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.dll
+C:\Users\H.Sinh\Desktop\QLSTCODING.git\trunk\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.pdb
+C:\Users\H.Sinh\Desktop\QLSTCODING.git\trunk\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.csprojResolveAssemblyReference.cache
+C:\Users\H.Sinh\Desktop\QLSTCODING.git\trunk\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.dll
+C:\Users\H.Sinh\Desktop\QLSTCODING.git\trunk\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.pdb
