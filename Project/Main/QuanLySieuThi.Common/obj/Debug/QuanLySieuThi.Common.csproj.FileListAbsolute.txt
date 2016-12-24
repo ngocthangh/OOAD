@@ -1,0 +1,9 @@
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\CODING\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Common\bin\Debug\QuanLySieuThi.Common.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.Common\obj\Debug\QuanLySieuThi.Common.csprojResolveAssemblyReference.cache
