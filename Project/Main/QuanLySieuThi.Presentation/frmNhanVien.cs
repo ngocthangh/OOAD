@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using QuanLySieuThi.Common;
 using QuanLySieuThi.DataBussiness;
 using System;
 using System.Collections.Generic;
@@ -64,7 +65,7 @@ namespace QuanLySieuThi.Presentation
             frmNhanVienThemSua.ChucVu = grvNhanVien.GetRowCellValue(row, "TenChucVu").ToString();
             frmNhanVienThemSua.DiaChi = grvNhanVien.GetRowCellValue(row, "DiaChi").ToString();
             frmNhanVienThemSua.TenDangNhap = grvNhanVien.GetRowCellValue(row, "TenDangNhap").ToString();
-            frmNhanVienThemSua.MatKhau = grvNhanVien.GetRowCellValue(row, "MatKhau").ToString();
+            frmNhanVienThemSua.MatKhau = ProjectUltil.Decrypt(grvNhanVien.GetRowCellValue(row, "MatKhau").ToString());
             frmNhanVienThemSua f = new frmNhanVienThemSua(1);
             f.FormClosing += new FormClosingEventHandler(reload);
             f.ShowDialog();

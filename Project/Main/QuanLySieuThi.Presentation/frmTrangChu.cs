@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLySieuThi.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -95,6 +96,38 @@ namespace QuanLySieuThi.Presentation
         private void bbtPhieuKiemKe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenForm<frmPhieuKiemKe>();
+        }
+
+        private void bbtDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDangNhap f = new frmDangNhap();
+            f.FormClosing += new FormClosingEventHandler(checkUser);
+            f.ShowDialog();
+        }
+
+        private void checkUser(object sender, FormClosingEventArgs e)
+        {
+            if(ProjectUltil.HoTenNhanVien != "")
+            {
+                lblNhanVien.Text = ProjectUltil.HoTenNhanVien;
+                bbtDangNhap.Enabled = false;
+                bbtDangXuat.Enabled = true;
+            }
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bbtDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ProjectUltil.MaNhanVien = "";
+            ProjectUltil.HoTenNhanVien = "";
+            lblNhanVien.Text = "";
+            bbtDangNhap.Enabled = true;
+            bbtDangXuat.Enabled = false;
+            MessageBox.Show("Đã logout!");
         }
     }
 }

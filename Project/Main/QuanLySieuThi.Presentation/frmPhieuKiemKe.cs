@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QuanLySieuThi.DataBussiness;
 using QuanLySieuThi.DataModel;
 using DevExpress.XtraEditors;
+using QuanLySieuThi.Common;
 
 namespace QuanLySieuThi.Presentation
 {
@@ -85,6 +86,7 @@ namespace QuanLySieuThi.Presentation
         private void frmPhieuKiemKe_Load(object sender, EventArgs e)
         {
             isSaved = false;
+            txtNhanVien.Text = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
             txtNhanVien.ReadOnly = true;
             txtMaPhieu.ReadOnly = true;
             btnXoa.Enabled = false;
@@ -132,7 +134,7 @@ namespace QuanLySieuThi.Presentation
         private void btnLuu_Click(object sender, EventArgs e) 
         {
             PhieuKiemKe pkk = new PhieuKiemKe();
-            pkk.MaNhanVien = "NV0001";
+            pkk.MaNhanVien = (ProjectUltil.MaNhanVien != "") ? ProjectUltil.MaNhanVien : "NV0001";
             pkk.SoPhieuKiemKe = txtMaPhieu.Text.Trim();
             pkk.NgayLap = deNgayLap.DateTime;
             if(PhieuKiemKeService.Insert(pkk))

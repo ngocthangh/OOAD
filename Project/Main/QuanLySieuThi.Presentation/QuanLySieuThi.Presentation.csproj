@@ -316,6 +316,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\QuanLySieuThi.Common\QuanLySieuThi.Common.csproj">
+      <Project>{15a3d1c9-63f8-43b6-818e-a1b90c8440a6}</Project>
+      <Name>QuanLySieuThi.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\QuanLySieuThi.DataBussiness\QuanLySieuThi.DataBussiness.csproj">
       <Project>{79e644f9-ba6f-4343-aafd-7cf40793b5d2}</Project>
       <Name>QuanLySieuThi.DataBussiness</Name>

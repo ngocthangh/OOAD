@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using QuanLySieuThi.Common;
 using QuanLySieuThi.DataBussiness;
 using QuanLySieuThi.DataModel;
 using System;
@@ -40,6 +41,11 @@ namespace QuanLySieuThi.Presentation
         {
             tedSoPhieuNhap.Text = PhieuNhapService.AutoGenerateId();
             tedNgayLap.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            tedNhanVienLap.Text = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
+            tedNgayLap.ReadOnly = true;
+            tedSoPhieuNhap.ReadOnly = true;
+            tedNhanVienLap.ReadOnly = true;
+            tedTongTien.ReadOnly = true;
             lueHangHoa.Properties.ValueMember = "MaHangHoa";
             lueHangHoa.Properties.DisplayMember = "TenHangHoa";
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaHangHoa", 50, "Mã Hàng Hóa"));
@@ -154,7 +160,7 @@ namespace QuanLySieuThi.Presentation
             else
             {
                 PhieuNhap pn = new PhieuNhap();
-                pn.MaNhanVien = "NV0001";
+                pn.MaNhanVien = (ProjectUltil.MaNhanVien != "")? ProjectUltil.MaNhanVien : "NV0001";
                 pn.SoPhieuNhap = tedSoPhieuNhap.Text;
                 pn.NgayLap = DateTime.Now;
                 pn.TongTien = TongTien;

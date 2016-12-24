@@ -185,7 +185,6 @@
             // 
             // tedSoPhieuNhap
             // 
-            this.tedSoPhieuNhap.Enabled = false;
             this.tedSoPhieuNhap.Location = new System.Drawing.Point(104, 30);
             this.tedSoPhieuNhap.Name = "tedSoPhieuNhap";
             this.tedSoPhieuNhap.Size = new System.Drawing.Size(322, 20);
@@ -194,7 +193,6 @@
             // 
             // tedNhanVienLap
             // 
-            this.tedNhanVienLap.Enabled = false;
             this.tedNhanVienLap.Location = new System.Drawing.Point(104, 64);
             this.tedNhanVienLap.Name = "tedNhanVienLap";
             this.tedNhanVienLap.Size = new System.Drawing.Size(322, 20);
@@ -203,7 +201,6 @@
             // 
             // tedNgayLap
             // 
-            this.tedNgayLap.Enabled = false;
             this.tedNgayLap.Location = new System.Drawing.Point(532, 30);
             this.tedNgayLap.Name = "tedNgayLap";
             this.tedNgayLap.Size = new System.Drawing.Size(328, 20);
@@ -212,7 +209,6 @@
             // 
             // tedTongTien
             // 
-            this.tedTongTien.Enabled = false;
             this.tedTongTien.Location = new System.Drawing.Point(532, 64);
             this.tedTongTien.Name = "tedTongTien";
             this.tedTongTien.Size = new System.Drawing.Size(328, 20);

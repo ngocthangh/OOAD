@@ -16,3 +16,12 @@ D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.DataAcc
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataModel.pdb
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.dll
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\NgocThang\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataAccess.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataAccess.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.Common.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataModel.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.Common.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataAccess\bin\Debug\QuanLySieuThi.DataModel.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.csprojResolveAssemblyReference.cache
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataAccess\obj\Debug\QuanLySieuThi.DataAccess.pdb

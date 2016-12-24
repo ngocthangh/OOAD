@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using QuanLySieuThi.DataBussiness;
 using DevExpress.XtraEditors;
 using QuanLySieuThi.DataModel;
+using QuanLySieuThi.Common;
+
 namespace QuanLySieuThi.Presentation
 {
     public partial class frmHoaDon : Form
@@ -48,6 +50,7 @@ namespace QuanLySieuThi.Presentation
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenHangHoa", 100, "Tên Hàng Hóa"));
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GiaBan", 100, "Giá"));
             lueHangHoa.Properties.DataSource = HangHoaService.LoadDataTable();
+            txtNhanVien.Text = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
         }
         public void Init()
         {
@@ -229,7 +232,7 @@ namespace QuanLySieuThi.Presentation
             HoaDon hd = new HoaDon();
             hd.SoHoaDon = txtSoHoaDon.Text.Trim();
             hd.MaKhachHang = txtMaKhachHang.Text.Trim();
-            hd.MaNhanVien = "NV0001";
+            hd.MaNhanVien = (ProjectUltil.MaNhanVien != "") ? ProjectUltil.MaNhanVien : "NV0001";
             hd.NgayLap=deNgayLap.DateTime;
             hd.TongTien = TienThanhToan;
             hd.TienGiam = TienGiam;

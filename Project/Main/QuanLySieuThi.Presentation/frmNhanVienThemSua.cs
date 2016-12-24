@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using QuanLySieuThi.Common;
 using QuanLySieuThi.DataBussiness;
 using QuanLySieuThi.DataModel;
 using System;
@@ -79,7 +80,7 @@ namespace QuanLySieuThi.Presentation
             lueChucVu.Properties.ValueMember = "MaChucVu";
             lueChucVu.Properties.DisplayMember = "TenChucVu";
             lueChucVu.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenChucVu", 200, "Tên Chức Vụ"));
-            //lueChucVu.Properties.DataSource = ChucVuService
+            lueChucVu.Properties.DataSource = ChucVuService.LoadDataTable();
         }
         public bool validateForm()
         {
@@ -157,11 +158,11 @@ namespace QuanLySieuThi.Presentation
                     nv.GioiTinh = cbbGioiTinh.Text.Trim();
                     nv.CMND = txtCMND.Text.Trim();
                     nv.DienThoai = txtDienThoai.Text.Trim();
-                    nv.MaChucVu = 1;
+                    nv.MaChucVu = int.Parse(lueChucVu.EditValue.ToString());
                     nv.NgayVaoLam = dedNgayVaoLam.DateTime;
                     nv.DiaChi = txtDiaChi.Text;
                     nv.TenDangNhap = txtTenDangNhap.Text.Trim();
-                    nv.MatKhau = txtMatKhau.Text.Trim();
+                    nv.MatKhau = ProjectUltil.Encrypt(txtMatKhau.Text.Trim());
                     try
                     {
                         if (NhanVienService.Insert(nv))
@@ -193,11 +194,11 @@ namespace QuanLySieuThi.Presentation
                         nv.GioiTinh = cbbGioiTinh.Text.Trim();
                         nv.CMND = txtCMND.Text.Trim();
                         nv.DienThoai = txtDienThoai.Text.Trim();
-                        nv.MaChucVu = 1;
+                        nv.MaChucVu = int.Parse(lueChucVu.EditValue.ToString());
                         nv.NgayVaoLam = dedNgayVaoLam.DateTime;
                         nv.DiaChi = txtDiaChi.Text;
                         nv.TenDangNhap = txtTenDangNhap.Text.Trim();
-                        nv.MatKhau = txtMatKhau.Text.Trim();
+                        nv.MatKhau = ProjectUltil.Encrypt(txtMatKhau.Text.Trim());
                         try
                         {
                             if (NhanVienService.Update(nv))

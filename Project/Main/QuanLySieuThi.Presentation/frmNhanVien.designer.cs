@@ -217,8 +217,6 @@
             this.TenDangNhap.FieldName = "TenDangNhap";
             this.TenDangNhap.Name = "TenDangNhap";
             this.TenDangNhap.OptionsColumn.AllowEdit = false;
-            this.TenDangNhap.Visible = true;
-            this.TenDangNhap.VisibleIndex = 9;
             // 
             // MatKhau
             // 
@@ -226,8 +224,6 @@
             this.MatKhau.FieldName = "MatKhau";
             this.MatKhau.Name = "MatKhau";
             this.MatKhau.OptionsColumn.AllowEdit = false;
-            this.MatKhau.Visible = true;
-            this.MatKhau.VisibleIndex = 10;
             // 
             // dockManager1
             // 

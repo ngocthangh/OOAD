@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using QuanLySieuThi.Common;
 using QuanLySieuThi.DataBussiness;
 using QuanLySieuThi.DataModel;
 using System;
@@ -37,14 +38,18 @@ namespace QuanLySieuThi.Presentation
         private void frmPhieuXuatThemSua_Load(object sender, EventArgs e)
         {
             tedSoPhieu.Text = PhieuXuatService.AutoGenerateId();
+            tedNhanVienLap.Text = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
             tedNgayLap.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            tedNgayLap.ReadOnly = true;
+            tedSoPhieu.ReadOnly = true;
+            tedNhanVienLap.ReadOnly = true;
+            tedTongTien.ReadOnly = true;
             lueHangHoa.Properties.ValueMember = "MaHangHoa";
             lueHangHoa.Properties.DisplayMember = "TenHangHoa";
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaHangHoa", 50, "Mã Hàng Hóa"));
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenHangHoa", 100, "Tên Hàng Hóa"));
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SoLuongNhap", 50, "Số Lượng Tồn"));
             lueHangHoa.Properties.DataSource = HangHoaService.LoadDataTable();
-
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -136,7 +141,7 @@ namespace QuanLySieuThi.Presentation
             else
             {
                 PhieuXuat px = new PhieuXuat();
-                px.MaNhanVien = "NV0001";
+                px.MaNhanVien = (ProjectUltil.MaNhanVien != "") ? ProjectUltil.MaNhanVien : "NV0001";
                 px.SoPhieuXuat = tedSoPhieu.Text;
                 px.NgayLap = DateTime.Now;
                 px.TongTien = TongTien;
