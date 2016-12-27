@@ -43,6 +43,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lueHangHoa = new DevExpress.XtraEditors.LookUpEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnLamMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
@@ -53,7 +54,6 @@
             this.TenSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuongTrenQuay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SLTrongKho = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deNgayLap.Properties.CalendarTimeProperties)).BeginInit();
@@ -212,6 +212,15 @@
             this.panelControl2.Size = new System.Drawing.Size(564, 39);
             this.panelControl2.TabIndex = 3;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(288, 6);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(63, 25);
+            this.btnThoat.TabIndex = 4;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // btnLamMoi
             // 
             this.btnLamMoi.Location = new System.Drawing.Point(219, 6);
@@ -311,15 +320,6 @@
             this.SLTrongKho.Visible = true;
             this.SLTrongKho.VisibleIndex = 3;
             this.SLTrongKho.Width = 74;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(288, 6);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(63, 25);
-            this.btnThoat.TabIndex = 4;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frmPhieuKiemKe
             // 

@@ -22,16 +22,10 @@ namespace QuanLySieuThi.Presentation
 
         public static string MaHangHoa;
         public static string TenHangHoa;
-        public static Decimal GiaMua;
+        public static Decimal GiaNhap;
         public static Decimal GiaBan;
-        public static int SoLuongNhap;
-        public static int SoLuongBan;
-        public static int VAT;
         public static int LoaiHang;
         public static int DonViTinh;
-        public static DateTime NgaySanXuat;
-        public static DateTime HanSuDung;
-        public static DateTime NgayNhap;
         public bool isEdited = false;
         public bool isDataChanged = false;
 
@@ -51,27 +45,20 @@ namespace QuanLySieuThi.Presentation
         public void initThem()
         {
             this.Text = "Thêm Hàng Hóa Mới";
-            txtMaHangHoa.Text = HangHoaService.AutoGenerateId();
-            btnSua.Enabled = false;
+            tedMaHangHoa.Text = HangHoaService.AutoGenerateId();
+            btnLuu.Text = "Thêm";
         }
 
         public void initSua()
         {
             this.Text = "Sửa Thông Tin Hàng Hóa";
-            txtMaHangHoa.Text = MaHangHoa;
-            txtTenHangHoa.Text = TenHangHoa;
-            txtGiaMua.Text = GiaMua.ToString();
-            txtGiaBan.Text = GiaBan.ToString();
-            txtSoLuongNhap.Text = SoLuongNhap.ToString();
-            txtSoLuongBan.Text = SoLuongBan.ToString();
-            txtVAT.Text = VAT.ToString();
-            lookUpEditLoaiHang.Text = LoaiHang.ToString();
-            lookUpEditDonViTinh.Text = DonViTinh.ToString();
-            dtNgaySanXuat.Text = NgaySanXuat.ToString("MM/dd/yyyy");
-            dtHanSuDung.Text = HanSuDung.ToString("MM/dd/yyyy");
-            dtNgayNhap.Text = NgayNhap.ToString("MM/dd/yyyy");
-
-            btnLuu.Enabled = false;
+            tedMaHangHoa.Text = MaHangHoa;
+            tedTenHangHoa.Text = TenHangHoa;
+            tedGiaNhap.Text = GiaNhap.ToString();
+            tedGiaBan.Text = GiaBan.ToString();
+            lueLoaiHang.EditValue = LoaiHang.ToString();
+            lueDonViTinh.EditValue = DonViTinh.ToString();
+            btnLuu.Text = "Sửa";
         }
         private void frmHangHoa_Load(object sender, EventArgs e)
         {
@@ -83,22 +70,16 @@ namespace QuanLySieuThi.Presentation
             {
                 initSua();
             }
-
-            _dtLoaiHang = LoaiHangService.LoadDataTable();
-            _dtDonViTinh = DonViTinhService.LoadDataTable();
-
-            lookUpEditLoaiHang.Properties.DataSource = _dtLoaiHang;
-            lookUpEditLoaiHang.Properties.ValueMember = "MaLoaiHang";
-            lookUpEditLoaiHang.Properties.DisplayMember = "TenLoaiHang";
-            lookUpEditLoaiHang.Properties.Columns.Add(new LookUpColumnInfo("MaLoaiHang", "Mã Loại Hàng"));
-            lookUpEditLoaiHang.Properties.Columns.Add(new LookUpColumnInfo("TenLoaiHang", "Tên Loại Hàng"));
-
-            lookUpEditDonViTinh.Properties.DataSource = _dtDonViTinh;
-            lookUpEditDonViTinh.Properties.ValueMember = "MaDVT";
-            lookUpEditDonViTinh.Properties.DisplayMember = "TenDVT";
-            lookUpEditDonViTinh.Properties.Columns.Add(new LookUpColumnInfo("MaDVT", "Mã Đơn Vị Tính"));
-            lookUpEditDonViTinh.Properties.Columns.Add(new LookUpColumnInfo("TenDVT", "Tên Đơn Vị Tính"));
-
+            tedMaHangHoa.ReadOnly = true;
+            lueLoaiHang.Properties.ValueMember = "MaLoaiHang";
+            lueLoaiHang.Properties.DisplayMember = "TenLoaiHang";
+            lueLoaiHang.Properties.Columns.Add(new LookUpColumnInfo("TenLoaiHang", "Tên Loại Hàng"));
+            lueLoaiHang.Properties.DataSource = LoaiHangService.LoadDataTable();
+            
+            lueDonViTinh.Properties.ValueMember = "MaDVT";
+            lueDonViTinh.Properties.DisplayMember = "TenDVT";
+            lueDonViTinh.Properties.Columns.Add(new LookUpColumnInfo("TenDVT", "Tên Đơn Vị Tính"));
+            lueDonViTinh.Properties.DataSource = DonViTinhService.LoadDataTable();
         }
 
         private void frmHangHoa_Validated(object sender, EventArgs e)
@@ -108,116 +89,172 @@ namespace QuanLySieuThi.Presentation
 
         public bool validateForm()
         {
-            if (txtMaHangHoa.Text.Trim() == "")
+            if (tedMaHangHoa.Text.Trim() == "")
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng nhập mã hàng hóa!");
-                txtMaHangHoa.Focus();
+                tedMaHangHoa.Focus();
                 return false;
             }
-            if (txtTenHangHoa.Text.Trim() == "")
+            if (tedTenHangHoa.Text.Trim() == "")
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng nhập tên hàng hóa!");
-                txtTenHangHoa.Focus();
+                tedTenHangHoa.Focus();
                 return false;
             }
-            if (txtGiaMua.Text.Trim() == "")
+            if (tedGiaNhap.Text.Trim() == "")
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng nhập Giá mua!");
-                txtGiaMua.Focus();
+                tedGiaNhap.Focus();
                 return false;
             }
-            if (txtGiaBan.Text.Trim() == "")
+            if (tedGiaBan.Text.Trim() == "")
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng nhập Giá bán!");
-                txtGiaBan.Focus();
+                tedGiaBan.Focus();
                 return false;
             }
-            if (dtNgaySanXuat.Text.Trim() == "")
-            {
-                MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng nhập Ngày sản xuất!");
-                dtNgaySanXuat.Focus();
-                return false;
-            }
-            if (dtHanSuDung.Text.Trim() == "")
-            {
-                MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng nhập Hạn sử dụng!");
-                dtHanSuDung.Focus();
-                return false;
-            }
-            if (dtNgayNhap.Text.Trim() == "")
-            {
-                MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng nhập Ngày nhập");
-                dtNgayNhap.Focus();
-                return false;
-            }
-            if (txtSoLuongNhap.Text.Trim() == "")
-            {
-                MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng nhập vào Số Lượng Nhập");
-                txtSoLuongNhap.Focus();
-                return false;
-            }
-            if (txtSoLuongBan.Text.Trim() == "")
-            {
-                MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng nhập vào Số Lượng Bán");
-                txtSoLuongBan.Focus();
-                return false;
-            }
-            if (txtVAT.Text.Trim() == "")
-            {
-                MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng nhập vào VAT");
-                txtVAT.Focus();
-                return false;
-            }
-            if (lookUpEditLoaiHang.Text.Trim() == "")
+            if (lueLoaiHang.Text.Trim() == "")
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng chọn Loại Hàng");
-                lookUpEditLoaiHang.Focus();
+                lueLoaiHang.Focus();
                 return false;
             }
-            if (lookUpEditDonViTinh.Text.Trim() == "")
+            if (lueDonViTinh.Text.Trim() == "")
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ thông tin! \nVui lòng chọn Đơn Vị Tính");
-                lookUpEditDonViTinh.Focus();
+                lueDonViTinh.Focus();
                 return false;
             }
             return true;
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (validateForm())
             {
                 HangHoa hh = new HangHoa();
-                hh.MaHangHoa = txtMaHangHoa.Text.Trim();
-                hh.TenHangHoa = txtTenHangHoa.Text.Trim();
-                hh.GiaMua = Convert.ToDecimal(txtGiaMua.Text);
-                hh.GiaBan = Convert.ToDecimal(txtGiaBan.Text);
-                hh.SoLuongBan = Convert.ToInt32(txtSoLuongBan.Text);
-                hh.SoLuongNhap = Convert.ToInt32(txtSoLuongNhap.Text);
-                hh.VAT = Convert.ToInt32(txtVAT.Text);
-                hh.NgaySanXuat = dtNgaySanXuat.DateTime;
-                hh.NgayNhap = dtNgayNhap.DateTime;
-                hh.HanSuDung = dtHanSuDung.DateTime;
-                hh.MaLoaiHang = lookUpEditLoaiHang.EditValue.ToString();
-                hh.MaDVT = lookUpEditDonViTinh.EditValue.ToString();
-                try
+                hh.MaHangHoa = tedMaHangHoa.Text.Trim();
+                hh.TenHangHoa = tedTenHangHoa.Text.Trim();
+                hh.GiaNhap = Convert.ToDecimal(tedGiaNhap.Text);
+                hh.GiaBan = Convert.ToDecimal(tedGiaBan.Text);
+                hh.SoLuongTon = 0;
+                hh.SoLuongQuay = 0;
+                hh.MaLoaiHang = lueLoaiHang.EditValue.ToString();
+                hh.MaDVT = lueDonViTinh.EditValue.ToString();
+                if (mode == MODE_ADDNEW)
                 {
-                    if (HangHoaService.Insert(hh))
+                    try
                     {
-                        isDataChanged = true;
-                        isEdited = false;
-                        MessageBox.Show("Thêm thành công!");
-                        initThem();
-                    }
+                        if (HangHoaService.Insert(hh))
+                        {
+                            isDataChanged = true;
+                            isEdited = false;
+                            MessageBox.Show("Thêm thành công!");
+                            initThem();
+                        }
 
-                    else MessageBox.Show("Không thể thêm\nMã nhân viên đã tồn tại!");
+                        else MessageBox.Show("Không thể thêm\nMã nhân viên đã tồn tại!");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Thêm thất bại!");
+                    }
                 }
-                catch (Exception)
+                else
                 {
-                    MessageBox.Show("Thêm thất bại!");
+                    if (isEdited)
+                    {
+                        try
+                        {
+                            if (HangHoaService.Update(hh))
+                            {
+                                isDataChanged = true;
+                                isEdited = false;
+                                MessageBox.Show("Cập Nhật thành công!");
+                            }
+
+                            else MessageBox.Show("Không thể cập nhật!");
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Không thể cập nhật!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn chưa sửa thông tin!");
+                    }
                 }
             }
         }
+        //private void btnLuu_Click(object sender, EventArgs e)
+        //{
+        //    if (mode == MODE_ADDNEW)
+        //    {
+        //        if (validateForm())
+        //        {
+        //            HangHoa hh = new HangHoa();
+        //            hh.MaHangHoa = txtMaHangHoa.Text.Trim();
+        //            hh.TenHangHoa = txtTenHangHoa.Text.Trim();
+        //            hh.GiaNhap = Convert.ToDecimal(txtGiaNhap.Text);
+        //            hh.GiaBan = Convert.ToDecimal(txtGiaBan.Text);
+        //            hh.SoLuongTon = 0;
+        //            hh.SoLuongQuay = 0;
+        //            hh.MaLoaiHang = lueLoaiHang.EditValue.ToString();
+        //            hh.MaDVT = lueDonViTinh.EditValue.ToString();
+        //            try
+        //            {
+        //                if (HangHoaService.Insert(hh))
+        //                {
+        //                    isDataChanged = true;
+        //                    isEdited = false;
+        //                    MessageBox.Show("Thêm thành công!");
+        //                    initThem();
+        //                }
+
+        //                else MessageBox.Show("Không thể thêm\nMã nhân viên đã tồn tại!");
+        //            }
+        //            catch (Exception)
+        //            {
+        //                MessageBox.Show("Thêm thất bại!");
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (validateForm())
+        //        {
+        //            HangHoa hh = new HangHoa();
+        //            hh.MaHangHoa = txtMaHangHoa.Text.Trim();
+        //            hh.TenHangHoa = txtTenHangHoa.Text.Trim();
+        //            hh.GiaNhap = Convert.ToDecimal(txtGiaNhap.Text);
+        //            hh.GiaBan = Convert.ToDecimal(txtGiaBan.Text);
+        //            hh.SoLuongTon = 0;
+        //            hh.SoLuongQuay = 0;
+        //            hh.MaLoaiHang = lueLoaiHang.EditValue.ToString();
+        //            hh.MaDVT = lueDonViTinh.EditValue.ToString();
+        //            try
+        //            {
+        //                if (HangHoaService.Update(hh))
+        //                {
+        //                    isDataChanged = true;
+        //                    isEdited = false;
+        //                    MessageBox.Show("Cập Nhật thành công!");
+        //                }
+
+        //                else MessageBox.Show("Không thể cập nhật!");
+        //            }
+        //            catch (Exception)
+        //            {
+        //                MessageBox.Show("Không thể cập nhật!");
+        //            }
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Bạn chưa sửa thông tin!");
+        //        }
+        //    }
+                
+        //}
 
         private void btnDong_Click(object sender, EventArgs e)
         {
@@ -233,89 +270,68 @@ namespace QuanLySieuThi.Presentation
                 this.Close();
             }
         }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            if (validateForm())
-            {
-                HangHoa hh = new HangHoa();
-                hh.MaHangHoa = txtMaHangHoa.Text.Trim();
-                hh.TenHangHoa = txtTenHangHoa.Text.Trim();
-                hh.GiaMua = Convert.ToDecimal(txtGiaMua.Text);
-                hh.GiaBan = Convert.ToDecimal(txtGiaBan.Text);
-                hh.SoLuongBan = Convert.ToInt32(txtSoLuongBan.Text);
-                hh.SoLuongNhap = Convert.ToInt32(txtSoLuongNhap.Text);
-                hh.VAT = Convert.ToInt32(txtVAT.Text);
-                hh.NgaySanXuat = dtNgaySanXuat.DateTime;
-                hh.NgayNhap = dtNgayNhap.DateTime;
-                hh.HanSuDung = dtHanSuDung.DateTime;
-                hh.MaLoaiHang = lookUpEditLoaiHang.EditValue.ToString();
-                hh.MaDVT = lookUpEditDonViTinh.EditValue.ToString();
-                try
-                {
-                    if (HangHoaService.Update(hh))
-                    {
-                        isDataChanged = true;
-                        isEdited = false;
-                        MessageBox.Show("Cập Nhật thành công!");
-                    }
-
-                    else MessageBox.Show("Không thể cập nhật!");
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Không thể cập nhật!");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Bạn chưa sửa thông tin!");
-            }
-        }
-
+        
         private void btnNhapLai_Click(object sender, EventArgs e)
         {
             if (mode == MODE_ADDNEW)
             {
-                txtTenHangHoa.Text = "";
-                txtGiaMua.Text = "";
-                txtGiaBan.Text = "";
-                txtSoLuongBan.Text = "";
-                txtSoLuongNhap.Text = "";
-                txtVAT.Text = "";
-                dtNgayNhap.Text = "";
-                dtNgaySanXuat.Text = "";
-                dtHanSuDung.Text = "";
-                lookUpEditLoaiHang.Text = "";
-                lookUpEditDonViTinh.Text = "";
+                tedMaHangHoa.Text = HangHoaService.AutoGenerateId();
+                tedTenHangHoa.Text = "";
+                tedGiaNhap.Text = "";
+                tedGiaBan.Text = "";
+                lueLoaiHang.Text = "";
+                lueDonViTinh.Text = "";
             }
             else
             {
                 initSua();
             }
             isEdited = false;
-            txtTenHangHoa.Focus();
+            tedTenHangHoa.Focus();
         }
 
-        private void dtNgaySanXuat_TextChanged(object sender, EventArgs e)
+        private void txtMaHangHoa_TextChanged(object sender, EventArgs e)
         {
-            if (dtNgaySanXuat.Text != NgaySanXuat.ToString("MM/dd/yyyy"))
+            if (tedMaHangHoa.Text != MaHangHoa)
             {
                 isEdited = true;
             }
         }
 
-        private void dtHanSuDung_TextChanged(object sender, EventArgs e)
+        private void tedTenHangHoa_TextChanged(object sender, EventArgs e)
         {
-            if (dtHanSuDung.Text != HanSuDung.ToString("MM/dd/yyyy"))
+            if (tedTenHangHoa.Text != TenHangHoa)
             {
                 isEdited = true;
             }
         }
 
-        private void dtNgayNhap_TextChanged(object sender, EventArgs e)
+        private void tedGiaNhap_TextChanged(object sender, EventArgs e)
         {
-            if (dtNgayNhap.Text != NgayNhap.ToString("MM/dd/yyyy"))
+            if (tedGiaNhap.Text != GiaNhap.ToString())
+            {
+                isEdited = true;
+            }
+        }
+        private void tedGiaBan_TextChanged(object sender, EventArgs e)
+        {
+            if (tedGiaBan.Text != GiaBan.ToString())
+            {
+                isEdited = true;
+            }
+        }
+
+        private void lueLoaiHang_TextChanged(object sender, EventArgs e)
+        {
+            if (lueLoaiHang.EditValue.ToString() != LoaiHang.ToString())
+            {
+                isEdited = true;
+            }
+        }
+
+        private void lueDonViTinh_TextChanged(object sender, EventArgs e)
+        {
+            if (lueDonViTinh.EditValue.ToString() != DonViTinh.ToString())
             {
                 isEdited = true;
             }

@@ -42,12 +42,8 @@
             this.TenHangHoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GiaMua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GiaBan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SoLuongNhap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SoLuongBan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NgayNhap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NgaySanXuat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HanSuDung = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.VAT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SoLuongTon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SoLuongQuay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LoaiHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEditLoaiHang = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.DonViTinh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -203,12 +199,8 @@
             this.TenHangHoa,
             this.GiaMua,
             this.GiaBan,
-            this.SoLuongNhap,
-            this.SoLuongBan,
-            this.NgayNhap,
-            this.NgaySanXuat,
-            this.HanSuDung,
-            this.VAT,
+            this.SoLuongTon,
+            this.SoLuongQuay,
             this.LoaiHang,
             this.DonViTinh});
             this.gridView.GridControl = this.grcHanghoaSearch;
@@ -241,7 +233,7 @@
             // GiaMua
             // 
             this.GiaMua.Caption = "Giá Mua";
-            this.GiaMua.FieldName = "GiaMua";
+            this.GiaMua.FieldName = "GiaNhap";
             this.GiaMua.Name = "GiaMua";
             this.GiaMua.OptionsColumn.AllowEdit = false;
             this.GiaMua.Visible = true;
@@ -256,59 +248,23 @@
             this.GiaBan.Visible = true;
             this.GiaBan.VisibleIndex = 3;
             // 
-            // SoLuongNhap
+            // SoLuongTon
             // 
-            this.SoLuongNhap.Caption = "Số Lượng Nhập";
-            this.SoLuongNhap.FieldName = "SoLuongNhap";
-            this.SoLuongNhap.Name = "SoLuongNhap";
-            this.SoLuongNhap.OptionsColumn.AllowEdit = false;
-            this.SoLuongNhap.Visible = true;
-            this.SoLuongNhap.VisibleIndex = 4;
+            this.SoLuongTon.Caption = "Số Lượng Tồn";
+            this.SoLuongTon.FieldName = "SoLuongTon";
+            this.SoLuongTon.Name = "SoLuongTon";
+            this.SoLuongTon.OptionsColumn.AllowEdit = false;
+            this.SoLuongTon.Visible = true;
+            this.SoLuongTon.VisibleIndex = 4;
             // 
-            // SoLuongBan
+            // SoLuongQuay
             // 
-            this.SoLuongBan.Caption = "Số Lượng Bán";
-            this.SoLuongBan.FieldName = "SoLuongBan";
-            this.SoLuongBan.Name = "SoLuongBan";
-            this.SoLuongBan.OptionsColumn.AllowEdit = false;
-            this.SoLuongBan.Visible = true;
-            this.SoLuongBan.VisibleIndex = 5;
-            // 
-            // NgayNhap
-            // 
-            this.NgayNhap.Caption = "Ngày Nhập";
-            this.NgayNhap.FieldName = "NgayNhap";
-            this.NgayNhap.Name = "NgayNhap";
-            this.NgayNhap.OptionsColumn.AllowEdit = false;
-            this.NgayNhap.Visible = true;
-            this.NgayNhap.VisibleIndex = 6;
-            // 
-            // NgaySanXuat
-            // 
-            this.NgaySanXuat.Caption = "Ngày Sản Xuất";
-            this.NgaySanXuat.FieldName = "NgaySanXuat";
-            this.NgaySanXuat.Name = "NgaySanXuat";
-            this.NgaySanXuat.OptionsColumn.AllowEdit = false;
-            this.NgaySanXuat.Visible = true;
-            this.NgaySanXuat.VisibleIndex = 7;
-            // 
-            // HanSuDung
-            // 
-            this.HanSuDung.Caption = "Hạn Sử Dụng";
-            this.HanSuDung.FieldName = "HanSuDung";
-            this.HanSuDung.Name = "HanSuDung";
-            this.HanSuDung.OptionsColumn.AllowEdit = false;
-            this.HanSuDung.Visible = true;
-            this.HanSuDung.VisibleIndex = 8;
-            // 
-            // VAT
-            // 
-            this.VAT.Caption = "VAT";
-            this.VAT.FieldName = "VAT";
-            this.VAT.Name = "VAT";
-            this.VAT.OptionsColumn.AllowEdit = false;
-            this.VAT.Visible = true;
-            this.VAT.VisibleIndex = 9;
+            this.SoLuongQuay.Caption = "Số Lượng Quầy";
+            this.SoLuongQuay.FieldName = "SoLuongQuay";
+            this.SoLuongQuay.Name = "SoLuongQuay";
+            this.SoLuongQuay.OptionsColumn.AllowEdit = false;
+            this.SoLuongQuay.Visible = true;
+            this.SoLuongQuay.VisibleIndex = 5;
             // 
             // LoaiHang
             // 
@@ -318,7 +274,7 @@
             this.LoaiHang.Name = "LoaiHang";
             this.LoaiHang.OptionsColumn.AllowEdit = false;
             this.LoaiHang.Visible = true;
-            this.LoaiHang.VisibleIndex = 10;
+            this.LoaiHang.VisibleIndex = 6;
             // 
             // LookUpEditLoaiHang
             // 
@@ -335,7 +291,7 @@
             this.DonViTinh.Name = "DonViTinh";
             this.DonViTinh.OptionsColumn.AllowEdit = false;
             this.DonViTinh.Visible = true;
-            this.DonViTinh.VisibleIndex = 11;
+            this.DonViTinh.VisibleIndex = 7;
             // 
             // LookUpEditDonViTinh
             // 
@@ -575,12 +531,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn TenHangHoa;
         private DevExpress.XtraGrid.Columns.GridColumn GiaMua;
         private DevExpress.XtraGrid.Columns.GridColumn GiaBan;
-        private DevExpress.XtraGrid.Columns.GridColumn SoLuongNhap;
-        private DevExpress.XtraGrid.Columns.GridColumn SoLuongBan;
-        private DevExpress.XtraGrid.Columns.GridColumn NgayNhap;
-        private DevExpress.XtraGrid.Columns.GridColumn NgaySanXuat;
-        private DevExpress.XtraGrid.Columns.GridColumn HanSuDung;
-        private DevExpress.XtraGrid.Columns.GridColumn VAT;
+        private DevExpress.XtraGrid.Columns.GridColumn SoLuongTon;
+        private DevExpress.XtraGrid.Columns.GridColumn SoLuongQuay;
         private DevExpress.XtraGrid.Columns.GridColumn LoaiHang;
         private DevExpress.XtraGrid.Columns.GridColumn DonViTinh;
         private DevExpress.XtraEditors.SimpleButton btnTimKiem;

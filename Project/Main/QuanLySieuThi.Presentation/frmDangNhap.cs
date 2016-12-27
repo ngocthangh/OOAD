@@ -23,6 +23,7 @@ namespace QuanLySieuThi.Presentation
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
             dt = NhanVienService.LoadDataTable();
+            tedTenDangNhap.Focus();
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {

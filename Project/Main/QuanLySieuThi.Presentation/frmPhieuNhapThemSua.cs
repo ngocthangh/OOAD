@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,12 +83,35 @@ namespace QuanLySieuThi.Presentation
                 dedHanSuDung.Focus();
                 return;
             }
+            if (tedDonGiaNhap.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đơn giá!");
+                tedDonGiaNhap.Focus();
+                return;
+            }
+            try
+            {
+                dongia = int.Parse(tedDonGiaNhap.Text);
+                if (dongia <= 0)
+                {
+                    MessageBox.Show("Đơn giá phải lớn hơn 0\nVui lòng nhập lại!");
+                    tedDonGiaNhap.Focus();
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Số lượng phải là số\nVui lòng nhập lại!");
+                speSoLuong.Focus();
+                return;
+            }
             if (speSoLuong.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập số lượng!");
                 speSoLuong.Focus();
                 return;
             }
+
             try
             {
                 soluong = int.Parse(speSoLuong.EditValue.ToString());
@@ -108,11 +132,12 @@ namespace QuanLySieuThi.Presentation
             try
             {
                 dongia = Decimal.Parse(row.Row["GiaMua"].ToString());
+                tedDonGiaNhap.Text = dongia.ToString();
             }
-            catch(Exception)
+            catch (Exception)
             {
-                MessageBox.Show("Không thể lấy đơn giá!");
-                return;
+                //MessageBox.Show("Không thể lấy đơn giá!");
+                //return;
             }
             bool check = false;
             if(grvHangHoa.RowCount > 0)
@@ -173,7 +198,7 @@ namespace QuanLySieuThi.Presentation
                         ctpn.SoPhieuNhap = tedSoPhieuNhap.Text;
                         ctpn.MaHangHoa = grvHangHoa.GetRowCellValue(i, "MaHangHoa").ToString();
                         ctpn.MaNhaCungCap = int.Parse(grvHangHoa.GetRowCellValue(i, "MaNhaCungCap").ToString());
-                        ctpn.HanSuDung = DateTime.Parse(grvHangHoa.GetRowCellValue(i, "HanSuDung").ToString());
+                        ctpn.HanSuDung = DateTime.ParseExact(grvHangHoa.GetRowCellValue(i, "HanSuDung").ToString(), "d/M/yyyy", CultureInfo.InvariantCulture);
                         ctpn.SoLuong = int.Parse(grvHangHoa.GetRowCellValue(i, "SoLuong").ToString());
                         ctpn.DonGiaNhap = decimal.Parse(grvHangHoa.GetRowCellValue(i, "DonGiaNhap").ToString());
                         ctpn.ThanhTien = decimal.Parse(grvHangHoa.GetRowCellValue(i, "ThanhTien").ToString());
@@ -197,6 +222,7 @@ namespace QuanLySieuThi.Presentation
                     }else if(success == grvHangHoa.RowCount)
                     {
                         isDataChanged = true;
+                        isSaved = true;
                         MessageBox.Show("Lưu thành công!");
                     }
                 }

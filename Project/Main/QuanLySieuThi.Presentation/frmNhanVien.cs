@@ -62,7 +62,7 @@ namespace QuanLySieuThi.Presentation
             frmNhanVienThemSua.CMND = grvNhanVien.GetRowCellValue(row, "CMND").ToString();
             frmNhanVienThemSua.DienThoai = grvNhanVien.GetRowCellValue(row, "DienThoai").ToString();
             frmNhanVienThemSua.NgayVaoLam = (DateTime)grvNhanVien.GetRowCellValue(row, "NgayVaoLam");
-            frmNhanVienThemSua.ChucVu = grvNhanVien.GetRowCellValue(row, "TenChucVu").ToString();
+            frmNhanVienThemSua.ChucVu = int.Parse(grvNhanVien.GetRowCellValue(row, "MaChucVu").ToString());
             frmNhanVienThemSua.DiaChi = grvNhanVien.GetRowCellValue(row, "DiaChi").ToString();
             frmNhanVienThemSua.TenDangNhap = grvNhanVien.GetRowCellValue(row, "TenDangNhap").ToString();
             frmNhanVienThemSua.MatKhau = ProjectUltil.Decrypt(grvNhanVien.GetRowCellValue(row, "MatKhau").ToString());
@@ -139,6 +139,14 @@ namespace QuanLySieuThi.Presentation
             else
             {
                 MessageBox.Show("Vui lòng chọn 1 dòng để sửa!");
+            }
+        }
+
+        private void grvNhanVien_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
         }
     }

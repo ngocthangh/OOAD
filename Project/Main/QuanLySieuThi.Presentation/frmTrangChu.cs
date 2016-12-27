@@ -129,5 +129,10 @@ namespace QuanLySieuThi.Presentation
             bbtDangXuat.Enabled = false;
             MessageBox.Show("Đã logout!");
         }
+
+        private void bbtBaoCaoTonKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<frmBaoCaoTonKho>();
+        }
     }
 }

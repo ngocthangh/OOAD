@@ -99,14 +99,8 @@ namespace QuanLySieuThi.Presentation
         {
             frmHangHoa.MaHangHoa = gridView.GetRowCellValue(row, "MaHangHoa").ToString();
             frmHangHoa.TenHangHoa = gridView.GetRowCellValue(row, "TenHangHoa").ToString();
-            frmHangHoa.GiaMua =(Decimal)gridView.GetRowCellValue(row, "GiaMua");
+            frmHangHoa.GiaNhap =(Decimal)gridView.GetRowCellValue(row, "GiaNhap");
             frmHangHoa.GiaBan = (Decimal)gridView.GetRowCellValue(row, "GiaBan");
-            frmHangHoa.SoLuongBan = (int)gridView.GetRowCellValue(row, "SoLuongBan");
-            frmHangHoa.SoLuongNhap = (int)gridView.GetRowCellValue(row, "SoLuongNhap");
-            frmHangHoa.VAT = (int)gridView.GetRowCellValue(row, "VAT");
-            frmHangHoa.NgayNhap = (DateTime)gridView.GetRowCellValue(row, "NgayNhap");
-            frmHangHoa.NgaySanXuat = (DateTime)gridView.GetRowCellValue(row, "NgaySanXuat");
-            frmHangHoa.HanSuDung = (DateTime)gridView.GetRowCellValue(row, "HanSuDung");
             frmHangHoa.LoaiHang = (int)gridView.GetRowCellValue(row, "MaLoaiHang");
             frmHangHoa.DonViTinh = (int)gridView.GetRowCellValue(row, "MaDVT");
 

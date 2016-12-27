@@ -128,6 +128,7 @@
             this.grvNhanVien.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
             this.grvNhanVien.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.grvNhanVien.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.grvNhanVien_RowClick);
+            this.grvNhanVien.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.grvNhanVien_CustomDrawRowIndicator);
             this.grvNhanVien.DoubleClick += new System.EventHandler(this.grvNhanVien_DoubleClick);
             // 
             // MaNhanVien

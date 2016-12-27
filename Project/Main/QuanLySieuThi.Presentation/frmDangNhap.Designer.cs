@@ -44,6 +44,7 @@
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
+            this.cbtShowPass = new DevExpress.XtraEditors.CheckButton();
             this.tedTenDangNhap = new DevExpress.XtraEditors.TextEdit();
             this.tedMatKhau = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -51,7 +52,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.cbtShowPass = new DevExpress.XtraEditors.CheckButton();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -238,6 +238,16 @@
             this.layoutControl3.TabIndex = 2;
             this.layoutControl3.Text = "layoutControl3";
             // 
+            // cbtShowPass
+            // 
+            this.cbtShowPass.Image = ((System.Drawing.Image)(resources.GetObject("cbtShowPass.Image")));
+            this.cbtShowPass.Location = new System.Drawing.Point(356, 48);
+            this.cbtShowPass.Name = "cbtShowPass";
+            this.cbtShowPass.Size = new System.Drawing.Size(26, 22);
+            this.cbtShowPass.StyleController = this.layoutControl3;
+            this.cbtShowPass.TabIndex = 6;
+            this.cbtShowPass.CheckedChanged += new System.EventHandler(this.cbtShowPass_CheckedChanged);
+            // 
             // tedTenDangNhap
             // 
             this.tedTenDangNhap.Location = new System.Drawing.Point(111, 12);
@@ -316,16 +326,6 @@
             this.emptySpaceItem6.Name = "emptySpaceItem6";
             this.emptySpaceItem6.Size = new System.Drawing.Size(30, 36);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // cbtShowPass
-            // 
-            this.cbtShowPass.Image = ((System.Drawing.Image)(resources.GetObject("cbtShowPass.Image")));
-            this.cbtShowPass.Location = new System.Drawing.Point(356, 48);
-            this.cbtShowPass.Name = "cbtShowPass";
-            this.cbtShowPass.Size = new System.Drawing.Size(26, 22);
-            this.cbtShowPass.StyleController = this.layoutControl3;
-            this.cbtShowPass.TabIndex = 6;
-            this.cbtShowPass.CheckedChanged += new System.EventHandler(this.cbtShowPass_CheckedChanged);
             // 
             // layoutControlItem6
             // 
