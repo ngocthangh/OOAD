@@ -633,3 +633,4 @@ D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.exe.licenses
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\bin\Debug\QuanLySieuThi.Common.dll
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\bin\Debug\QuanLySieuThi.Common.pdb
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmBaoCaoDoanhThu.resources

@@ -14,7 +14,7 @@ using QuanLySieuThi.DataModel;
 
 namespace QuanLySieuThi.Presentation
 {
-    public partial class frmHangHoa : DevExpress.XtraEditors.XtraForm
+    public partial class frmHangHoa : Form
     {
         private const int MODE_UPDATE = 1;
         private const int MODE_ADDNEW = 0;

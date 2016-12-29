@@ -48,7 +48,7 @@ namespace QuanLySieuThi.Presentation
             lueHangHoa.Properties.DisplayMember = "TenHangHoa";
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaHangHoa", 50, "Mã Hàng Hóa"));
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenHangHoa", 100, "Tên Hàng Hóa"));
-            lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SoLuongNhap", 50, "Số Lượng Tồn"));
+            lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SoLuongTon", 50, "Số Lượng Tồn"));
             lueHangHoa.Properties.DataSource = HangHoaService.LoadDataTable();
         }
 
@@ -56,9 +56,15 @@ namespace QuanLySieuThi.Presentation
         {
             decimal dongia;
             int soluong;
+            if (cbbNoiDungXuat.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn nội dung xuất!");
+                cbbNoiDungXuat.Focus();
+                return;
+            }
             if (lueHangHoa.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn hàng hóa nhập!");
+                MessageBox.Show("Vui lòng chọn hàng hóa xuất!");
                 lueHangHoa.Focus();
                 return;
             }
@@ -68,12 +74,20 @@ namespace QuanLySieuThi.Presentation
                 speSoLuong.Focus();
                 return;
             }
+            DataRowView row = lueHangHoa.Properties.GetDataSourceRowByKeyValue(lueHangHoa.EditValue) as DataRowView;
             try
             {
                 soluong = int.Parse(speSoLuong.EditValue.ToString());
                 if (soluong <= 0)
                 {
                     MessageBox.Show("Số lượng phải lớn hơn 0\nVui lòng nhập lại!");
+                    speSoLuong.Focus();
+                    return;
+                }
+                int soluongton = int.Parse(row.Row["SoLuongTon"].ToString());
+                if(soluong > soluongton)
+                {
+                    MessageBox.Show("Số lượng xuất phải nhỏ hơn hoặc bằng số lượng tồn hiện tại là " + soluongton);
                     speSoLuong.Focus();
                     return;
                 }
@@ -84,10 +98,18 @@ namespace QuanLySieuThi.Presentation
                 speSoLuong.Focus();
                 return;
             }
-            DataRowView row = lueHangHoa.Properties.GetDataSourceRowByKeyValue(lueHangHoa.EditValue) as DataRowView;
+            
             try
             {
-                dongia = Decimal.Parse(row.Row["GiaBan"].ToString());
+                if(cbbNoiDungXuat.SelectedIndex == 0)
+                {
+                    dongia = Decimal.Parse(row.Row["GiaBan"].ToString());
+                }
+                else
+                {
+                    dongia = Decimal.Parse(row.Row["GiaNhap"].ToString());
+                }
+                
             }
             catch (Exception)
             {
@@ -157,8 +179,25 @@ namespace QuanLySieuThi.Presentation
                         ctpx.SoLuong = int.Parse(grvHangHoa.GetRowCellValue(i, "SoLuong").ToString());
                         ctpx.DonGiaXuat = decimal.Parse(grvHangHoa.GetRowCellValue(i, "DonGiaXuat").ToString());
                         ctpx.ThanhTien = decimal.Parse(grvHangHoa.GetRowCellValue(i, "ThanhTien").ToString());
-                        if (!ChiTietPhieuXuatService.Insert(ctpx))
-                        { 
+                        if (ChiTietPhieuXuatService.Insert(ctpx))
+                        {
+                            if (cbbNoiDungXuat.SelectedIndex == 0)
+                            {
+                                if (!HangHoaService.XuatQuay(ctpx.MaHangHoa, ctpx.SoLuong))
+                                {
+                                    MessageBox.Show("Không thể cập nhật số lượng hàng hóa!");
+                                }
+                            }
+                            else
+                            {
+                                if (!HangHoaService.XuatTra(ctpx.MaHangHoa, ctpx.SoLuong))
+                                {
+                                    MessageBox.Show("Không thể cập nhật số lượng hàng hóa!");
+                                }
+                            }
+                        }
+                        else
+                        {
                             fail++;
                             if (i > 0)
                             {

@@ -54,34 +54,34 @@ namespace QuanLySieuThi.DataAccess
             return id;
         }
 
-        //public string InsertGetId(string stproc, object info, string ignore)
-        //{
-        //    string id = "";
-        //    if (_connect.State.Equals(ConnectionState.Closed))
-        //        _connect.Open();
+        public int InsertGetId(string stproc, object info, string ignore)
+        {
+            int id;
+            if (_connect.State.Equals(ConnectionState.Closed))
+                _connect.Open();
 
-        //    var command = new SqlCommand(stproc, _connect) { CommandType = CommandType.StoredProcedure };
-        //    var bind = BindingObject(info);
-        //    for (var i = 0; i < bind.Names.Length; i++)
-        //    {
-        //        if (ignore != null && bind.Names[i] == ignore)
-        //            continue;
-        //        command.Parameters.AddWithValue(bind.Names[i], bind.Values[i]);
-        //    }
-        //    try
-        //    {
-        //        id = command.ExecuteScalar().ToString();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return null;
-        //    }
-        //    finally
-        //    {
-        //        _connect.Close();
-        //    }
-        //    return id;
-        //}
+            var command = new SqlCommand(stproc, _connect) { CommandType = CommandType.StoredProcedure };
+            var bind = BindingObject(info);
+            for (var i = 0; i < bind.Names.Length; i++)
+            {
+                if (ignore != null && bind.Names[i] == ignore)
+                    continue;
+                command.Parameters.AddWithValue(bind.Names[i], bind.Values[i]);
+            }
+            try
+            {
+                id = int.Parse(command.ExecuteScalar().ToString());
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                _connect.Close();
+            }
+            return id;
+        }
 
         public DataTable LoadData(string sql)
         {
@@ -130,6 +130,28 @@ namespace QuanLySieuThi.DataAccess
                 _connect.Close();
             }
         }
+        public bool NhapXuat(string sql, string maHangHoa, int soLuong)
+        {
+            if (_connect.State == ConnectionState.Closed)
+                _connect.Open();
+            var command = new SqlCommand(sql, _connect);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@MaHangHoa", maHangHoa);
+            command.Parameters.AddWithValue("@SoLuong", soLuong);
+            try
+            {
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                _connect.Close();
+            }
+        }
 
         public DataTable LoadData(string sql, string[] names, object[] values, int parameters)
         {
@@ -156,7 +178,6 @@ namespace QuanLySieuThi.DataAccess
             }
             return dt;
         }
-
         //public DataTable getById(string sql, string idName,string id)
         //{
         //    DataTable result;

@@ -53,5 +53,21 @@ namespace QuanLySieuThi.Common
             cryptoStream.Close();
             return Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount).TrimEnd("\0".ToCharArray());
         }
+        public static bool laNamNhuan(int nam)
+        {
+            return ((nam % 4 == 0 && nam % 100 != 0) || (nam % 400 == 0));
+        }
+        public static int soNgay(int nam, int thang)
+        {
+            switch (thang)
+            {
+                case 2:
+                    if (laNamNhuan(nam)) return 29;
+                    else return 28;
+                    break;
+                case 4: case 6: case 9: case 11: return 30;
+                default: return 31;
+            }
+        }
     }
 }

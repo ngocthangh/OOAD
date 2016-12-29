@@ -82,7 +82,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(564, 39);
+            this.panelControl1.Size = new System.Drawing.Size(593, 39);
             this.panelControl1.TabIndex = 1;
             // 
             // deNgayLap
@@ -185,7 +185,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 39);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(564, 62);
+            this.groupControl1.Size = new System.Drawing.Size(593, 62);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Thông tin sản phẩm kiểm kê";
             // 
@@ -209,7 +209,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 101);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(564, 39);
+            this.panelControl2.Size = new System.Drawing.Size(593, 39);
             this.panelControl2.TabIndex = 3;
             // 
             // btnThoat
@@ -263,7 +263,7 @@
             this.grcPhieuKiemKe.Location = new System.Drawing.Point(0, 140);
             this.grcPhieuKiemKe.MainView = this.grvPhieuKiemKe;
             this.grcPhieuKiemKe.Name = "grcPhieuKiemKe";
-            this.grcPhieuKiemKe.Size = new System.Drawing.Size(564, 167);
+            this.grcPhieuKiemKe.Size = new System.Drawing.Size(593, 218);
             this.grcPhieuKiemKe.TabIndex = 4;
             this.grcPhieuKiemKe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvPhieuKiemKe});
@@ -325,7 +325,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 307);
+            this.ClientSize = new System.Drawing.Size(593, 358);
             this.Controls.Add(this.grcPhieuKiemKe);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.groupControl1);

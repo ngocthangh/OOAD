@@ -33,6 +33,10 @@ namespace QuanLySieuThi.DataBussiness
         {
             return Controller.GetById(id);
         }
+        public static DataTable GetByChungLoai(int machungloai)
+        {
+            return Controller.GetByChungLoai(machungloai);
+        }
         public static string AutoGenerateId()
         {
             return Controller.AutoGenerateId();

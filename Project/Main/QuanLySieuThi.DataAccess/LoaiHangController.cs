@@ -36,6 +36,10 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.LoadData("SP_LOAIHANG_GETBYID", new[] { "@MaLoaiHang" }, new object[] { maloaihang }, 1);
         }
+        public DataTable GetByChungLoai(int machungloai)
+        {
+            return _connect.LoadData("SP_LOAIHANG_GETBYCHUNGLOAI", new[] { "@MaChungLoai" }, new object[] { machungloai }, 1);
+        }
 
         public bool Update(LoaiHang loaihang)
         {

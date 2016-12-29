@@ -18,13 +18,17 @@ namespace QuanLySieuThi.Presentation
     public partial class frmHangHoaSearch : DevExpress.XtraEditors.XtraForm
     {
         private int rowSelected;
-        private DataTable _dtDonViTinh;
-        private DataTable _dtLoaiHang;
+        DataTable dtLoaiHang;
 
         public frmHangHoaSearch()
         {
             InitializeComponent();
             rowSelected = -1;
+            dtLoaiHang = new DataTable();
+            dtLoaiHang.Columns.Add();
+            dtLoaiHang.Columns.Add();
+            dtLoaiHang.Columns[0].ColumnName = "MaLoaiHang";
+            dtLoaiHang.Columns[1].ColumnName = "TenLoaiHang";
         }
 
 
@@ -44,21 +48,27 @@ namespace QuanLySieuThi.Presentation
         private void frmHangHoaSearch_Load(object sender, EventArgs e)
         {
             grcHanghoaSearch.DataSource = HangHoaService.LoadDataTable();
+            lbcLoaiHang.ValueMember = "MaLoaiHang";
+            lbcLoaiHang.DisplayMember = "TenLoaiHang";
+            
+            lueChungLoai.Properties.ValueMember = "MaChungLoai";
+            lueChungLoai.Properties.DisplayMember = "TenChungLoai";
+            lueChungLoai.Properties.Columns.Add(new LookUpColumnInfo("TenChungLoai", "Chủng Loại"));
+            lueChungLoai.Properties.DataSource = ChungLoaiService.LoadDataTable();
 
-            _dtLoaiHang = LoaiHangService.LoadDataTable();
-            _dtDonViTinh = DonViTinhService.LoadDataTable();
-
-            LookUpEditLoaiHang.DataSource = _dtLoaiHang;
-            LookUpEditLoaiHang.ValueMember = "MaLoaiHang";
-            LookUpEditLoaiHang.DisplayMember = "TenLoaiHang";
-            LookUpEditLoaiHang.Columns.Add(new LookUpColumnInfo("MaLoaiHang", "Mã Loại Hàng"));
-            LookUpEditLoaiHang.Columns.Add(new LookUpColumnInfo("TenLoaiHang", "Tên Loại Hàng"));
-
-            LookUpEditDonViTinh.DataSource = _dtDonViTinh;
-            LookUpEditDonViTinh.ValueMember = "MaDVT";
-            LookUpEditDonViTinh.DisplayMember = "TenDVT";
-            LookUpEditDonViTinh.Columns.Add(new LookUpColumnInfo("MaDVT", "Mã Đơn Vị Tính"));
-            LookUpEditDonViTinh.Columns.Add(new LookUpColumnInfo("TenDVT", "Tên Đơn Vị Tính"));
+            DataTable temp = LoaiHangService.LoadDataTable();
+            DataRow dr = dtLoaiHang.NewRow();
+            dr[0] = 0;
+            dr[1] = "Tất cả";
+            dtLoaiHang.Rows.Add(dr);
+            for (int i = 0; i < temp.Rows.Count; i++)
+            {
+                DataRow dr1 = dtLoaiHang.NewRow();
+                dr1[0] = temp.Rows[i].Field<int>("MaLoaiHang");
+                dr1[1] = temp.Rows[i].Field<string>("TenLoaiHang");
+                dtLoaiHang.Rows.Add(dr1);
+            }
+            lbcLoaiHang.DataSource = dtLoaiHang;
         }
 
         private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
@@ -174,6 +184,64 @@ namespace QuanLySieuThi.Presentation
             if (e.Info.IsRowIndicator && e.RowHandle >= 0)
             {
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
+
+        private void lueChungLoai_TextChanged(object sender, EventArgs e)
+        {
+            int maChungLoai = -1;
+            DataRowView row = lueChungLoai.Properties.GetDataSourceRowByKeyValue(lueChungLoai.EditValue) as DataRowView;
+            try
+            {
+                maChungLoai = int.Parse(row.Row["MaChungLoai"].ToString());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không thể lấy mã!");
+            }
+            if(maChungLoai != -1)
+            {
+                DataTable temp = LoaiHangService.GetByChungLoai(maChungLoai);
+                if(temp.Rows.Count > 0)
+                {
+                    dtLoaiHang.Rows.Clear();
+                    DataRow dr = dtLoaiHang.NewRow();
+                    dr[0] = 0;
+                    dr[1] = "Tất cả";
+                    dtLoaiHang.Rows.Add(dr);
+                    for (int i = 0; i < temp.Rows.Count; i++)
+                    {
+                        DataRow dr1 = dtLoaiHang.NewRow();
+                        dr1[0] = temp.Rows[i].Field<int>("MaLoaiHang");
+                        dr1[1] = temp.Rows[i].Field<string>("TenLoaiHang");
+                        dtLoaiHang.Rows.Add(dr1);
+                    }
+                    lbcLoaiHang.DataSource = dtLoaiHang;
+                }
+                else
+                {
+                    lbcLoaiHang.DataSource = temp;
+                }
+            }
+        }
+
+        private void lbcLoaiHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lbcLoaiHang.SelectedValue != null)
+            {
+                if (lbcLoaiHang.SelectedValue.ToString() == "0")
+                {
+                    grcHanghoaSearch.DataSource = HangHoaService.LoadDataTable();
+                }
+                else
+                {
+                    int maLoaiHang = int.Parse(lbcLoaiHang.SelectedValue.ToString());
+                    grcHanghoaSearch.DataSource = HangHoaService.GetByLoaiHang(maLoaiHang);
+                }
+            }
+            else
+            {
+
             }
         }
     }

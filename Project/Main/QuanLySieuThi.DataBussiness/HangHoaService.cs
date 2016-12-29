@@ -33,6 +33,10 @@ namespace QuanLySieuThi.DataBussiness
         {
             return Controller.GetById(id);
         }
+        public static DataTable GetByLoaiHang(int maloaihang)
+        {
+            return Controller.GetByLoaiHang(maloaihang);
+        }
         public static string AutoGenerateId()
         {
             return Controller.AutoGenerateId();
@@ -41,7 +45,19 @@ namespace QuanLySieuThi.DataBussiness
         {
             return Controller.Search(key);
         }
+        public static bool NhapHang(string maHangHoa, int soLuong)
+        {
+            return Controller.NhapHang(maHangHoa, soLuong);
+        }
+        public static bool XuatQuay(string maHangHoa, int soLuong)
+        {
+            return Controller.XuatQuay(maHangHoa, soLuong);
+        }
 
+        public static bool XuatTra(string maHangHoa, int soLuong)
+        {
+            return Controller.XuatTra(maHangHoa, soLuong);
+        }
         public static bool Delete(string maHangHoa)
         {
             return Controller.Delete(maHangHoa);

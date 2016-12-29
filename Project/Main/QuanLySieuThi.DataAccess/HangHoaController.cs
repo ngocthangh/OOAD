@@ -36,6 +36,23 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.LoadData("SP_HANGHOA_GETBYID", new[] { "@MaHangHoa" }, new object[] { mahanghoa }, 1);
         }
+        public DataTable GetByLoaiHang(int maloaihang)
+        {
+            return _connect.LoadData("SP_HANGHOA_GETBYLOAIHANG", new[] { "@MaLoaiHang" }, new object[] { maloaihang }, 1);
+        }
+        public bool NhapHang(string maHangHoa, int soLuong)
+        {
+            return _connect.NhapXuat("SP_HANGHOA_NHAP", maHangHoa, soLuong);
+        }
+        public bool XuatQuay(string maHangHoa, int soLuong)
+        {
+            return _connect.NhapXuat("SP_HANGHOA_XUATQUAY", maHangHoa, soLuong);
+        }
+
+        public bool XuatTra(string maHangHoa, int soLuong)
+        {
+            return _connect.NhapXuat("SP_HANGHOA_XUATTRA", maHangHoa, soLuong);
+        }
 
         public bool Update(HangHoa hanghoa)
         {

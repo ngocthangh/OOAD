@@ -95,9 +95,9 @@
             // 
             this.btnThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.btnThoat.Appearance.Options.UseFont = true;
-            this.btnThoat.Location = new System.Drawing.Point(211, 12);
+            this.btnThoat.Location = new System.Drawing.Point(236, 12);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(114, 25);
+            this.btnThoat.Size = new System.Drawing.Size(116, 25);
             this.btnThoat.StyleController = this.layoutControl1;
             this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
@@ -107,9 +107,9 @@
             // 
             this.btnDangNhap.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.btnDangNhap.Appearance.Options.UseFont = true;
-            this.btnDangNhap.Location = new System.Drawing.Point(90, 12);
+            this.btnDangNhap.Location = new System.Drawing.Point(112, 12);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(117, 25);
+            this.btnDangNhap.Size = new System.Drawing.Size(120, 25);
             this.btnDangNhap.StyleController = this.layoutControl1;
             this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Text = "Đăng Nhập";
@@ -132,18 +132,18 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnDangNhap;
-            this.layoutControlItem4.Location = new System.Drawing.Point(78, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(100, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(121, 32);
+            this.layoutControlItem4.Size = new System.Drawing.Size(124, 32);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(317, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(344, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(57, 32);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(30, 32);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
@@ -151,15 +151,15 @@
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(78, 32);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(100, 32);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnThoat;
-            this.layoutControlItem5.Location = new System.Drawing.Point(199, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(224, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(118, 32);
+            this.layoutControlItem5.Size = new System.Drawing.Size(120, 32);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -344,6 +344,7 @@
             this.Controls.Add(this.layoutControl3);
             this.Controls.Add(this.layoutControl2);
             this.Controls.Add(this.layoutControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

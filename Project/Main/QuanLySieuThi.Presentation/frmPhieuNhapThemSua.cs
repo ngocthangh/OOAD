@@ -51,7 +51,7 @@ namespace QuanLySieuThi.Presentation
             lueHangHoa.Properties.DisplayMember = "TenHangHoa";
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaHangHoa", 50, "Mã Hàng Hóa"));
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenHangHoa", 100, "Tên Hàng Hóa"));
-            lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SoLuongNhap", 50, "Số Lượng Tồn"));
+            lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SoLuongTon", 50, "Số Lượng Tồn"));
             lueHangHoa.Properties.DataSource = HangHoaService.LoadDataTable();
             lueNhaCungCap.Properties.ValueMember = "MaNhaCungCap";
             lueNhaCungCap.Properties.DisplayMember = "TenNhaCungCap";
@@ -101,7 +101,7 @@ namespace QuanLySieuThi.Presentation
             }
             catch (Exception)
             {
-                MessageBox.Show("Số lượng phải là số\nVui lòng nhập lại!");
+                MessageBox.Show("Đơn giá phải là số\nVui lòng nhập lại!");
                 speSoLuong.Focus();
                 return;
             }
@@ -127,17 +127,6 @@ namespace QuanLySieuThi.Presentation
                 MessageBox.Show("Số lượng phải là số\nVui lòng nhập lại!");
                 speSoLuong.Focus();
                 return;
-            }
-            DataRowView row = lueHangHoa.Properties.GetDataSourceRowByKeyValue(lueHangHoa.EditValue) as DataRowView;
-            try
-            {
-                dongia = Decimal.Parse(row.Row["GiaMua"].ToString());
-                tedDonGiaNhap.Text = dongia.ToString();
-            }
-            catch (Exception)
-            {
-                //MessageBox.Show("Không thể lấy đơn giá!");
-                //return;
             }
             bool check = false;
             if(grvHangHoa.RowCount > 0)
@@ -203,7 +192,13 @@ namespace QuanLySieuThi.Presentation
                         ctpn.DonGiaNhap = decimal.Parse(grvHangHoa.GetRowCellValue(i, "DonGiaNhap").ToString());
                         ctpn.ThanhTien = decimal.Parse(grvHangHoa.GetRowCellValue(i, "ThanhTien").ToString());
                         if (ChiTietPhieuNhapService.Insert(ctpn))
-                            { success++; }
+                        {
+                            if(!HangHoaService.NhapHang(ctpn.MaHangHoa, ctpn.SoLuong))
+                            {
+                                MessageBox.Show("Không thể cập nhật số lượng hàng hóa!");
+                            }
+                            success++;
+                        }
                         else{
                             fail++;
                             if(i > 0)
@@ -305,6 +300,50 @@ namespace QuanLySieuThi.Presentation
             {
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
+        }
+
+        private void lueHangHoa_TextChanged(object sender, EventArgs e)
+        {
+            DataRowView row = lueHangHoa.Properties.GetDataSourceRowByKeyValue(lueHangHoa.EditValue) as DataRowView;
+            try
+            {
+                decimal dongia = Decimal.Parse(row.Row["GiaNhap"].ToString());
+                tedDonGiaNhap.Text = dongia.ToString("#");
+            }
+            catch (Exception)
+            {
+                //MessageBox.Show("Không thể lấy đơn giá!");
+                //return;
+            }
+        }
+
+        private void btnThemHangHoa_Click(object sender, EventArgs e)
+        {
+            frmHangHoa f = new frmHangHoa();
+            f.FormClosing += new FormClosingEventHandler(reloadHangHoa);
+            f.ShowDialog();
+        }
+
+        private void reloadHangHoa(object sender, FormClosingEventArgs e)
+        {
+            lueHangHoa.Properties.DataSource = HangHoaService.LoadDataTable();
+        }
+        private void reloadNCC(object sender, FormClosingEventArgs e)
+        {
+            lueNhaCungCap.Properties.DataSource = NhaCungCapService.LoadDataTable();
+        }
+
+        private void btnThemNCC_Click(object sender, EventArgs e)
+        {
+            frmNhaCungCap f = new frmNhaCungCap();
+            f.FormClosing += new FormClosingEventHandler(reloadNCC);
+            f.ShowDialog();
+        }
+
+        private void btnTimNCC_Click(object sender, EventArgs e)
+        {
+            frmNhaCungCapSearch f = new frmNhaCungCapSearch();
+            f.ShowDialog();
         }
     }
 }

@@ -166,7 +166,7 @@
             this.cbbNoiDungXuat.Properties.Items.AddRange(new object[] {
             "Xuất quầy",
             "Trả nhà cung cấp",
-            "Hủy"});
+            "Xuất hủy"});
             this.cbbNoiDungXuat.Size = new System.Drawing.Size(374, 22);
             this.cbbNoiDungXuat.StyleController = this.layoutControl1;
             this.cbbNoiDungXuat.TabIndex = 8;
@@ -479,9 +479,9 @@
             // simpleButton1
             // 
             this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(412, 30);
+            this.simpleButton1.Location = new System.Drawing.Point(419, 30);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(33, 22);
+            this.simpleButton1.Size = new System.Drawing.Size(26, 22);
             this.simpleButton1.StyleController = this.layoutControl4;
             this.simpleButton1.TabIndex = 6;
             // 
@@ -498,6 +498,7 @@
             this.speSoLuong.Properties.Appearance.Options.UseFont = true;
             this.speSoLuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.speSoLuong.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.speSoLuong.Size = new System.Drawing.Size(370, 22);
             this.speSoLuong.StyleController = this.layoutControl4;
             this.speSoLuong.TabIndex = 5;
@@ -511,7 +512,7 @@
             this.lueHangHoa.Properties.Appearance.Options.UseFont = true;
             this.lueHangHoa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueHangHoa.Size = new System.Drawing.Size(333, 22);
+            this.lueHangHoa.Size = new System.Drawing.Size(340, 22);
             this.lueHangHoa.StyleController = this.layoutControl4;
             this.lueHangHoa.TabIndex = 4;
             // 
@@ -536,7 +537,7 @@
             this.layoutControlItem8.Control = this.lueHangHoa;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(400, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(407, 26);
             this.layoutControlItem8.Text = "Hàng Hóa";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(60, 16);
             // 
@@ -563,16 +564,19 @@
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(0, 26);
+            this.emptySpaceItem4.MaxSize = new System.Drawing.Size(0, 10);
+            this.emptySpaceItem4.MinSize = new System.Drawing.Size(10, 10);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(437, 10);
+            this.emptySpaceItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.simpleButton1;
-            this.layoutControlItem14.Location = new System.Drawing.Point(400, 0);
+            this.layoutControlItem14.Location = new System.Drawing.Point(407, 0);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(37, 26);
+            this.layoutControlItem14.Size = new System.Drawing.Size(30, 26);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
