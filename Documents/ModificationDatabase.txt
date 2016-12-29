@@ -16,3 +16,4 @@ Số Phiếu, Số hóa đơn cho các bảng này, chỉnh sửa các proc tư�
 1_5: Thêm SP_PHIEUNHAP_SEARCH, SP_PHIEUXUAT_SEARCH, thêm CMND vào bảng KHACHHANGTHANTHIET
 1_6: Thêm SP_KHACHHANGTHANTHIET_SEARCHMAKHACHHANG 
 1_7: Thu gọn bảng HANGHOA
+1_8: Thêm các proc search, thêm BAOCAOTONKHO, CHITIETBAOCAOTONKHO
