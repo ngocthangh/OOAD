@@ -634,3 +634,9 @@ D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\bin\Debug\QuanLySieuThi.Common.dll
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\bin\Debug\QuanLySieuThi.Common.pdb
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmBaoCaoDoanhThu.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\bin\Debug\EntityFramework.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\bin\Debug\EntityFramework.SqlServer.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\bin\Debug\EntityFramework.xml
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\bin\Debug\EntityFramework.SqlServer.xml
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.BaoCaoDoanhThu.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.HoaDonThanhToanReport.resources

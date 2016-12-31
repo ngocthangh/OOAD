@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+using QuanLySieuThi.Common;
 
 namespace QuanLySieuThi.Presentation
 {
@@ -33,6 +35,16 @@ namespace QuanLySieuThi.Presentation
                 doanhthu += tt;
             }
             lblTongDoanhThu.Text = "Tổng Doanh Thu: " + doanhthu + "(VNĐ)";
+        }
+
+        private void btnInBaoCao_Click(object sender, EventArgs e)
+        {
+            BaoCaoDoanhThu.TuNgay = dedTuNgay.DateTime.Date;
+            BaoCaoDoanhThu.DenNgay = dedDenNgay.DateTime.Date;
+            BaoCaoDoanhThu.NhanVienLap = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
+            BaoCaoDoanhThu bc = new BaoCaoDoanhThu();
+            bc.DataSource = HoaDonService.LoadDataTable();
+            bc.ShowPreviewDialog();
         }
     }
 }

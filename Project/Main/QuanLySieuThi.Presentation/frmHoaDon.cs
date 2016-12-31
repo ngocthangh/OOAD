@@ -11,6 +11,7 @@ using QuanLySieuThi.DataBussiness;
 using DevExpress.XtraEditors;
 using QuanLySieuThi.DataModel;
 using QuanLySieuThi.Common;
+using DevExpress.XtraReports.UI;
 
 namespace QuanLySieuThi.Presentation
 {
@@ -318,6 +319,19 @@ namespace QuanLySieuThi.Presentation
                 }
             }
           
+        }
+
+        private void btnInHoaDon_Click(object sender, EventArgs e)
+        {
+            
+            DataTable dt = HoaDonService.GetById("HD0002");
+            if(dt.Rows.Count > 0)
+            {
+                HoaDonThanhToanReport hdtt = new HoaDonThanhToanReport();
+                hdtt.DataSource = dt;
+                hdtt.ShowPreviewDialog();
+            }
+            
         }
     }
 }

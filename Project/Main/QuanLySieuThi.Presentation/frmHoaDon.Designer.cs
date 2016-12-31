@@ -58,7 +58,7 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.btnKiemTra = new DevExpress.XtraEditors.SimpleButton();
-            this.btnIn = new DevExpress.XtraEditors.SimpleButton();
+            this.btnInHoaDon = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnHoaDonMoi = new DevExpress.XtraEditors.SimpleButton();
             this.grcHoaDon = new DevExpress.XtraGrid.GridControl();
@@ -148,7 +148,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(692, 40);
+            this.panelControl1.Size = new System.Drawing.Size(778, 40);
             this.panelControl1.TabIndex = 0;
             // 
             // deNgayLap
@@ -205,9 +205,9 @@
             // 
             this.panelControl4.Controls.Add(this.labelControl2);
             this.panelControl4.Controls.Add(this.txtDiemThuong);
-            this.panelControl4.Location = new System.Drawing.Point(12, 127);
+            this.panelControl4.Location = new System.Drawing.Point(12, 119);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(74, 154);
+            this.panelControl4.Size = new System.Drawing.Size(74, 142);
             this.panelControl4.TabIndex = 8;
             // 
             // labelControl2
@@ -231,7 +231,7 @@
             this.panelControl3.Controls.Add(this.btnXoa);
             this.panelControl3.Location = new System.Drawing.Point(12, 12);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(74, 109);
+            this.panelControl3.Size = new System.Drawing.Size(74, 101);
             this.panelControl3.TabIndex = 7;
             // 
             // btnThem
@@ -314,9 +314,9 @@
             this.panelControl6.Controls.Add(this.panelControl9);
             this.panelControl6.Controls.Add(this.panelControl7);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl6.Location = new System.Drawing.Point(0, 357);
+            this.panelControl6.Location = new System.Drawing.Point(0, 337);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(692, 89);
+            this.panelControl6.Size = new System.Drawing.Size(778, 89);
             this.panelControl6.TabIndex = 8;
             // 
             // panelControl9
@@ -330,7 +330,7 @@
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl9.Location = new System.Drawing.Point(2, 37);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(688, 33);
+            this.panelControl9.Size = new System.Drawing.Size(774, 33);
             this.panelControl9.TabIndex = 14;
             // 
             // labelControl8
@@ -389,7 +389,7 @@
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl7.Location = new System.Drawing.Point(2, 2);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(688, 35);
+            this.panelControl7.Size = new System.Drawing.Size(774, 35);
             this.panelControl7.TabIndex = 13;
             // 
             // btnKiemTra
@@ -401,18 +401,19 @@
             this.btnKiemTra.Text = "Kiểm tra";
             this.btnKiemTra.Click += new System.EventHandler(this.btnKiemTra_Click);
             // 
-            // btnIn
+            // btnInHoaDon
             // 
-            this.btnIn.Location = new System.Drawing.Point(109, 5);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(80, 28);
-            this.btnIn.TabIndex = 3;
-            this.btnIn.Text = "In hóa đơn";
+            this.btnInHoaDon.Location = new System.Drawing.Point(109, 5);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(80, 28);
+            this.btnInHoaDon.TabIndex = 3;
+            this.btnInHoaDon.Text = "In hóa đơn";
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // btnThoat
             // 
             this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThoat.Location = new System.Drawing.Point(607, 5);
+            this.btnThoat.Location = new System.Drawing.Point(693, 5);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(80, 28);
             this.btnThoat.TabIndex = 9;
@@ -433,7 +434,7 @@
             this.grcHoaDon.Location = new System.Drawing.Point(12, 12);
             this.grcHoaDon.MainView = this.grvHoaDon;
             this.grcHoaDon.Name = "grcHoaDon";
-            this.grcHoaDon.Size = new System.Drawing.Size(411, 271);
+            this.grcHoaDon.Size = new System.Drawing.Size(497, 251);
             this.grcHoaDon.TabIndex = 2;
             this.grcHoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvHoaDon});
@@ -510,7 +511,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 40);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(692, 317);
+            this.groupControl1.Size = new System.Drawing.Size(778, 297);
             this.groupControl1.TabIndex = 12;
             this.groupControl1.Text = "Hàng Hóa";
             // 
@@ -521,7 +522,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(255, 20);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(435, 295);
+            this.layoutControl2.Size = new System.Drawing.Size(521, 275);
             this.layoutControl2.TabIndex = 3;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -533,7 +534,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(435, 295);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(521, 275);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem1
@@ -541,7 +542,7 @@
             this.layoutControlItem1.Control = this.grcHoaDon;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(415, 275);
+            this.layoutControlItem1.Size = new System.Drawing.Size(501, 255);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -554,7 +555,7 @@
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(422, 454, 250, 350);
             this.layoutControl3.Root = this.layoutControlGroup3;
-            this.layoutControl3.Size = new System.Drawing.Size(98, 295);
+            this.layoutControl3.Size = new System.Drawing.Size(98, 275);
             this.layoutControl3.TabIndex = 2;
             this.layoutControl3.Text = "layoutControl3";
             // 
@@ -569,29 +570,29 @@
             this.layoutControlItem4});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "Root";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(98, 295);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(98, 275);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // simpleSeparator1
             // 
             this.simpleSeparator1.AllowHotTrack = false;
-            this.simpleSeparator1.Location = new System.Drawing.Point(0, 273);
+            this.simpleSeparator1.Location = new System.Drawing.Point(0, 253);
             this.simpleSeparator1.Name = "simpleSeparator1";
             this.simpleSeparator1.Size = new System.Drawing.Size(78, 2);
             // 
             // simpleSeparator2
             // 
             this.simpleSeparator2.AllowHotTrack = false;
-            this.simpleSeparator2.Location = new System.Drawing.Point(0, 113);
+            this.simpleSeparator2.Location = new System.Drawing.Point(0, 105);
             this.simpleSeparator2.Name = "simpleSeparator2";
             this.simpleSeparator2.Size = new System.Drawing.Size(78, 2);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.panelControl4;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 115);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 107);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(78, 158);
+            this.layoutControlItem3.Size = new System.Drawing.Size(78, 146);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -600,7 +601,7 @@
             this.layoutControlItem4.Control = this.panelControl3;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(78, 113);
+            this.layoutControlItem4.Size = new System.Drawing.Size(78, 105);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -611,7 +612,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 20);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(155, 295);
+            this.layoutControl1.Size = new System.Drawing.Size(155, 275);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -622,7 +623,7 @@
             this.panelControl2.Controls.Add(this.lueHangHoa);
             this.panelControl2.Location = new System.Drawing.Point(12, 12);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(131, 271);
+            this.panelControl2.Size = new System.Drawing.Size(131, 251);
             this.panelControl2.TabIndex = 4;
             // 
             // labelControl1
@@ -665,7 +666,7 @@
             this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(155, 295);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(155, 275);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem5
@@ -673,27 +674,27 @@
             this.layoutControlItem5.Control = this.panelControl2;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(135, 275);
+            this.layoutControlItem5.Size = new System.Drawing.Size(135, 255);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // panelControl5
             // 
-            this.panelControl5.Controls.Add(this.btnIn);
+            this.panelControl5.Controls.Add(this.btnInHoaDon);
             this.panelControl5.Controls.Add(this.btnThoat);
             this.panelControl5.Controls.Add(this.btnLuu);
             this.panelControl5.Controls.Add(this.btnHoaDonMoi);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl5.Location = new System.Drawing.Point(0, 446);
+            this.panelControl5.Location = new System.Drawing.Point(0, 426);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(692, 36);
+            this.panelControl5.Size = new System.Drawing.Size(778, 36);
             this.panelControl5.TabIndex = 2;
             // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 482);
+            this.ClientSize = new System.Drawing.Size(778, 462);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.panelControl6);
             this.Controls.Add(this.panelControl5);
@@ -783,7 +784,7 @@
         private DevExpress.XtraEditors.TextEdit txtTienGiam;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.SimpleButton btnIn;
+        private DevExpress.XtraEditors.SimpleButton btnInHoaDon;
         private DevExpress.XtraEditors.SimpleButton btnThoat;
         private DevExpress.XtraEditors.SimpleButton btnHoaDonMoi;
         private DevExpress.XtraEditors.TextEdit txtSoHoaDon;

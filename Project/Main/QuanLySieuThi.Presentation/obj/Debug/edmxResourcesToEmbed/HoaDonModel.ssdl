@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLySieuThi5Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QuanLySieuThi5.dbo.HoaDonThanhToan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="HoaDonThanhToan">
+    <Key>
+      <PropertyRef Name="SoHoaDon" />
+    </Key>
+    <Property Name="SoHoaDon" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="NgayLap" Type="date" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="100" />
+    <Property Name="HoTenKhachHang" Type="nvarchar" MaxLength="100" />
+    <Property Name="TenHangHoa" Type="nvarchar" MaxLength="100" />
+    <Property Name="DonGia" Type="money" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="ThanhTien" Type="money" />
+    <Property Name="TienGiam" Type="money" />
+    <Property Name="TongTien" Type="money" />
+  </EntityType>
+  <EntityContainer Name="QuanLySieuThi5Model1StoreContainer">
+    <EntitySet Name="HoaDonThanhToan" EntityType="Self.HoaDonThanhToan" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [HoaDonThanhToan].[SoHoaDon] AS [SoHoaDon], 
+    [HoaDonThanhToan].[NgayLap] AS [NgayLap], 
+    [HoaDonThanhToan].[HoTen] AS [HoTen], 
+    [HoaDonThanhToan].[HoTenKhachHang] AS [HoTenKhachHang], 
+    [HoaDonThanhToan].[TenHangHoa] AS [TenHangHoa], 
+    [HoaDonThanhToan].[DonGia] AS [DonGia], 
+    [HoaDonThanhToan].[SoLuong] AS [SoLuong], 
+    [HoaDonThanhToan].[ThanhTien] AS [ThanhTien], 
+    [HoaDonThanhToan].[TienGiam] AS [TienGiam], 
+    [HoaDonThanhToan].[TongTien] AS [TongTien]
+    FROM [dbo].[HoaDonThanhToan] AS [HoaDonThanhToan]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

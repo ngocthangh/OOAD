@@ -69,6 +69,7 @@ namespace QuanLySieuThi.Presentation
                 dtLoaiHang.Rows.Add(dr1);
             }
             lbcLoaiHang.DataSource = dtLoaiHang;
+
         }
 
         private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)

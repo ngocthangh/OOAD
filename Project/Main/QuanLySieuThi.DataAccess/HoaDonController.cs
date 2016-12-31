@@ -23,9 +23,9 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.LoadData("SP_HOADON_GETALL");
         }
-        public DataTable GetById(string mahoadon)
+        public DataTable GetById(string sohoadon)
         {
-            return _connect.LoadData("SP_HOADON_GETBYID", new[] { "MaHoaDon" }, new object[] { mahoadon }, 1);
+            return _connect.LoadData("SP_HOADON_GETBYID", new[] { "@SoHoaDon" }, new object[] { sohoadon }, 1);
         }
         public bool SaveChanges(DataTable dt)
         {
