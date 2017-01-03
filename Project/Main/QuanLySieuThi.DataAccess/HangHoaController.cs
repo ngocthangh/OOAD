@@ -1,4 +1,5 @@
 ﻿using QuanLySieuThi.DataModel;
+using System;
 using System.Data;
 
 namespace QuanLySieuThi.DataAccess
@@ -65,6 +66,10 @@ namespace QuanLySieuThi.DataAccess
         public DataTable Search(string key)
         {
             return _connect.Search("SP_HANGHOA_SEARCH", key);
+        }
+        public DataTable Search1(string key = null, Nullable<int> loaiHang = null, Nullable<int> slTonTu = null, Nullable<int> slTonDen = null, Nullable<int> slQuayTu = null, Nullable<int> slQuayDen = null)
+        {
+            return _connect.LoadData("SP_HANGHOA_SEARCH1", new[] { "@key", "@loaiHang", "@slTonTu", "@slTonDen", "@slQuayTu", "slQuayDen" }, new object[] { key, loaiHang, slTonTu, slTonDen, slQuayTu, slQuayDen }, 6);
         }
         public bool Delete(string maHangHoa)
         {

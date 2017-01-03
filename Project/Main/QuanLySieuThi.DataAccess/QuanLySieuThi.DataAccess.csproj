@@ -60,6 +60,7 @@
     <Compile Include="PhieuNhapController.cs" />
     <Compile Include="PhieuXuatController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThamSoController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLySieuThi.Common\QuanLySieuThi.Common.csproj">

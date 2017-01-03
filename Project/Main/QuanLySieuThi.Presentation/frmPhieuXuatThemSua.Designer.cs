@@ -59,7 +59,7 @@
             this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnChonHangHoa = new DevExpress.XtraEditors.SimpleButton();
             this.speSoLuong = new DevExpress.XtraEditors.SpinEdit();
             this.lueHangHoa = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -346,6 +346,7 @@
             // 
             this.btnLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnLuu.Appearance.Options.UseFont = true;
+            this.btnLuu.Enabled = false;
             this.btnLuu.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonSave_Image;
             this.btnLuu.Location = new System.Drawing.Point(628, 12);
             this.btnLuu.Name = "btnLuu";
@@ -465,7 +466,7 @@
             // 
             // layoutControl4
             // 
-            this.layoutControl4.Controls.Add(this.simpleButton1);
+            this.layoutControl4.Controls.Add(this.btnChonHangHoa);
             this.layoutControl4.Controls.Add(this.speSoLuong);
             this.layoutControl4.Controls.Add(this.lueHangHoa);
             this.layoutControl4.Location = new System.Drawing.Point(12, 30);
@@ -476,14 +477,15 @@
             this.layoutControl4.TabIndex = 10;
             this.layoutControl4.Text = "layoutControl4";
             // 
-            // simpleButton1
+            // btnChonHangHoa
             // 
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(419, 30);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(26, 22);
-            this.simpleButton1.StyleController = this.layoutControl4;
-            this.simpleButton1.TabIndex = 6;
+            this.btnChonHangHoa.Image = ((System.Drawing.Image)(resources.GetObject("btnChonHangHoa.Image")));
+            this.btnChonHangHoa.Location = new System.Drawing.Point(419, 30);
+            this.btnChonHangHoa.Name = "btnChonHangHoa";
+            this.btnChonHangHoa.Size = new System.Drawing.Size(26, 22);
+            this.btnChonHangHoa.StyleController = this.layoutControl4;
+            this.btnChonHangHoa.TabIndex = 6;
+            this.btnChonHangHoa.Click += new System.EventHandler(this.btnChonHangHoa_Click);
             // 
             // speSoLuong
             // 
@@ -573,7 +575,7 @@
             // 
             // layoutControlItem14
             // 
-            this.layoutControlItem14.Control = this.simpleButton1;
+            this.layoutControlItem14.Control = this.btnChonHangHoa;
             this.layoutControlItem14.Location = new System.Drawing.Point(407, 0);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.Size = new System.Drawing.Size(30, 26);
@@ -584,6 +586,7 @@
             // 
             this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnXoa.Appearance.Options.UseFont = true;
+            this.btnXoa.Enabled = false;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.Location = new System.Drawing.Point(473, 151);
             this.btnXoa.Name = "btnXoa";
@@ -869,7 +872,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn DonGia;
         private DevExpress.XtraGrid.Columns.GridColumn MaHangHoa;
         private DevExpress.XtraLayout.LayoutControl layoutControl4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnChonHangHoa;
         private DevExpress.XtraEditors.SpinEdit speSoLuong;
         private DevExpress.XtraEditors.LookUpEdit lueHangHoa;
         private DevExpress.XtraLayout.LayoutControlGroup Root;

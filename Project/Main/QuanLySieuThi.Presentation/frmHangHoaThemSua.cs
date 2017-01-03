@@ -14,7 +14,7 @@ using QuanLySieuThi.DataModel;
 
 namespace QuanLySieuThi.Presentation
 {
-    public partial class frmHangHoa : Form
+    public partial class frmHangHoaThemSua : Form
     {
         private const int MODE_UPDATE = 1;
         private const int MODE_ADDNEW = 0;
@@ -31,12 +31,12 @@ namespace QuanLySieuThi.Presentation
 
         public DataTable _dtLoaiHang;
         public DataTable _dtDonViTinh;
-        public frmHangHoa()
+        public frmHangHoaThemSua()
         {
             InitializeComponent();
         }
 
-        public frmHangHoa(int mode)
+        public frmHangHoaThemSua(int mode)
         {
             InitializeComponent();
             this.mode = mode;

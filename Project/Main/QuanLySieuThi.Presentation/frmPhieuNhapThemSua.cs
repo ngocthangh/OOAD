@@ -3,6 +3,7 @@ using QuanLySieuThi.Common;
 using QuanLySieuThi.DataBussiness;
 using QuanLySieuThi.DataModel;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,25 +66,25 @@ namespace QuanLySieuThi.Presentation
         {
             decimal dongia;
             int soluong;
-            if (lueHangHoa.Text == "")
+            if (lueHangHoa.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng chọn hàng hóa nhập!");
                 lueHangHoa.Focus();
                 return;
             }
-            if (lueNhaCungCap.Text == "")
+            if (lueNhaCungCap.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng chọn nhà cung cấp!");
                 lueHangHoa.Focus();
                 return;
             }
-            if (dedHanSuDung.Text == "")
+            if (dedHanSuDung.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng chọn hạn sử dụng!");
                 dedHanSuDung.Focus();
                 return;
             }
-            if (tedDonGiaNhap.Text == "")
+            if (tedDonGiaNhap.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng nhập đơn giá!");
                 tedDonGiaNhap.Focus();
@@ -105,7 +106,7 @@ namespace QuanLySieuThi.Presentation
                 speSoLuong.Focus();
                 return;
             }
-            if (speSoLuong.Text == "")
+            if (speSoLuong.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng nhập số lượng!");
                 speSoLuong.Focus();
@@ -319,7 +320,7 @@ namespace QuanLySieuThi.Presentation
 
         private void btnThemHangHoa_Click(object sender, EventArgs e)
         {
-            frmHangHoa f = new frmHangHoa();
+            frmHangHoaThemSua f = new frmHangHoaThemSua();
             f.FormClosing += new FormClosingEventHandler(reloadHangHoa);
             f.ShowDialog();
         }
@@ -344,6 +345,30 @@ namespace QuanLySieuThi.Presentation
         {
             frmNhaCungCapSearch f = new frmNhaCungCapSearch();
             f.ShowDialog();
+        }
+
+        private void btnTimHangHoa_Click(object sender, EventArgs e)
+        {
+            frmHangHoaSearch f = new frmHangHoaSearch(2);
+            f.FormClosing += new FormClosingEventHandler(chonHangHoa);
+            f.ShowDialog();
+        }
+
+        private void chonHangHoa(object sender, FormClosingEventArgs e)
+        {
+            int count = ((DataTable)lueHangHoa.Properties.DataSource).Rows.Count;
+            for (int i = 0; i < count; i++)
+            {
+                if(frmHangHoaSearch.maHangDaChon != null)
+                {
+                    if (lueHangHoa.Properties.GetDataSourceValue("MaHangHoa", i).ToString() == frmHangHoaSearch.maHangDaChon)
+                    {
+                        lueHangHoa.ItemIndex = i;
+                        //lueHangHoa.EditValue = i;
+                        return;
+                    }
+                }
+            }
         }
     }
 }

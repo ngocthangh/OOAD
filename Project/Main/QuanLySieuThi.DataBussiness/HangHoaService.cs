@@ -45,6 +45,10 @@ namespace QuanLySieuThi.DataBussiness
         {
             return Controller.Search(key);
         }
+        public static DataTable Search1(string key = null, Nullable<int> loaiHang = null, Nullable<int> slTonTu = null, Nullable<int> slTonDen = null, Nullable<int> slQuayTu = null, Nullable<int> slQuayDen = null)
+        {
+            return Controller.Search1(key, loaiHang, slTonTu, slTonDen, slQuayTu, slQuayDen);
+        }
         public static bool NhapHang(string maHangHoa, int soLuong)
         {
             return Controller.NhapHang(maHangHoa, soLuong);

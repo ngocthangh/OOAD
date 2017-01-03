@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoDoanhThu));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnInBaoCao = new DevExpress.XtraEditors.SimpleButton();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
@@ -114,9 +115,10 @@
             // 
             this.btnInBaoCao.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnInBaoCao.Appearance.Options.UseFont = true;
+            this.btnInBaoCao.Image = ((System.Drawing.Image)(resources.GetObject("btnInBaoCao.Image")));
             this.btnInBaoCao.Location = new System.Drawing.Point(610, 12);
             this.btnInBaoCao.Name = "btnInBaoCao";
-            this.btnInBaoCao.Size = new System.Drawing.Size(78, 23);
+            this.btnInBaoCao.Size = new System.Drawing.Size(92, 23);
             this.btnInBaoCao.StyleController = this.layoutControl1;
             this.btnInBaoCao.TabIndex = 5;
             this.btnInBaoCao.Text = "In Báo Cáo";
@@ -126,12 +128,14 @@
             // 
             this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnDong.Appearance.Options.UseFont = true;
-            this.btnDong.Location = new System.Drawing.Point(702, 12);
+            this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
+            this.btnDong.Location = new System.Drawing.Point(716, 12);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(78, 23);
+            this.btnDong.Size = new System.Drawing.Size(64, 23);
             this.btnDong.StyleController = this.layoutControl1;
             this.btnDong.TabIndex = 4;
             this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // layoutControlGroup1
             // 
@@ -150,16 +154,16 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnDong;
-            this.layoutControlItem4.Location = new System.Drawing.Point(690, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(704, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(82, 27);
+            this.layoutControlItem4.Size = new System.Drawing.Size(68, 27);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(680, 0);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(694, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(10, 27);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -169,7 +173,7 @@
             this.layoutControlItem5.Control = this.btnInBaoCao;
             this.layoutControlItem5.Location = new System.Drawing.Point(598, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(82, 27);
+            this.layoutControlItem5.Size = new System.Drawing.Size(96, 27);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -223,9 +227,10 @@
             // 
             this.btnLapBaoCao.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnLapBaoCao.Appearance.Options.UseFont = true;
-            this.btnLapBaoCao.Location = new System.Drawing.Point(671, 12);
+            this.btnLapBaoCao.Image = ((System.Drawing.Image)(resources.GetObject("btnLapBaoCao.Image")));
+            this.btnLapBaoCao.Location = new System.Drawing.Point(666, 12);
             this.btnLapBaoCao.Name = "btnLapBaoCao";
-            this.btnLapBaoCao.Size = new System.Drawing.Size(102, 24);
+            this.btnLapBaoCao.Size = new System.Drawing.Size(107, 24);
             this.btnLapBaoCao.StyleController = this.layoutControl4;
             this.btnLapBaoCao.TabIndex = 6;
             this.btnLapBaoCao.Text = "Lập Báo Cáo";
@@ -242,7 +247,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dedDenNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dedDenNgay.Size = new System.Drawing.Size(243, 22);
+            this.dedDenNgay.Size = new System.Drawing.Size(238, 22);
             this.dedDenNgay.StyleController = this.layoutControl4;
             this.dedDenNgay.TabIndex = 5;
             // 
@@ -292,16 +297,16 @@
             this.layoutControlItem8.Control = this.dedDenNgay;
             this.layoutControlItem8.Location = new System.Drawing.Point(348, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(311, 32);
+            this.layoutControlItem8.Size = new System.Drawing.Size(306, 32);
             this.layoutControlItem8.Text = "Đến Ngày";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(61, 17);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnLapBaoCao;
-            this.layoutControlItem9.Location = new System.Drawing.Point(659, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(654, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(106, 32);
+            this.layoutControlItem9.Size = new System.Drawing.Size(111, 32);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 

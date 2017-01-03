@@ -56,19 +56,19 @@ namespace QuanLySieuThi.Presentation
         {
             decimal dongia;
             int soluong;
-            if (cbbNoiDungXuat.Text == "")
+            if (cbbNoiDungXuat.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng chọn nội dung xuất!");
                 cbbNoiDungXuat.Focus();
                 return;
             }
-            if (lueHangHoa.Text == "")
+            if (lueHangHoa.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng chọn hàng hóa xuất!");
                 lueHangHoa.Focus();
                 return;
             }
-            if (speSoLuong.Text == "")
+            if (speSoLuong.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng nhập số lượng!");
                 speSoLuong.Focus();
@@ -150,7 +150,7 @@ namespace QuanLySieuThi.Presentation
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (cbbNoiDungXuat.Text == "")
+            if (cbbNoiDungXuat.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng chọn nội dung xuất!");
                 cbbNoiDungXuat.Focus();
@@ -293,6 +293,30 @@ namespace QuanLySieuThi.Presentation
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnChonHangHoa_Click(object sender, EventArgs e)
+        {
+            frmHangHoaSearch f = new frmHangHoaSearch(2);
+            f.FormClosing += new FormClosingEventHandler(chonHangHoa);
+            f.ShowDialog();
+        }
+
+        private void chonHangHoa(object sender, FormClosingEventArgs e)
+        {
+            int count = ((DataTable)lueHangHoa.Properties.DataSource).Rows.Count;
+            for (int i = 0; i < count; i++)
+            {
+                if (frmHangHoaSearch.maHangDaChon != null)
+                {
+                    if (lueHangHoa.Properties.GetDataSourceValue("MaHangHoa", i).ToString() == frmHangHoaSearch.maHangDaChon)
+                    {
+                        lueHangHoa.ItemIndex = i;
+                        //lueHangHoa.EditValue = i;
+                        return;
+                    }
+                }
+            }
         }
     }
 }

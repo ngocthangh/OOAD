@@ -15,7 +15,7 @@ namespace QuanLySieuThi.Presentation
             InitializeComponent();
             lbltitle1.Text = "TỪ NGÀY " + TuNgay.ToString("dd/MM/yyyy") + " - " + DenNgay.ToString("dd/MM/yyyy");
             lblNhanVienLap.Text = NhanVienLap;
-            lblNgayLap.Text = DateTime.Now.Date.ToShortDateString();
+            lblNgayLap.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
         }
 
     }

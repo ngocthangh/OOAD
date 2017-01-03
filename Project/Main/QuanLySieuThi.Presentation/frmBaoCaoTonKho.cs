@@ -16,6 +16,17 @@ namespace QuanLySieuThi.Presentation
     public partial class frmBaoCaoTonKho : Form
     {
         DataTable dsBaoCaoTonKho, dsPhieuNhap, dsPhieuXuat, dsCTPhieuNhap, dsCTPhieuXuat, dsHangHoa;
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnTaoMoi_Click(object sender, EventArgs e)
+        {
+
+        }
+
         BaoCaoTonKho bctk;
         ChiTietBaoCaoTonKho ctbctk;
         public frmBaoCaoTonKho()
@@ -25,16 +36,6 @@ namespace QuanLySieuThi.Presentation
 
         private void frmBaoCaoTonKho_Load(object sender, EventArgs e)
         {
-            lueChungLoai.Properties.ValueMember = "MaChungLoai";
-            lueChungLoai.Properties.DisplayMember = "TenChungLoai";
-            lueChungLoai.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenChungLoai", 200, "Tên Chủng Loại"));
-            lueChungLoai.Properties.DataSource = ChungLoaiService.LoadDataTable();
-
-            lueLoaiHang.Properties.ValueMember = "MaLoaiHang";
-            lueLoaiHang.Properties.DisplayMember = "TenLoaiHang";
-            lueLoaiHang.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenLoaiHang", 200, "Tên Loại Hàng"));
-            lueLoaiHang.Properties.DataSource = LoaiHangService.LoadDataTable();
-
             tedNguoiLap.ReadOnly = true;
             tedNgayLap.ReadOnly = true;
             tedNguoiLap.Text = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
@@ -43,7 +44,7 @@ namespace QuanLySieuThi.Presentation
 
         private void btnLapBaoCao_Click(object sender, EventArgs e)
         {
-            int thang = 1, nam = 2016, machungloai = 1, maloaihang = 1;
+            int thang = 1, nam = 2016;
             if (cbbThang.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn tháng!");
@@ -56,31 +57,6 @@ namespace QuanLySieuThi.Presentation
                 return;
             }
             nam = int.Parse(cbbNam.Text);
-            if(lueChungLoai.Text != "")
-            {
-                DataRowView row = lueChungLoai.Properties.GetDataSourceRowByKeyValue(lueChungLoai.EditValue) as DataRowView;
-                try
-                {
-                    machungloai = int.Parse(row.Row["MaChungLoai"].ToString());
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Không thể lấy mã!");
-                }
-                
-            }
-            if(lueLoaiHang.Text != "")
-            {
-                DataRowView row = lueLoaiHang.Properties.GetDataSourceRowByKeyValue(lueLoaiHang.EditValue) as DataRowView;
-                try
-                {
-                    maloaihang = int.Parse(row.Row["MaLoaiHang"].ToString());
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Không thể lấy mã!");
-                }
-            }
             DateTime dateStart = new DateTime(nam, thang, 1);
             DateTime dateEnd = new DateTime(nam, thang, ProjectUltil.soNgay(nam, thang));
             if(dateStart > DateTime.Now.Date)

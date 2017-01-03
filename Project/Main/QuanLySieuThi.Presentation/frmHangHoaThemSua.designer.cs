@@ -1,6 +1,6 @@
 ﻿namespace QuanLySieuThi.Presentation
 {
-    partial class frmHangHoa
+    partial class frmHangHoaThemSua
     {
         /// <summary>
         /// Required designer variable.
@@ -446,14 +446,14 @@
             this.emptySpaceItem4.Size = new System.Drawing.Size(349, 28);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // frmHangHoa
+            // frmHangHoaThemSua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 189);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmHangHoa";
+            this.Name = "frmHangHoaThemSua";
             this.Text = "Quản Lý Hàng Hóa";
             this.Load += new System.EventHandler(this.frmHangHoa_Load);
             this.Validated += new System.EventHandler(this.frmHangHoa_Validated);

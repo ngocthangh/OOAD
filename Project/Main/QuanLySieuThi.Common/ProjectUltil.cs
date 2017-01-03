@@ -14,6 +14,13 @@ namespace QuanLySieuThi.Common
         static readonly string VIKey = "@1B2c3D4e5F6g7H8";
         public static string MaNhanVien = "";
         public static string HoTenNhanVien = "";
+        public static int MaChucVu = 0;
+        public static void logout()
+        {
+            MaNhanVien = "";
+            HoTenNhanVien = "";
+            MaChucVu = 0;
+        }
         public static string Encrypt(string plainText)
         {
             byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);

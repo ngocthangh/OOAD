@@ -9,6 +9,13 @@ namespace QuanLySieuThi.Presentation
 {
     public partial class frmTrangChu : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private const int ADMIN = 1;
+        private const int GIAMDOC = 2;
+        private const int NHANVIENKHO = 3;
+        private const int NHANVIENBANHANG = 4;
+        private const int NHANVIENNHANSU = 5;
+        private const int NHANVIENKETOAN = 6;
+
         public frmTrangChu()
         {
             InitializeComponent();
@@ -39,7 +46,7 @@ namespace QuanLySieuThi.Presentation
 
         private void buttonClick_ThongTinHanghoa(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            OpenForm<frmHangHoaSearch>();
+            OpenForm<frmHangHoaQuanLy>();
 
         }
 
@@ -113,6 +120,75 @@ namespace QuanLySieuThi.Presentation
                 bbtDangNhap.Enabled = false;
                 bbtDangXuat.Enabled = true;
             }
+            if(ProjectUltil.MaChucVu != 0)
+            {
+                switch (ProjectUltil.MaChucVu)
+                {
+                    case ADMIN:
+                        rbpThayDoiCSDL.Visible = true;
+                        rbpGiaoDien.Visible = true;
+                        break;
+                    case GIAMDOC:
+                        rbpThayDoiQuyDinh.Visible = true;
+                        rbpBaoCaoThongKe.Visible = true;
+                        break;
+                    case NHANVIENKHO:
+                        rbpQuanLy.Visible = true;
+                        rbpNghiepVu.Visible = true;
+                        rbpHangHoa.Visible = true;
+                        rbpNhaCungCap.Visible = true;
+                        rbpKho.Visible = true;
+                        rbpKiemKe.Visible = true;
+                        rbpTraCuu.Visible = true;
+                        break;
+                    case NHANVIENBANHANG:
+                        rbpNghiepVu.Visible = true;
+                        rbpBanHang.Visible = true;
+                        rbpKhachHangThanThiet.Visible = true;
+                        rbpTraCuu.Visible = true;
+                        break;
+                    case NHANVIENNHANSU:
+                        rbpQuanLy.Visible = true;
+                        rbpNhanVien.Visible = true;
+                        rbpChucVu.Visible = true;
+                        rbpTraCuu.Visible = true;
+                        break;
+                    case NHANVIENKETOAN:
+                        rbpBaoCaoThongKe.Visible = true;
+                        break; ;
+                }
+            }
+        }
+
+        private void reSet()
+        {
+            rbpThayDoiCSDL.Visible = false;
+            rbpGiaoDien.Visible = false;
+            rbpThayDoiQuyDinh.Visible = false;
+            rbpBaoCaoThongKe.Visible = false;
+           
+            rbpQuanLy.Visible = false;
+            rbpNghiepVu.Visible = false;
+            rbpHangHoa.Visible = false;
+            rbpNhaCungCap.Visible = false;
+            rbpKho.Visible = false;
+            rbpKiemKe.Visible = false;
+            rbpTraCuu.Visible = false;
+
+            rbpBanHang.Visible = false;
+            rbpKhachHangThanThiet.Visible = false;
+           
+            rbpNhanVien.Visible = false;
+            rbpChucVu.Visible = false;
+          
+            rbpBaoCaoThongKe.Visible = false;
+
+            //tabbedView1.Documents.Clear();
+            for (int i = tabbedView1.Documents.Count - 1; i >= 0; i--)
+            {
+                tabbedView1.Documents[i].Form.Close();
+            }
+            tabbedView1.Documents.Clear();   
         }
 
         private void ribbonControl1_Click(object sender, EventArgs e)
@@ -122,8 +198,8 @@ namespace QuanLySieuThi.Presentation
 
         private void bbtDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ProjectUltil.MaNhanVien = "";
-            ProjectUltil.HoTenNhanVien = "";
+            reSet();
+            ProjectUltil.logout();
             lblNhanVien.Text = "";
             bbtDangNhap.Enabled = true;
             bbtDangXuat.Enabled = false;
@@ -158,6 +234,17 @@ namespace QuanLySieuThi.Presentation
         private void btnTraCuuLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenForm<frmLoaiHangSearch>();
+        }
+
+        private void bbtThayDoiQuyDinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmThayDoiQuyDinh f = new frmThayDoiQuyDinh();
+            f.ShowDialog();
+        }
+
+        private void bbtTraCuuHangHoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<frmHangHoaSearch>();
         }
     }
 }

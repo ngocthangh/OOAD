@@ -106,22 +106,13 @@ namespace QuanLySieuThi.Presentation
 
         private void cedKey_CheckedChanged(object sender, EventArgs e)
         {
-            if (cedKey.Checked == true) { sctKey.Enabled = true; }
-            else { sctKey.Enabled = false; }
+            sctKey.Enabled = cedKey.Checked; 
         }
 
         private void cedDate_CheckedChanged(object sender, EventArgs e)
         {
-            if (cedDate.Checked == true)
-            {
-                dedDateStart.Enabled = true;
-                dedDateEnd.Enabled = true;
-            }
-            else
-            {
-                dedDateStart.Enabled = false;
-                dedDateEnd.Enabled = false;
-            }
+            dedDateStart.Enabled = cedDate.Checked;
+            dedDateEnd.Enabled = cedDate.Checked;
         }
 
         private void sctKey_KeyDown(object sender, KeyEventArgs e)

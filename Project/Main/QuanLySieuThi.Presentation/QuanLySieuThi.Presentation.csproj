@@ -159,11 +159,11 @@
     <Compile Include="frmDonViTinhSearch.Designer.cs">
       <DependentUpon>frmDonViTinhSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHangHoaSearch.cs">
+    <Compile Include="frmHangHoaQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHangHoaSearch.Designer.cs">
-      <DependentUpon>frmHangHoaSearch.cs</DependentUpon>
+    <Compile Include="frmHangHoaQuanLy.Designer.cs">
+      <DependentUpon>frmHangHoaQuanLy.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHoaDon.cs">
       <SubType>Form</SubType>
@@ -213,11 +213,11 @@
     <Compile Include="frmDonViTinh.designer.cs">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHangHoa.cs">
+    <Compile Include="frmHangHoaThemSua.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHangHoa.designer.cs">
-      <DependentUpon>frmHangHoa.cs</DependentUpon>
+    <Compile Include="frmHangHoaThemSua.designer.cs">
+      <DependentUpon>frmHangHoaThemSua.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLoaiHang.cs">
       <SubType>Form</SubType>
@@ -255,11 +255,23 @@
     <Compile Include="frmPhieuXuatThemSua.Designer.cs">
       <DependentUpon>frmPhieuXuatThemSua.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThayDoiQuyDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThayDoiQuyDinh.Designer.cs">
+      <DependentUpon>frmThayDoiQuyDinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTrangChu.designer.cs">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHangHoaSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHangHoaSearch.Designer.cs">
+      <DependentUpon>frmHangHoaSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="HoaDonModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -319,8 +331,8 @@
     <EmbeddedResource Include="frmDonViTinhSearch.resx">
       <DependentUpon>frmDonViTinhSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHangHoaSearch.resx">
-      <DependentUpon>frmHangHoaSearch.cs</DependentUpon>
+    <EmbeddedResource Include="frmHangHoaQuanLy.resx">
+      <DependentUpon>frmHangHoaQuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
@@ -346,8 +358,8 @@
     <EmbeddedResource Include="frmDonViTinh.resx">
       <DependentUpon>frmDonViTinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHangHoa.resx">
-      <DependentUpon>frmHangHoa.cs</DependentUpon>
+    <EmbeddedResource Include="frmHangHoaThemSua.resx">
+      <DependentUpon>frmHangHoaThemSua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoaiHang.resx">
       <DependentUpon>frmLoaiHang.cs</DependentUpon>
@@ -367,8 +379,14 @@
     <EmbeddedResource Include="frmPhieuXuatThemSua.resx">
       <DependentUpon>frmPhieuXuatThemSua.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmThayDoiQuyDinh.resx">
+      <DependentUpon>frmThayDoiQuyDinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHangHoaSearch.resx">
+      <DependentUpon>frmHangHoaSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDonThanhToanReport.resx">
       <DependentUpon>HoaDonThanhToanReport.cs</DependentUpon>

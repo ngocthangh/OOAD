@@ -1,4 +1,5 @@
-﻿using QuanLySieuThi.DataBussiness;
+﻿using QuanLySieuThi.Common;
+using QuanLySieuThi.DataBussiness;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
 
 namespace QuanLySieuThi.Presentation
 {
@@ -97,22 +99,13 @@ namespace QuanLySieuThi.Presentation
 
         private void cedKey_CheckedChanged(object sender, EventArgs e)
         {
-            if(cedKey.Checked == true) { sctKey.Enabled = true; }
-            else { sctKey.Enabled = false; }
+            sctKey.Enabled = cedKey.Checked; 
         }
 
         private void cedDate_CheckedChanged(object sender, EventArgs e)
         {
-            if (cedDate.Checked == true)
-            {
-                dedDateStart.Enabled = true;
-                dedDateEnd.Enabled = true;
-            }
-            else
-            {
-                dedDateStart.Enabled = false;
-                dedDateEnd.Enabled = false;
-            }
+            dedDateStart.Enabled = cedDate.Checked;
+            dedDateEnd.Enabled = cedDate.Checked;
         }
 
         private void btnHuyPhieu_Click(object sender, EventArgs e)
@@ -131,6 +124,14 @@ namespace QuanLySieuThi.Presentation
                 }
                 else { MessageBox.Show("Không thể hủy chi tiết phiếu!"); }
             }
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            //PhieuNhapReport.NguoiLap = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
+            //PhieuNhapReport pnr = new PhieuNhapReport();
+            //pnr.DataSource = ChiTietKiemKeService.LoadDataTable();
+            //pnr.ShowPreviewDialog();
         }
     }
 }

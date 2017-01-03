@@ -381,12 +381,12 @@
             // 
             this.btnLapPhieuXuat.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnLapPhieuXuat.Appearance.Options.UseFont = true;
-            this.btnLapPhieuXuat.Location = new System.Drawing.Point(669, 12);
+            this.btnLapPhieuXuat.Location = new System.Drawing.Point(691, 12);
             this.btnLapPhieuXuat.Name = "btnLapPhieuXuat";
-            this.btnLapPhieuXuat.Size = new System.Drawing.Size(105, 24);
+            this.btnLapPhieuXuat.Size = new System.Drawing.Size(83, 24);
             this.btnLapPhieuXuat.StyleController = this.layoutControl2;
             this.btnLapPhieuXuat.TabIndex = 7;
-            this.btnLapPhieuXuat.Text = "Lập Phiếu Xuất";
+            this.btnLapPhieuXuat.Text = "Lập Phiếu";
             this.btnLapPhieuXuat.Click += new System.EventHandler(this.btnLapPhieuXuat_Click);
             // 
             // btnHuyPhieu
@@ -466,9 +466,9 @@
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnLapPhieuXuat;
-            this.layoutControlItem11.Location = new System.Drawing.Point(657, 0);
+            this.layoutControlItem11.Location = new System.Drawing.Point(679, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(109, 30);
+            this.layoutControlItem11.Size = new System.Drawing.Size(87, 30);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
@@ -477,7 +477,7 @@
             this.emptySpaceItem8.AllowHotTrack = false;
             this.emptySpaceItem8.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(657, 30);
+            this.emptySpaceItem8.Size = new System.Drawing.Size(679, 30);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControl3

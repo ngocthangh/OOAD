@@ -25,8 +25,26 @@ namespace QuanLySieuThi.Presentation
             
         }
 
+        private bool validate()
+        {
+            if (dedTuNgay.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng chọn ngày bắt đầu");
+                return false;
+            }
+            if (dedDenNgay.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng chọn ngày kết thúc");
+                return false;
+            }
+            return true;
+        }
         private void btnLapBaoCao_Click(object sender, EventArgs e)
         {
+            if (!validate())
+            {
+                return;
+            }
             decimal doanhthu = 0;
             grcDoanhThu.DataSource = HoaDonService.LoadDataTable();
             for(int i = 0; i < grvDoanhThu.RowCount; i++)
@@ -39,12 +57,21 @@ namespace QuanLySieuThi.Presentation
 
         private void btnInBaoCao_Click(object sender, EventArgs e)
         {
+            if (!validate())
+            {
+                return;
+            }
             BaoCaoDoanhThu.TuNgay = dedTuNgay.DateTime.Date;
             BaoCaoDoanhThu.DenNgay = dedDenNgay.DateTime.Date;
             BaoCaoDoanhThu.NhanVienLap = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
             BaoCaoDoanhThu bc = new BaoCaoDoanhThu();
-            bc.DataSource = HoaDonService.LoadDataTable();
+            bc.DataSource = HoaDonService.Search(null, dedTuNgay.DateTime.Date, dedDenNgay.DateTime.Date);
             bc.ShowPreviewDialog();
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

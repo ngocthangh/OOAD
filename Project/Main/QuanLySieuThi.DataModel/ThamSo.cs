@@ -2,9 +2,15 @@ using System;
 
 namespace QuanLySieuThi.DataModel
 {
-    public partial class THAMSO
+    public partial class ThamSo
     {
-        public string ThamSo1 { get; set; }
-        public Nullable<double> GiaTri { get; set; }
+        public ThamSo(string tenthamso, int giatri)
+        {
+            TenThamSo = tenthamso;
+            GiaTri = giatri;
+        }
+        public string TenThamSo { get; set; }
+        public int GiaTri { get; set; }
+
     }
 }

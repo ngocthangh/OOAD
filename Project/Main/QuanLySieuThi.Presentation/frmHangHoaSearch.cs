@@ -1,249 +1,241 @@
-﻿using System;
+﻿using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using QuanLySieuThi.DataBussiness;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using QuanLySieuThi.DataBussiness;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-using DevExpress.XtraEditors.Controls;
 
 namespace QuanLySieuThi.Presentation
 {
-    public partial class frmHangHoaSearch : DevExpress.XtraEditors.XtraForm
+    public partial class frmHangHoaSearch : Form
     {
-        private int rowSelected;
-        DataTable dtLoaiHang;
-
+        public static string maHangDaChon;
+        private const int MODE_NORMAL = 1;
+        private const int MODE_SELECT = 2;
+        private int Mode;
         public frmHangHoaSearch()
         {
             InitializeComponent();
-            rowSelected = -1;
-            dtLoaiHang = new DataTable();
-            dtLoaiHang.Columns.Add();
-            dtLoaiHang.Columns.Add();
-            dtLoaiHang.Columns[0].ColumnName = "MaLoaiHang";
-            dtLoaiHang.Columns[1].ColumnName = "TenLoaiHang";
+            Mode = MODE_NORMAL;
+            btnChon.Visible = false;
+        }
+        public frmHangHoaSearch(int mode)
+        {
+            InitializeComponent();
+            Mode = MODE_SELECT;
+            maHangDaChon = null;
+            btnChon.Visible = true;
         }
 
-
-        private void buttonTimKiem_Click(object sender, EventArgs e)
+        private void HangHoaSearch_Load(object sender, EventArgs e)
         {
-            string key = txtTimKiem.Text; 
-            if (key.Trim() != "")
-            {
-                grcHanghoaSearch.DataSource = HangHoaService.Search(key);
-            }
-            else
-            {
-                grcHanghoaSearch.DataSource = HangHoaService.LoadDataTable();
-            }
-        }
-
-        private void frmHangHoaSearch_Load(object sender, EventArgs e)
-        {
-            grcHanghoaSearch.DataSource = HangHoaService.LoadDataTable();
-            lbcLoaiHang.ValueMember = "MaLoaiHang";
-            lbcLoaiHang.DisplayMember = "TenLoaiHang";
-            
             lueChungLoai.Properties.ValueMember = "MaChungLoai";
             lueChungLoai.Properties.DisplayMember = "TenChungLoai";
-            lueChungLoai.Properties.Columns.Add(new LookUpColumnInfo("TenChungLoai", "Chủng Loại"));
+            lueChungLoai.Properties.Columns.Add(new LookUpColumnInfo("TenChungLoai", "Tên chủng loại hàng"));
             lueChungLoai.Properties.DataSource = ChungLoaiService.LoadDataTable();
-
-            DataTable temp = LoaiHangService.LoadDataTable();
-            DataRow dr = dtLoaiHang.NewRow();
-            dr[0] = 0;
-            dr[1] = "Tất cả";
-            dtLoaiHang.Rows.Add(dr);
-            for (int i = 0; i < temp.Rows.Count; i++)
+            lueLoaiHang.Properties.ValueMember = "MaLoaiHang";
+            lueLoaiHang.Properties.DisplayMember = "TenLoaiHang";
+            lueLoaiHang.Properties.Columns.Add(new LookUpColumnInfo("TenLoaiHang", "Tên Loại Hàng"));
+            lueLoaiHang.Properties.DataSource = LoaiHangService.LoadDataTable();
+            grcHangHoa.DataSource = HangHoaService.LoadDataTable();
+            if(Mode == MODE_NORMAL)
             {
-                DataRow dr1 = dtLoaiHang.NewRow();
-                dr1[0] = temp.Rows[i].Field<int>("MaLoaiHang");
-                dr1[1] = temp.Rows[i].Field<string>("TenLoaiHang");
-                dtLoaiHang.Rows.Add(dr1);
+                btnChon.Visible = false;
             }
-            lbcLoaiHang.DataSource = dtLoaiHang;
-
         }
 
-        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            string key = null;
+            Nullable<int> loaiHang = null, slTonTu = null, slTonDen = null, slQuayTu = null, slQuayDen = null;
+            if (cheKey.Checked == true)
             {
-                string key = txtTimKiem.Text;
-                if (key.Trim() != "")
+                if (sctKey.Text != "")
                 {
-                    grcHanghoaSearch.DataSource = HangHoaService.Search(key);
+                    key = sctKey.Text;
                 }
-                else
+            }
+            if(cheLoai.Checked == true)
+            {
+                if(lueLoaiHang.Text.Trim() != "")
                 {
-                    grcHanghoaSearch.DataSource = HangHoaService.LoadDataTable();
+                    DataRowView row = lueLoaiHang.Properties.GetDataSourceRowByKeyValue(lueLoaiHang.EditValue) as DataRowView;
+                    try
+                    {
+                        loaiHang = int.Parse(row.Row["MaLoaiHang"].ToString());
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Không thể lấy mã loại!");
+                        return;
+                    }
                 }
+            }
+            if (cheSLTon.Checked == true)
+            {
+                if (cbbSLTonTu.Text != "")
+                {
+                    try
+                    {
+                        slTonTu = int.Parse(cbbSLTonTu.Text);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+                if (cbbSLTonDen.Text != "")
+                {
+                    try
+                    {
+                        slTonDen = int.Parse(cbbSLTonDen.Text);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+            }
+            if (cheSLQuay.Checked == true)
+            {
+                if (cbbSLQuayTu.Text != "")
+                {
+                    try
+                    {
+                        slQuayTu = int.Parse(cbbSLQuayTu.Text);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+                if (cbbSLQuayDen.Text != "")
+                {
+                    try
+                    {
+                        slQuayDen = int.Parse(cbbSLQuayDen.Text);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+            }
+            if (key == null && loaiHang == null && slTonTu == null && slTonDen == null && slQuayTu == null && slQuayDen == null)
+            {
+                grcHangHoa.DataSource = HangHoaService.LoadDataTable();
+            }
+            else { grcHangHoa.DataSource = HangHoaService.Search1(key, loaiHang, slTonTu, slTonDen, slQuayTu, slQuayDen); }
+        }
+
+        private void cheKey_CheckedChanged(object sender, EventArgs e)
+        {
+            sctKey.Enabled = cheKey.Checked;
+        }
+
+        private void cheLoai_CheckedChanged(object sender, EventArgs e)
+        {
+            lueChungLoai.Enabled = cheLoai.Checked;
+            lueLoaiHang.Enabled = cheLoai.Checked;
+
+        }
+
+        private void cheSoLuongTon_CheckedChanged(object sender, EventArgs e)
+        {
+            cbbSLTonTu.Enabled = cheSLTon.Checked; 
+            cbbSLTonDen.Enabled = cheSLTon.Checked;
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cheSLQuay_CheckedChanged(object sender, EventArgs e)
+        {
+            cbbSLQuayTu.Enabled = cheSLQuay.Checked;
+            cbbSLQuayDen.Enabled = cheSLQuay.Checked;
+        }
+
+        private void sctKey_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnTimKiem.PerformClick();
             }
         }
 
-        private void gridView_DoubleClick(object sender, EventArgs e)
+        private void lueChungLoai_TextChanged(object sender, EventArgs e)
+        {
+            DataRowView row = lueChungLoai.Properties.GetDataSourceRowByKeyValue(lueChungLoai.EditValue) as DataRowView;
+            try
+            {
+                int machungloai = int.Parse(row.Row["MaChungLoai"].ToString());
+                lueLoaiHang.Properties.DataSource = LoaiHangService.GetByChungLoai(machungloai);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không thể lấy mã chủng loại!");
+                return;
+            }
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             GridView view = (GridView)sender;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             DoRowDoubleClick(view, pt);
         }
-
         private void DoRowDoubleClick(GridView view, Point pt)
         {
             GridHitInfo info = view.CalcHitInfo(pt);
             if (info.InRow || info.InRowCell)
             {
                 string colCaption = info.Column == null ? "N/A" : info.Column.GetCaption();
-                //MessageBox.Show(string.Format("DoubleClick on row: {0}, column: {1}.", info.RowHandle, colCaption));
-                initSua(info.RowHandle);
+                if (Mode == MODE_SELECT)
+                {
+                    maHangDaChon = grvHangHoa.GetRowCellValue(info.RowHandle, "MaHangHoa").ToString();
+                    this.Close();
+                }
+                else {
+                    initSua(info.RowHandle);
+                }
             }
         }
-
         private void initSua(int row)
         {
-            frmHangHoa.MaHangHoa = gridView.GetRowCellValue(row, "MaHangHoa").ToString();
-            frmHangHoa.TenHangHoa = gridView.GetRowCellValue(row, "TenHangHoa").ToString();
-            frmHangHoa.GiaNhap =(Decimal)gridView.GetRowCellValue(row, "GiaNhap");
-            frmHangHoa.GiaBan = (Decimal)gridView.GetRowCellValue(row, "GiaBan");
-            frmHangHoa.LoaiHang = (int)gridView.GetRowCellValue(row, "MaLoaiHang");
-            frmHangHoa.DonViTinh = (int)gridView.GetRowCellValue(row, "MaDVT");
+            frmHangHoaThemSua.MaHangHoa = grvHangHoa.GetRowCellValue(row, "MaHangHoa").ToString();
+            frmHangHoaThemSua.TenHangHoa = grvHangHoa.GetRowCellValue(row, "TenHangHoa").ToString();
+            frmHangHoaThemSua.GiaNhap = (Decimal)grvHangHoa.GetRowCellValue(row, "GiaNhap");
+            frmHangHoaThemSua.GiaBan = (Decimal)grvHangHoa.GetRowCellValue(row, "GiaBan");
+            frmHangHoaThemSua.LoaiHang = (int)grvHangHoa.GetRowCellValue(row, "MaLoaiHang");
+            frmHangHoaThemSua.DonViTinh = (int)grvHangHoa.GetRowCellValue(row, "MaDVT");
 
-            frmHangHoa f = new frmHangHoa(1);
+            frmHangHoaThemSua f = new frmHangHoaThemSua(1);
             f.FormClosing += new FormClosingEventHandler(reload);
             f.ShowDialog();
         }
 
         private void reload(object sender, FormClosingEventArgs e)
         {
-            frmHangHoa f = (frmHangHoa)sender;
+            frmHangHoaThemSua f = (frmHangHoaThemSua)sender;
             if (f.isDataChanged == true)
             {
-                grcHanghoaSearch.DataSource = HangHoaService.LoadDataTable();
+                grcHangHoa.DataSource = HangHoaService.LoadDataTable();
             }
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnChon_Click(object sender, EventArgs e)
         {
-            frmHangHoa f = new frmHangHoa(0);
-            f.FormClosing += new FormClosingEventHandler(reload);
-            f.ShowDialog();
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            rowSelected = gridView.GetSelectedRows()[0];
-            if (rowSelected >= 0)
-            {
-                initSua(rowSelected);
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn 1 dòng để sửa!");
-            }
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            rowSelected = gridView.GetSelectedRows()[0];
-            if (rowSelected >= 0)
-            {
-                if (MessageBox.Show("Xác nhận xóa nhân viên đã chọn?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                {
-                    if (HangHoaService.Delete(gridView.GetRowCellValue(rowSelected, "MaHangHoa").ToString()))
-                    {
-                        grcHanghoaSearch.DataSource = HangHoaService.LoadDataTable();
-                        MessageBox.Show("Xóa thành công!");
-                    }
-                    else { MessageBox.Show("Không thể xóa vì nhân viên này còn thông tin liên quan!"); }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn 1 dòng để xóa!");
-            }
-        }
-
-        private void gridView_RowClick(object sender, RowClickEventArgs e)
-        {
-            rowSelected = e.RowHandle;
-        }
-
-        private void btnDong_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void gridView_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
-        {
-            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
-            {
-                e.Info.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
-
-        private void lueChungLoai_TextChanged(object sender, EventArgs e)
-        {
-            int maChungLoai = -1;
-            DataRowView row = lueChungLoai.Properties.GetDataSourceRowByKeyValue(lueChungLoai.EditValue) as DataRowView;
-            try
-            {
-                maChungLoai = int.Parse(row.Row["MaChungLoai"].ToString());
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Không thể lấy mã!");
-            }
-            if(maChungLoai != -1)
-            {
-                DataTable temp = LoaiHangService.GetByChungLoai(maChungLoai);
-                if(temp.Rows.Count > 0)
-                {
-                    dtLoaiHang.Rows.Clear();
-                    DataRow dr = dtLoaiHang.NewRow();
-                    dr[0] = 0;
-                    dr[1] = "Tất cả";
-                    dtLoaiHang.Rows.Add(dr);
-                    for (int i = 0; i < temp.Rows.Count; i++)
-                    {
-                        DataRow dr1 = dtLoaiHang.NewRow();
-                        dr1[0] = temp.Rows[i].Field<int>("MaLoaiHang");
-                        dr1[1] = temp.Rows[i].Field<string>("TenLoaiHang");
-                        dtLoaiHang.Rows.Add(dr1);
-                    }
-                    lbcLoaiHang.DataSource = dtLoaiHang;
-                }
-                else
-                {
-                    lbcLoaiHang.DataSource = temp;
-                }
-            }
-        }
-
-        private void lbcLoaiHang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(lbcLoaiHang.SelectedValue != null)
-            {
-                if (lbcLoaiHang.SelectedValue.ToString() == "0")
-                {
-                    grcHanghoaSearch.DataSource = HangHoaService.LoadDataTable();
-                }
-                else
-                {
-                    int maLoaiHang = int.Parse(lbcLoaiHang.SelectedValue.ToString());
-                    grcHanghoaSearch.DataSource = HangHoaService.GetByLoaiHang(maLoaiHang);
-                }
-            }
-            else
-            {
-
-            }
+            maHangDaChon = grvHangHoa.GetRowCellValue(grvHangHoa.FocusedRowHandle, "MaHangHoa").ToString();
+            this.Close();
         }
     }
 }

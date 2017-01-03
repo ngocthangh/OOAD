@@ -47,5 +47,9 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.Delete("SP_CHITIETHOADON_DEL", "MaHoaDon", mahoadon);
         }
+        public DataTable Search(string key = null, Nullable<DateTime> dateStart = null, Nullable<DateTime> dateEnd = null)
+        {
+            return _connect.LoadData("SP_HOADON_SEARCH", new[] { "@key", "@dateStart", "@dateEnd" }, new object[] { key, dateStart, dateEnd }, 3);
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using QuanLySieuThi.DataModel;
 using QuanLySieuThi.DataAccess;
 using System.Data;
+using System;
 
 namespace QuanLySieuThi.DataBussiness
 {
@@ -35,6 +36,10 @@ namespace QuanLySieuThi.DataBussiness
         public static bool Delete(string mahoadon)
         {
             return Controller.Delete(mahoadon);
+        }
+        public static DataTable Search(string key = null, Nullable<DateTime> dateStart = null, Nullable<DateTime> dateEnd = null)
+        {
+            return Controller.Search(key, dateStart, dateEnd);
         }
     }
 }

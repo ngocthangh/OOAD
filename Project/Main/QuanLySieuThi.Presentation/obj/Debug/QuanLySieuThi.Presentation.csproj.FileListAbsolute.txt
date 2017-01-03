@@ -611,7 +611,6 @@ D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmChungLoaiHangSearch.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmDangNhap.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmDonViTinhSearch.resources
-D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmHangHoaSearch.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmHoaDon.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmKhachHangThanThiet.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmLoaiHangSearch.resources
@@ -620,7 +619,6 @@ D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmPhieuKiemKe.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmPhieuNhap.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmDonViTinh.resources
-D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmHangHoa.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmLoaiHang.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmNhaCungCap.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmNhanVien.resources
@@ -640,3 +638,7 @@ D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\bin\Debug\EntityFramework.SqlServer.xml
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.BaoCaoDoanhThu.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.HoaDonThanhToanReport.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmThayDoiQuyDinh.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmHangHoaQuanLy.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmHangHoaThemSua.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmHangHoaSearch.resources

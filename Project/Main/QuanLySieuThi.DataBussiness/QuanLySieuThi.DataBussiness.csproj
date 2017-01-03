@@ -61,6 +61,7 @@
     <Compile Include="PhieuNhapService.cs" />
     <Compile Include="PhieuXuatService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThamSoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLySieuThi.DataAccess\QuanLySieuThi.DataAccess.csproj">

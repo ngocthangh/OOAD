@@ -46,6 +46,7 @@ namespace QuanLySieuThi.Presentation
                     MessageBox.Show("Đăng nhập thành công!\nXin chào " + dt.Rows[i].Field<string>("HoTen") + "....");
                     ProjectUltil.MaNhanVien = dt.Rows[i].Field<string>("MaNhanVien");
                     ProjectUltil.HoTenNhanVien = dt.Rows[i].Field<string>("HoTen");
+                    ProjectUltil.MaChucVu = dt.Rows[i].Field<int>("MaChucVu");
                     btnThoat.PerformClick();
                     return;
                 }
