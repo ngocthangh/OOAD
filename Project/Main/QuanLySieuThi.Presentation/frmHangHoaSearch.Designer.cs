@@ -158,7 +158,6 @@
             // 
             this.btnChon.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnChon.Appearance.Options.UseFont = true;
-            this.btnChon.Enabled = false;
             this.btnChon.Image = ((System.Drawing.Image)(resources.GetObject("btnChon.Image")));
             this.btnChon.Location = new System.Drawing.Point(627, 12);
             this.btnChon.Name = "btnChon";
@@ -212,8 +211,11 @@
             // 
             this.emptySpaceItem13.AllowHotTrack = false;
             this.emptySpaceItem13.Location = new System.Drawing.Point(697, 0);
+            this.emptySpaceItem13.MaxSize = new System.Drawing.Size(10, 32);
+            this.emptySpaceItem13.MinSize = new System.Drawing.Size(10, 32);
             this.emptySpaceItem13.Name = "emptySpaceItem13";
             this.emptySpaceItem13.Size = new System.Drawing.Size(10, 32);
+            this.emptySpaceItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem13.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem15
@@ -346,6 +348,7 @@
             // 
             this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnTimKiem.Appearance.Options.UseFont = true;
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
             this.btnTimKiem.Location = new System.Drawing.Point(663, 49);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(118, 59);
@@ -687,8 +690,11 @@
             // 
             this.emptySpaceItem9.AllowHotTrack = false;
             this.emptySpaceItem9.Location = new System.Drawing.Point(641, 0);
+            this.emptySpaceItem9.MaxSize = new System.Drawing.Size(10, 0);
+            this.emptySpaceItem9.MinSize = new System.Drawing.Size(10, 10);
             this.emptySpaceItem9.Name = "emptySpaceItem9";
             this.emptySpaceItem9.Size = new System.Drawing.Size(10, 137);
+            this.emptySpaceItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControl3
@@ -727,6 +733,7 @@
             this.LoaiHang});
             this.grvHangHoa.GridControl = this.grcHangHoa;
             this.grvHangHoa.Name = "grvHangHoa";
+            this.grvHangHoa.OptionsView.ShowGroupPanel = false;
             this.grvHangHoa.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // MaHangHoa
@@ -842,7 +849,7 @@
             this.Controls.Add(this.layoutControl2);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmHangHoaSearch";
-            this.Text = "HangHoaSearch";
+            this.Text = "Tìm Kiếm Hàng Hóa";
             this.Load += new System.EventHandler(this.HangHoaSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

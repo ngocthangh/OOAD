@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
     <Reference Include="DevExpress.BonusSkins.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -92,6 +95,30 @@
     </Compile>
     <Compile Include="BaoCaoDoanhThu.Designer.cs">
       <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoTonKhoModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoTonKhoModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoTonKhoModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoTonKhoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoTonKhoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoTonKhoModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoTonKhoReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaoCaoTonKhoReport.Designer.cs">
+      <DependentUpon>BaoCaoTonKhoReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoTonKhoView.cs">
+      <DependentUpon>BaoCaoTonKhoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DoanhThu.cs">
       <DependentUpon>DoanhThuModel.tt</DependentUpon>
@@ -297,6 +324,54 @@
     <Compile Include="HoaDonThanhToanReport.Designer.cs">
       <DependentUpon>HoaDonThanhToanReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhieuNhapIn.cs">
+      <DependentUpon>PhieuNhapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuNhapModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuNhapModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuNhapModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuNhapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuNhapModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuNhapModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuNhapReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PhieuNhapReport.Designer.cs">
+      <DependentUpon>PhieuNhapReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuXuatIn.cs">
+      <DependentUpon>PhieuXuatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuXuatModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuXuatModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuXuatModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuXuatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuXuatModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuXuatModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuXuatReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PhieuXuatReport.Designer.cs">
+      <DependentUpon>PhieuXuatReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLySieuThiDataSet.Designer.cs">
@@ -306,6 +381,9 @@
     </Compile>
     <EmbeddedResource Include="BaoCaoDoanhThu.resx">
       <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCaoTonKhoReport.resx">
+      <DependentUpon>BaoCaoTonKhoReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaoCaoDoanhThu.resx">
       <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
@@ -391,6 +469,12 @@
     <EmbeddedResource Include="HoaDonThanhToanReport.resx">
       <DependentUpon>HoaDonThanhToanReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhieuNhapReport.resx">
+      <DependentUpon>PhieuNhapReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhieuXuatReport.resx">
+      <DependentUpon>PhieuXuatReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -406,6 +490,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DoanhThuModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="BaoCaoTonKhoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BaoCaoTonKhoModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BaoCaoTonKhoModel.edmx.diagram">
+      <DependentUpon>BaoCaoTonKhoModel.edmx</DependentUpon>
+    </None>
     <None Include="DoanhThuModel.edmx.diagram">
       <DependentUpon>DoanhThuModel.edmx</DependentUpon>
     </None>
@@ -417,6 +508,20 @@
       <DependentUpon>HoaDonModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <EntityDeploy Include="PhieuNhapModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PhieuNhapModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PhieuNhapModel.edmx.diagram">
+      <DependentUpon>PhieuNhapModel.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="PhieuXuatModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PhieuXuatModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PhieuXuatModel.edmx.diagram">
+      <DependentUpon>PhieuXuatModel.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -561,6 +666,16 @@
     <None Include="Resources\user_male.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BaoCaoTonKhoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaoCaoTonKhoModel.edmx</DependentUpon>
+      <LastGenOutput>BaoCaoTonKhoModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BaoCaoTonKhoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaoCaoTonKhoModel.edmx</DependentUpon>
+      <LastGenOutput>BaoCaoTonKhoModel.cs</LastGenOutput>
+    </Content>
     <Content Include="DoanhThuModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DoanhThuModel.edmx</DependentUpon>
@@ -580,6 +695,26 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HoaDonModel.edmx</DependentUpon>
       <LastGenOutput>HoaDonModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="PhieuNhapModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhieuNhapModel.edmx</DependentUpon>
+      <LastGenOutput>PhieuNhapModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PhieuNhapModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhieuNhapModel.edmx</DependentUpon>
+      <LastGenOutput>PhieuNhapModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="PhieuXuatModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhieuXuatModel.edmx</DependentUpon>
+      <LastGenOutput>PhieuXuatModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PhieuXuatModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhieuXuatModel.edmx</DependentUpon>
+      <LastGenOutput>PhieuXuatModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

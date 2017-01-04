@@ -38,11 +38,15 @@ namespace QuanLySieuThi.DataAccess
 
         public bool Delete(string maBaoCao)
         {
-            return _connect.Delete("SP_BAOCAOTONKHO_DEL", "SoBAOCAOTONKHO", maBaoCao);
+            return _connect.Delete("SP_BAOCAOTONKHO_DEL", "SoBaoCaoTonKho", maBaoCao);
         }
         public DataTable GetByMonthYear(int thang, int nam)
         {
             return _connect.LoadData("SP_BAOCAOTONKHO_GETBYMONTHYEAR", new[] { "@Thang", "@Nam"}, new object[] { thang, nam}, 2);
+        }
+        public DataTable GetById(int maBaoCao)
+        {
+            return _connect.LoadData("SP_BAOCAOTONKHO_IN", new[] { "@MaBaoCaoTonKho" }, new object[] { maBaoCao }, 1);
         }
     }
 }

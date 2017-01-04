@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhaCungCapSearch));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtNhaCungCapSearch = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -70,25 +71,31 @@
             // 
             // txtNhaCungCapSearch
             // 
-            this.txtNhaCungCapSearch.Location = new System.Drawing.Point(127, 12);
+            this.txtNhaCungCapSearch.Location = new System.Drawing.Point(162, 11);
             this.txtNhaCungCapSearch.Name = "txtNhaCungCapSearch";
-            this.txtNhaCungCapSearch.Size = new System.Drawing.Size(432, 20);
+            this.txtNhaCungCapSearch.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtNhaCungCapSearch.Properties.Appearance.Options.UseFont = true;
+            this.txtNhaCungCapSearch.Size = new System.Drawing.Size(397, 22);
             this.txtNhaCungCapSearch.TabIndex = 4;
             this.txtNhaCungCapSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNhaCungCapSearch_KeyDown);
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(9, 15);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl1.Location = new System.Drawing.Point(9, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(112, 13);
+            this.labelControl1.Size = new System.Drawing.Size(147, 17);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Nhập Từ Khóa Tìm Kiếm";
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnTimKiem.Appearance.Options.UseFont = true;
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
             this.btnTimKiem.Location = new System.Drawing.Point(565, 10);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiem.Size = new System.Drawing.Size(93, 23);
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
@@ -107,6 +114,8 @@
             // 
             // btnXoa
             // 
+            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnXoa.Appearance.Options.UseFont = true;
             this.btnXoa.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonDelete_Image;
             this.btnXoa.Location = new System.Drawing.Point(166, 5);
             this.btnXoa.Name = "btnXoa";
@@ -117,6 +126,9 @@
             // 
             // btnThem
             // 
+            this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnThem.Appearance.Options.UseFont = true;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(4, 4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
@@ -126,6 +138,8 @@
             // 
             // btnDong
             // 
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonClose_Image;
             this.btnDong.Location = new System.Drawing.Point(247, 5);
             this.btnDong.Name = "btnDong";
@@ -136,6 +150,8 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnLuu.Appearance.Options.UseFont = true;
             this.btnLuu.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonSave_Image;
             this.btnLuu.Location = new System.Drawing.Point(85, 5);
             this.btnLuu.Name = "btnLuu";

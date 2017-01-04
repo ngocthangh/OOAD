@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDonViTinhSearch));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtMaDVTSearch = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -60,31 +61,38 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(687, 64);
+            this.groupControl1.ShowCaption = false;
+            this.groupControl1.Size = new System.Drawing.Size(687, 41);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Nhập Thông Tin Tìm Kiếm Đơn Vị Tính";
             // 
             // txtMaDVTSearch
             // 
-            this.txtMaDVTSearch.Location = new System.Drawing.Point(130, 29);
+            this.txtMaDVTSearch.Location = new System.Drawing.Point(165, 9);
             this.txtMaDVTSearch.Name = "txtMaDVTSearch";
-            this.txtMaDVTSearch.Size = new System.Drawing.Size(432, 20);
+            this.txtMaDVTSearch.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtMaDVTSearch.Properties.Appearance.Options.UseFont = true;
+            this.txtMaDVTSearch.Size = new System.Drawing.Size(421, 22);
             this.txtMaDVTSearch.TabIndex = 1;
             this.txtMaDVTSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaDVTSearch_KeyDown);
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 32);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(112, 13);
+            this.labelControl1.Size = new System.Drawing.Size(147, 17);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Nhập Từ Khóa Tìm Kiếm";
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(568, 27);
+            this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnTimKiem.Appearance.Options.UseFont = true;
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
+            this.btnTimKiem.Location = new System.Drawing.Point(592, 8);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiem.Size = new System.Drawing.Size(83, 23);
             this.btnTimKiem.TabIndex = 0;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
@@ -96,13 +104,15 @@
             this.panelControl1.Controls.Add(this.btnDong);
             this.panelControl1.Controls.Add(this.btnLuu);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 64);
+            this.panelControl1.Location = new System.Drawing.Point(0, 41);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(687, 34);
             this.panelControl1.TabIndex = 1;
             // 
             // btnXoa
             // 
+            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnXoa.Appearance.Options.UseFont = true;
             this.btnXoa.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonDelete_Image;
             this.btnXoa.Location = new System.Drawing.Point(175, 6);
             this.btnXoa.Name = "btnXoa";
@@ -113,6 +123,9 @@
             // 
             // btnThem
             // 
+            this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnThem.Appearance.Options.UseFont = true;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(13, 5);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
@@ -122,6 +135,8 @@
             // 
             // btnDong
             // 
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonClose_Image;
             this.btnDong.Location = new System.Drawing.Point(256, 6);
             this.btnDong.Name = "btnDong";
@@ -132,6 +147,8 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnLuu.Appearance.Options.UseFont = true;
             this.btnLuu.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonSave_Image;
             this.btnLuu.Location = new System.Drawing.Point(94, 6);
             this.btnLuu.Name = "btnLuu";
@@ -144,9 +161,9 @@
             // 
             this.groupControl2.Controls.Add(this.grcDonViTinhSearch);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(0, 98);
+            this.groupControl2.Location = new System.Drawing.Point(0, 75);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(687, 255);
+            this.groupControl2.Size = new System.Drawing.Size(687, 278);
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "Kết Quả Tìm Kiếm";
             // 
@@ -156,7 +173,7 @@
             this.grcDonViTinhSearch.Location = new System.Drawing.Point(2, 20);
             this.grcDonViTinhSearch.MainView = this.gridView;
             this.grcDonViTinhSearch.Name = "grcDonViTinhSearch";
-            this.grcDonViTinhSearch.Size = new System.Drawing.Size(683, 233);
+            this.grcDonViTinhSearch.Size = new System.Drawing.Size(683, 256);
             this.grcDonViTinhSearch.TabIndex = 0;
             this.grcDonViTinhSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -182,7 +199,7 @@
             this.TenDVT.FieldName = "TenDVT";
             this.TenDVT.Name = "TenDVT";
             this.TenDVT.Visible = true;
-            this.TenDVT.VisibleIndex = 0;
+            this.TenDVT.VisibleIndex = 1;
             // 
             // frmDonViTinhSearch
             // 

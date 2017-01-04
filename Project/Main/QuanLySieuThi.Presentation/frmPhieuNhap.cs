@@ -128,10 +128,13 @@ namespace QuanLySieuThi.Presentation
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            //PhieuNhapReport.NguoiLap = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
-            //PhieuNhapReport pnr = new PhieuNhapReport();
-            //pnr.DataSource = ChiTietKiemKeService.LoadDataTable();
-            //pnr.ShowPreviewDialog();
+            string id = grvPhieuNhap.GetRowCellValue(grvPhieuNhap.FocusedRowHandle, "SoPhieuNhap").ToString();
+            if(id != null)
+            {
+                PhieuNhapReport pnr = new PhieuNhapReport();
+                pnr.DataSource = PhieuNhapService.GetById(id);
+                pnr.ShowPreviewDialog();
+            }
         }
     }
 }

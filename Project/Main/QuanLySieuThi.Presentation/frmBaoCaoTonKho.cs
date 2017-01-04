@@ -1,4 +1,5 @@
-﻿using QuanLySieuThi.Common;
+﻿using DevExpress.XtraReports.UI;
+using QuanLySieuThi.Common;
 using QuanLySieuThi.DataBussiness;
 using QuanLySieuThi.DataModel;
 using System;
@@ -16,7 +17,7 @@ namespace QuanLySieuThi.Presentation
     public partial class frmBaoCaoTonKho : Form
     {
         DataTable dsBaoCaoTonKho, dsPhieuNhap, dsPhieuXuat, dsCTPhieuNhap, dsCTPhieuXuat, dsHangHoa;
-
+        int thang = 1, nam = 2016;
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -24,7 +25,25 @@ namespace QuanLySieuThi.Presentation
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
+            int count = ((DataTable)grcBaoCaoTonKho.DataSource).Rows.Count;
+            while(count > 0)
+            {
+                grvBaoCaoTonKho.DeleteRow(0);
+                count--;
+            }
+        }
 
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            int id = dsBaoCaoTonKho.Rows[0].Field<int>("MaBaoCaoTonKho");
+            if (id != null)
+            {
+                BaoCaoTonKhoReport.thang = thang;
+                BaoCaoTonKhoReport.nam = nam;
+                BaoCaoTonKhoReport pctk = new BaoCaoTonKhoReport();
+                pctk.DataSource = BaoCaoTonKhoService.GetById(id);
+                pctk.ShowPreviewDialog();
+            }
         }
 
         BaoCaoTonKho bctk;
@@ -40,11 +59,11 @@ namespace QuanLySieuThi.Presentation
             tedNgayLap.ReadOnly = true;
             tedNguoiLap.Text = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
             tedNgayLap.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
+            btnIn.Enabled = false;
         }
 
         private void btnLapBaoCao_Click(object sender, EventArgs e)
         {
-            int thang = 1, nam = 2016;
             if (cbbThang.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn tháng!");
@@ -75,6 +94,7 @@ namespace QuanLySieuThi.Presentation
             if (dsBaoCaoTonKho.Rows.Count > 0)
             {
                 grcBaoCaoTonKho.DataSource = ChiTietBaoCaoTonKhoService.GetById(dsBaoCaoTonKho.Rows[0].Field<int>("MaBaoCaoTonKho"));
+                btnIn.Enabled = true;
             }
             else
             {
@@ -128,6 +148,7 @@ namespace QuanLySieuThi.Presentation
                 }
                 else { MessageBox.Show("Không thể lập báo cáo!"); }
                 grcBaoCaoTonKho.DataSource = ChiTietBaoCaoTonKhoService.GetById(bctk.MaBaoCaoTonKho);
+                btnIn.Enabled = true;
             }
             
         }

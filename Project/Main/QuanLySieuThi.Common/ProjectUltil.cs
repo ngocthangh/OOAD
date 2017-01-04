@@ -15,6 +15,7 @@ namespace QuanLySieuThi.Common
         public static string MaNhanVien = "";
         public static string HoTenNhanVien = "";
         public static int MaChucVu = 0;
+        public static string BackupDirectory = "C:\\";
         public static void logout()
         {
             MaNhanVien = "";

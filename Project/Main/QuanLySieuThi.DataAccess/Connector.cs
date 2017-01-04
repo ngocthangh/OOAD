@@ -119,8 +119,9 @@ namespace QuanLySieuThi.DataAccess
             command.Parameters.AddWithValue("@"+ idName, idValue);
             try
             {
-                command.ExecuteNonQuery();
-                return true;
+                if (command.ExecuteNonQuery() > 0)
+                    return true;
+                return false;
             }catch(Exception)
             {
                 return false;
@@ -307,8 +308,53 @@ namespace QuanLySieuThi.DataAccess
             }
             catch (Exception)
             {
-                _connect.Close();
                 return false;
+            }
+            finally
+            {
+                _connect.Close();
+            }
+        }
+        public bool BackupDatabase()
+        {
+            if (_connect.State.Equals(ConnectionState.Closed))
+                _connect.Open();
+            SqlCommand command;
+            command = new SqlCommand(@"backup database QuanLySieuThi to disk ='D:\SQLBackup\QuanLySieuThi.bak' with init,stats=10", _connect);
+            try
+            {
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                _connect.Close();
+            }
+        }
+        public bool RestoreDatabase()
+        {
+            if (_connect.State.Equals(ConnectionState.Closed))
+                _connect.Open();
+            SqlCommand command;
+            command = new SqlCommand("use master", _connect);
+            command.ExecuteNonQuery();
+            command = new SqlCommand(@"restore database QuanLySieuThi from disk = 'D:\SQLBackup\QuanLySieuThi.bak' WITH REPLACE", _connect);
+            try
+            {
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                _connect.Close();
             }
         }
     }

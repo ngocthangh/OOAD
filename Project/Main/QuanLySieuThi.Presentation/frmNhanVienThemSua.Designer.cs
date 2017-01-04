@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVienThemSua));
             this.txtCMND = new DevExpress.XtraEditors.TextEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cbbGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -535,10 +536,12 @@
             // 
             // btnThem
             // 
+            this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnThem.Appearance.Options.UseFont = true;
             this.btnThem.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonSave_Image;
             this.btnThem.Location = new System.Drawing.Point(425, 12);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(84, 22);
+            this.btnThem.Size = new System.Drawing.Size(84, 23);
             this.btnThem.StyleController = this.layoutControl2;
             this.btnThem.TabIndex = 7;
             this.btnThem.Text = "Thêm";
@@ -546,9 +549,12 @@
             // 
             // btnNhapLai
             // 
+            this.btnNhapLai.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnNhapLai.Appearance.Options.UseFont = true;
+            this.btnNhapLai.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapLai.Image")));
             this.btnNhapLai.Location = new System.Drawing.Point(523, 12);
             this.btnNhapLai.Name = "btnNhapLai";
-            this.btnNhapLai.Size = new System.Drawing.Size(77, 22);
+            this.btnNhapLai.Size = new System.Drawing.Size(82, 24);
             this.btnNhapLai.StyleController = this.layoutControl2;
             this.btnNhapLai.TabIndex = 5;
             this.btnNhapLai.Text = "Nhập Lại";
@@ -556,10 +562,12 @@
             // 
             // btnDong
             // 
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonClose_Image;
-            this.btnDong.Location = new System.Drawing.Point(614, 12);
+            this.btnDong.Location = new System.Drawing.Point(619, 12);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(78, 22);
+            this.btnDong.Size = new System.Drawing.Size(73, 23);
             this.btnDong.StyleController = this.layoutControl2;
             this.btnDong.TabIndex = 4;
             this.btnDong.Text = "Đóng";
@@ -584,16 +592,16 @@
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.btnDong;
-            this.layoutControlItem10.Location = new System.Drawing.Point(602, 0);
+            this.layoutControlItem10.Location = new System.Drawing.Point(607, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(82, 33);
+            this.layoutControlItem10.Size = new System.Drawing.Size(77, 33);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(592, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(597, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(10, 33);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -603,7 +611,7 @@
             this.layoutControlItem11.Control = this.btnNhapLai;
             this.layoutControlItem11.Location = new System.Drawing.Point(511, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(81, 33);
+            this.layoutControlItem11.Size = new System.Drawing.Size(86, 33);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 

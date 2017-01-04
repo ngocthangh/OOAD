@@ -49,6 +49,7 @@
             this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.btnIn = new DevExpress.XtraEditors.SimpleButton();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
@@ -104,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -143,7 +145,7 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(399, 157, 250, 350);
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(424, 272, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(967, 82);
             this.layoutControl1.TabIndex = 0;
@@ -151,7 +153,7 @@
             // 
             // cedDate
             // 
-            this.cedDate.Location = new System.Drawing.Point(755, 48);
+            this.cedDate.Location = new System.Drawing.Point(657, 48);
             this.cedDate.Name = "cedDate";
             this.cedDate.Properties.Caption = "";
             this.cedDate.Size = new System.Drawing.Size(19, 19);
@@ -162,7 +164,7 @@
             // cedKey
             // 
             this.cedKey.EditValue = true;
-            this.cedKey.Location = new System.Drawing.Point(755, 12);
+            this.cedKey.Location = new System.Drawing.Point(657, 12);
             this.cedKey.Name = "cedKey";
             this.cedKey.Properties.Caption = "";
             this.cedKey.Size = new System.Drawing.Size(19, 19);
@@ -174,7 +176,7 @@
             // 
             this.dedDateEnd.EditValue = null;
             this.dedDateEnd.Enabled = false;
-            this.dedDateEnd.Location = new System.Drawing.Point(501, 48);
+            this.dedDateEnd.Location = new System.Drawing.Point(494, 48);
             this.dedDateEnd.Name = "dedDateEnd";
             this.dedDateEnd.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dedDateEnd.Properties.Appearance.Options.UseFont = true;
@@ -182,7 +184,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dedDateEnd.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dedDateEnd.Size = new System.Drawing.Size(250, 22);
+            this.dedDateEnd.Size = new System.Drawing.Size(159, 22);
             this.dedDateEnd.StyleController = this.layoutControl1;
             this.dedDateEnd.TabIndex = 7;
             // 
@@ -190,7 +192,7 @@
             // 
             this.dedDateStart.EditValue = null;
             this.dedDateStart.Enabled = false;
-            this.dedDateStart.Location = new System.Drawing.Point(103, 48);
+            this.dedDateStart.Location = new System.Drawing.Point(197, 48);
             this.dedDateStart.Name = "dedDateStart";
             this.dedDateStart.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dedDateStart.Properties.Appearance.Options.UseFont = true;
@@ -198,7 +200,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dedDateStart.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dedDateStart.Size = new System.Drawing.Size(293, 22);
+            this.dedDateStart.Size = new System.Drawing.Size(192, 22);
             this.dedDateStart.StyleController = this.layoutControl1;
             this.dedDateStart.TabIndex = 6;
             // 
@@ -206,9 +208,10 @@
             // 
             this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnTimKiem.Appearance.Options.UseFont = true;
-            this.btnTimKiem.Location = new System.Drawing.Point(788, 22);
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
+            this.btnTimKiem.Location = new System.Drawing.Point(690, 22);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(157, 38);
+            this.btnTimKiem.Size = new System.Drawing.Size(150, 38);
             this.btnTimKiem.StyleController = this.layoutControl1;
             this.btnTimKiem.TabIndex = 5;
             this.btnTimKiem.Text = "Tìm Kiếm";
@@ -216,14 +219,14 @@
             // 
             // sctKey
             // 
-            this.sctKey.Location = new System.Drawing.Point(103, 12);
+            this.sctKey.Location = new System.Drawing.Point(197, 12);
             this.sctKey.Name = "sctKey";
             this.sctKey.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.sctKey.Properties.Appearance.Options.UseFont = true;
             this.sctKey.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.sctKey.Size = new System.Drawing.Size(648, 22);
+            this.sctKey.Size = new System.Drawing.Size(456, 22);
             this.sctKey.StyleController = this.layoutControl1;
             this.sctKey.TabIndex = 4;
             this.sctKey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.sctKey_KeyDown);
@@ -244,7 +247,8 @@
             this.emptySpaceItem9,
             this.emptySpaceItem11,
             this.layoutControlItem11,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.emptySpaceItem10});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(967, 82);
@@ -257,16 +261,16 @@
             this.sctTimKiem.AppearanceItemCaption.Options.UseFont = true;
             this.sctTimKiem.Control = this.sctKey;
             this.sctTimKiem.CustomizationFormText = "Nhập Từ Khóa Tìm Kiếm";
-            this.sctTimKiem.Location = new System.Drawing.Point(0, 0);
+            this.sctTimKiem.Location = new System.Drawing.Point(94, 0);
             this.sctTimKiem.Name = "sctTimKiem";
-            this.sctTimKiem.Size = new System.Drawing.Size(743, 26);
+            this.sctTimKiem.Size = new System.Drawing.Size(551, 26);
             this.sctTimKiem.Text = "Nhập Từ Khóa";
             this.sctTimKiem.TextSize = new System.Drawing.Size(88, 17);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(766, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(668, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(10, 62);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -274,10 +278,10 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnTimKiem;
-            this.layoutControlItem2.Location = new System.Drawing.Point(776, 10);
+            this.layoutControlItem2.Location = new System.Drawing.Point(678, 10);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(56, 26);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(161, 42);
+            this.layoutControlItem2.Size = new System.Drawing.Size(154, 42);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -287,9 +291,9 @@
             this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 10F);
             this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem7.Control = this.dedDateStart;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 36);
+            this.layoutControlItem7.Location = new System.Drawing.Point(94, 36);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(388, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(287, 26);
             this.layoutControlItem7.Text = "Từ Ngày";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(88, 17);
             // 
@@ -298,48 +302,48 @@
             this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 10F);
             this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem8.Control = this.dedDateEnd;
-            this.layoutControlItem8.Location = new System.Drawing.Point(398, 36);
+            this.layoutControlItem8.Location = new System.Drawing.Point(391, 36);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(345, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(254, 26);
             this.layoutControlItem8.Text = "Đến Ngày";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(88, 17);
             // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(776, 0);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(678, 0);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(161, 10);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(154, 10);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(776, 52);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(678, 52);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(161, 10);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(154, 10);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(937, 0);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(832, 0);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(10, 62);
+            this.emptySpaceItem8.Size = new System.Drawing.Size(115, 62);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem9
             // 
             this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 26);
+            this.emptySpaceItem9.Location = new System.Drawing.Point(94, 26);
             this.emptySpaceItem9.Name = "emptySpaceItem9";
-            this.emptySpaceItem9.Size = new System.Drawing.Size(766, 10);
+            this.emptySpaceItem9.Size = new System.Drawing.Size(574, 10);
             this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem11
             // 
             this.emptySpaceItem11.AllowHotTrack = false;
-            this.emptySpaceItem11.Location = new System.Drawing.Point(388, 36);
+            this.emptySpaceItem11.Location = new System.Drawing.Point(381, 36);
             this.emptySpaceItem11.Name = "emptySpaceItem11";
             this.emptySpaceItem11.Size = new System.Drawing.Size(10, 26);
             this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
@@ -347,7 +351,7 @@
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.cedKey;
-            this.layoutControlItem11.Location = new System.Drawing.Point(743, 0);
+            this.layoutControlItem11.Location = new System.Drawing.Point(645, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(23, 26);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
@@ -356,11 +360,19 @@
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.cedDate;
-            this.layoutControlItem12.Location = new System.Drawing.Point(743, 36);
+            this.layoutControlItem12.Location = new System.Drawing.Point(645, 36);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Size = new System.Drawing.Size(23, 26);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
+            // 
+            // emptySpaceItem10
+            // 
+            this.emptySpaceItem10.AllowHotTrack = false;
+            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem10.Name = "emptySpaceItem10";
+            this.emptySpaceItem10.Size = new System.Drawing.Size(94, 62);
+            this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControl2
             // 
@@ -733,6 +745,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -818,5 +831,6 @@
         private DevExpress.XtraEditors.SimpleButton btnIn;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
     }
 }

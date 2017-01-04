@@ -32,10 +32,9 @@ namespace QuanLySieuThi.DataBussiness
         {
             return Controller.Delete(bcTonKho);
         }
-        public static DataTable GetById(string id)
+        public static DataTable GetById(int id)
         {
-            //return Controller.GetById(id);
-            return null;
+            return Controller.GetById(id);
         }
         public static DataTable GetByMonthYear(int thang, int nam)
         {

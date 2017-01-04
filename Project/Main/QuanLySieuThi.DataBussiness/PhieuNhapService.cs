@@ -45,8 +45,7 @@ namespace QuanLySieuThi.DataBussiness
 
         public static DataTable GetById(string id)
         {
-            //return Controller.GetById(id);
-            return null;
+            return Controller.GetById(id);
         }
         public static DataTable Search(string key = null, Nullable<DateTime> dateStart = null, Nullable<DateTime> dateEnd = null)
         {

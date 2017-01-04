@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhieuXuatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QuanLySieuThi5.dbo.PhieuXuatIn' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PhieuXuatIn">
+    <Key>
+      <PropertyRef Name="SoPhieuXuat" />
+    </Key>
+    <Property Name="SoPhieuXuat" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayLap" Type="date" />
+    <Property Name="NoiDungXuat" Type="nvarchar" MaxLength="500" />
+    <Property Name="TenHangHoa" Type="nvarchar" MaxLength="100" />
+    <Property Name="DonGiaXuat" Type="money" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="ThanhTien" Type="money" />
+    <Property Name="TongTien" Type="money" />
+  </EntityType>
+  <EntityContainer Name="PhieuXuatModelStoreContainer">
+    <EntitySet Name="PhieuXuatIn" EntityType="Self.PhieuXuatIn" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PhieuXuatIn].[SoPhieuXuat] AS [SoPhieuXuat], 
+    [PhieuXuatIn].[HoTen] AS [HoTen], 
+    [PhieuXuatIn].[NgayLap] AS [NgayLap], 
+    [PhieuXuatIn].[NoiDungXuat] AS [NoiDungXuat], 
+    [PhieuXuatIn].[TenHangHoa] AS [TenHangHoa], 
+    [PhieuXuatIn].[DonGiaXuat] AS [DonGiaXuat], 
+    [PhieuXuatIn].[SoLuong] AS [SoLuong], 
+    [PhieuXuatIn].[ThanhTien] AS [ThanhTien], 
+    [PhieuXuatIn].[TongTien] AS [TongTien]
+    FROM [dbo].[PhieuXuatIn] AS [PhieuXuatIn]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

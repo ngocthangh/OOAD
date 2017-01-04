@@ -772,7 +772,7 @@
             this.Controls.Add(this.layoutControl2);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmPhieuXuatThemSua";
-            this.Text = "frmPhieuXuatThemSua";
+            this.Text = "Lập Phiếu Xuất";
             this.Load += new System.EventHandler(this.frmPhieuXuatThemSua_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

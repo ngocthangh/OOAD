@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BaoCaoTonKhoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BaoCaoTonKhoView">
+    <Key>
+      <PropertyRef Name="MaBaoCaoTonKho" />
+    </Key>
+    <Property Name="MaBaoCaoTonKho" Type="Int32" Nullable="false" />
+    <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NgayLap" Type="DateTime" Precision="0" />
+    <Property Name="Nam" Type="Int32" />
+    <Property Name="Thang" Type="Int32" />
+    <Property Name="TenHangHoa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SoLuongDauKy" Type="Int32" />
+    <Property Name="SoLuongNhap" Type="Int32" />
+    <Property Name="SoLuongXuat" Type="Int32" />
+    <Property Name="SoLuongCuoiKy" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="BaoCaoTonKhoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BaoCaoTonKhoViews" EntityType="Self.BaoCaoTonKhoView" />
+  </EntityContainer>
+</Schema>

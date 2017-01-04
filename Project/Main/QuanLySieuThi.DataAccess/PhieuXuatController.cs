@@ -52,5 +52,9 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.LoadData("SP_PHIEUXUAT_SEARCH", new[] { "@key", "@dateStart", "@dateEnd" }, new object[] { key, dateStart, dateEnd }, 3);
         }
+        public DataTable GetById(string soPhieu)
+        {
+            return _connect.LoadData("SP_PHIEUXUAT_IN", new[] { "@SoPhieuXuat" }, new object[] { soPhieu }, 1);
+        }
     }
 }

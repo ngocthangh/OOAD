@@ -73,15 +73,7 @@ namespace QuanLySieuThi.DataAccess
         }
         public bool Delete(string maHangHoa)
         {
-            try
-            {
-                _connect.Delete("SP_HANGHOA_DEL", "MaHangHoa", maHangHoa);
-                return true;
-            }
-            catch (System.Exception)
-            {
-                return false;
-            }
+             return _connect.Delete("SP_HANGHOA_DEL", "MaHangHoa", maHangHoa);
         }
     }
 }

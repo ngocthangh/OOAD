@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using QuanLySieuThi.DataBussiness;
 using System;
 using System.Collections.Generic;
@@ -120,6 +121,17 @@ namespace QuanLySieuThi.Presentation
             if(e.KeyCode == Keys.Enter)
             {
                 btnTimKiem.PerformClick();
+            }
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            string id = grvPhieuXuat.GetRowCellValue(grvPhieuXuat.FocusedRowHandle, "SoPhieuXuat").ToString();
+            if (id != null)
+            {
+                PhieuXuatReport pxr = new PhieuXuatReport();
+                pxr.DataSource = PhieuXuatService.GetById(id);
+                pxr.ShowPreviewDialog();
             }
         }
     }

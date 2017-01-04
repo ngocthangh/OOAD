@@ -46,8 +46,8 @@ namespace QuanLySieuThi.Presentation
                 return;
             }
             decimal doanhthu = 0;
-            grcDoanhThu.DataSource = HoaDonService.LoadDataTable();
-            for(int i = 0; i < grvDoanhThu.RowCount; i++)
+            grcDoanhThu.DataSource = HoaDonService.Search(null, dedTuNgay.DateTime.Date, dedDenNgay.DateTime.Date);
+            for (int i = 0; i < grvDoanhThu.RowCount; i++)
             {
                 decimal tt = decimal.Parse(grvDoanhThu.GetRowCellValue(i, "TongTien").ToString());
                 doanhthu += tt;

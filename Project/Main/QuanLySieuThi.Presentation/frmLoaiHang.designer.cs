@@ -64,6 +64,8 @@
             // 
             // btnDong
             // 
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonClose_Image;
             this.btnDong.Location = new System.Drawing.Point(165, 6);
             this.btnDong.Name = "btnDong";
@@ -74,6 +76,8 @@
             // 
             // btnXoa
             // 
+            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnXoa.Appearance.Options.UseFont = true;
             this.btnXoa.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonDelete_Image;
             this.btnXoa.Location = new System.Drawing.Point(84, 6);
             this.btnXoa.Name = "btnXoa";
@@ -84,6 +88,8 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnLuu.Appearance.Options.UseFont = true;
             this.btnLuu.Image = global::QuanLySieuThi.Presentation.Properties.Resources.buttonSave_Image;
             this.btnLuu.Location = new System.Drawing.Point(3, 6);
             this.btnLuu.Name = "btnLuu";

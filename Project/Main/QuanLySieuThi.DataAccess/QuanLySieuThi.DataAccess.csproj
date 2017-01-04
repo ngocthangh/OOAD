@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackupDatabaseController.cs" />
     <Compile Include="BaoCaoTonKhoController.cs" />
     <Compile Include="ChiTietBaoCaoTonKhoController.cs" />
     <Compile Include="ChiTietHoaDonController.cs" />

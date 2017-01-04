@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHangHoaThemSua));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.tedTenHangHoa = new DevExpress.XtraEditors.TextEdit();
@@ -347,6 +348,7 @@
             // 
             this.btnLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnLuu.Appearance.Options.UseFont = true;
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.Location = new System.Drawing.Point(361, 12);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(84, 23);
@@ -359,9 +361,10 @@
             // 
             this.btnNhapLai.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnNhapLai.Appearance.Options.UseFont = true;
+            this.btnNhapLai.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapLai.Image")));
             this.btnNhapLai.Location = new System.Drawing.Point(459, 12);
             this.btnNhapLai.Name = "btnNhapLai";
-            this.btnNhapLai.Size = new System.Drawing.Size(81, 24);
+            this.btnNhapLai.Size = new System.Drawing.Size(82, 24);
             this.btnNhapLai.StyleController = this.layoutControl1;
             this.btnNhapLai.TabIndex = 5;
             this.btnNhapLai.Text = "Nhập Lại";
@@ -371,9 +374,10 @@
             // 
             this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnDong.Appearance.Options.UseFont = true;
-            this.btnDong.Location = new System.Drawing.Point(554, 12);
+            this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
+            this.btnDong.Location = new System.Drawing.Point(555, 12);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(81, 23);
+            this.btnDong.Size = new System.Drawing.Size(80, 23);
             this.btnDong.StyleController = this.layoutControl1;
             this.btnDong.TabIndex = 4;
             this.btnDong.Text = "Đóng";
@@ -398,16 +402,16 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnDong;
-            this.layoutControlItem1.Location = new System.Drawing.Point(542, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(543, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(85, 28);
+            this.layoutControlItem1.Size = new System.Drawing.Size(84, 28);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(532, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(533, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(10, 28);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -417,7 +421,7 @@
             this.layoutControlItem2.Control = this.btnNhapLai;
             this.layoutControlItem2.Location = new System.Drawing.Point(447, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(85, 28);
+            this.layoutControlItem2.Size = new System.Drawing.Size(86, 28);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 

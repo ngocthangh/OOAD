@@ -154,14 +154,14 @@ namespace QuanLySieuThi.Presentation
             rowSelected = gridView.GetSelectedRows()[0];
             if (rowSelected >= 0)
             {
-                if (MessageBox.Show("Xác nhận xóa nhân viên đã chọn?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Xác nhận xóa hàng hóa đã chọn?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     if (HangHoaService.Delete(gridView.GetRowCellValue(rowSelected, "MaHangHoa").ToString()))
                     {
                         grcHanghoaSearch.DataSource = HangHoaService.LoadDataTable();
                         MessageBox.Show("Xóa thành công!");
                     }
-                    else { MessageBox.Show("Không thể xóa vì nhân viên này còn thông tin liên quan!"); }
+                    else { MessageBox.Show("Không thể xóa vì hàng hóa này còn thông tin liên quan!"); }
                 }
             }
             else

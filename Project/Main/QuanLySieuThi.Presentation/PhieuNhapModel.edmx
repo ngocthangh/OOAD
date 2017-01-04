@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QuanLySieuThi5Model2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QuanLySieuThi5.dbo.PhieuNhapIn' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PhieuNhapIn">
+          <Key>
+            <PropertyRef Name="SoPhieuNhap" />
+          </Key>
+          <Property Name="SoPhieuNhap" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="100" />
+          <Property Name="NgayLap" Type="date" />
+          <Property Name="TongTien" Type="money" />
+          <Property Name="TenHangHoa" Type="nvarchar" MaxLength="100" />
+          <Property Name="TenNhaCungCap" Type="nvarchar" MaxLength="100" />
+          <Property Name="HanSuDung" Type="date" />
+          <Property Name="DonGiaNhap" Type="money" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="ThanhTien" Type="money" />
+        </EntityType>
+        <EntityContainer Name="QuanLySieuThi5Model2StoreContainer">
+          <EntitySet Name="PhieuNhapIn" EntityType="Self.PhieuNhapIn" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PhieuNhapIn].[SoPhieuNhap] AS [SoPhieuNhap], 
+    [PhieuNhapIn].[HoTen] AS [HoTen], 
+    [PhieuNhapIn].[NgayLap] AS [NgayLap], 
+    [PhieuNhapIn].[TongTien] AS [TongTien], 
+    [PhieuNhapIn].[TenHangHoa] AS [TenHangHoa], 
+    [PhieuNhapIn].[TenNhaCungCap] AS [TenNhaCungCap], 
+    [PhieuNhapIn].[HanSuDung] AS [HanSuDung], 
+    [PhieuNhapIn].[DonGiaNhap] AS [DonGiaNhap], 
+    [PhieuNhapIn].[SoLuong] AS [SoLuong], 
+    [PhieuNhapIn].[ThanhTien] AS [ThanhTien]
+    FROM [dbo].[PhieuNhapIn] AS [PhieuNhapIn]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuanLySieuThi5Model2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PhieuNhapIn">
+          <Key>
+            <PropertyRef Name="SoPhieuNhap" />
+          </Key>
+          <Property Name="SoPhieuNhap" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NgayLap" Type="DateTime" Precision="0" />
+          <Property Name="TongTien" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TenHangHoa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TenNhaCungCap" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HanSuDung" Type="DateTime" Precision="0" />
+          <Property Name="DonGiaNhap" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityContainer Name="PhieuNhapEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PhieuNhapIns" EntityType="Self.PhieuNhapIn" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuanLySieuThi5Model2StoreContainer" CdmEntityContainer="PhieuNhapEntity">
+          <EntitySetMapping Name="PhieuNhapIns">
+            <EntityTypeMapping TypeName="QuanLySieuThi5Model2.PhieuNhapIn">
+              <MappingFragment StoreEntitySet="PhieuNhapIn">
+                <ScalarProperty Name="SoPhieuNhap" ColumnName="SoPhieuNhap" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="TenHangHoa" ColumnName="TenHangHoa" />
+                <ScalarProperty Name="TenNhaCungCap" ColumnName="TenNhaCungCap" />
+                <ScalarProperty Name="HanSuDung" ColumnName="HanSuDung" />
+                <ScalarProperty Name="DonGiaNhap" ColumnName="DonGiaNhap" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

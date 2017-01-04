@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PhieuXuatModelStoreContainer" CdmEntityContainer="PhieuXuatEntities">
+    <EntitySetMapping Name="PhieuXuatIns">
+      <EntityTypeMapping TypeName="PhieuXuatModel.PhieuXuatIn">
+        <MappingFragment StoreEntitySet="PhieuXuatIn">
+          <ScalarProperty Name="SoPhieuXuat" ColumnName="SoPhieuXuat" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="NoiDungXuat" ColumnName="NoiDungXuat" />
+          <ScalarProperty Name="TenHangHoa" ColumnName="TenHangHoa" />
+          <ScalarProperty Name="DonGiaXuat" ColumnName="DonGiaXuat" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

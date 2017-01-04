@@ -1,6 +1,8 @@
 ﻿using QuanLySieuThi.Common;
+using QuanLySieuThi.DataBussiness;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -25,6 +27,30 @@ namespace QuanLySieuThi.Presentation
         {
             DevExpress.UserSkins.BonusSkins.Register();
             DevExpress.XtraBars.Helpers.SkinHelper.InitSkinGallery(ribbonGalleryBarItem1, true);
+            unlockAll();
+        }
+        private void unlockAll()
+        {
+            rbpThayDoiCSDL.Visible = true;
+            rbpGiaoDien.Visible = true;
+            rbpThayDoiQuyDinh.Visible = true;
+            rbpBaoCaoThongKe.Visible = true;
+            rbpQuanLy.Visible = true;
+            rbpNghiepVu.Visible = true;
+            rbpHangHoa.Visible = true;
+            rbpNhaCungCap.Visible = true;
+            rbpKho.Visible = true;
+            rbpKiemKe.Visible = true;
+            rbpTraCuu.Visible = true;
+            rbpNghiepVu.Visible = true;
+            rbpBanHang.Visible = true;
+            rbpKhachHangThanThiet.Visible = true;
+            rbpTraCuu.Visible = true;
+            rbpQuanLy.Visible = true;
+            rbpNhanVien.Visible = true;
+            rbpChucVu.Visible = true;
+            rbpTraCuu.Visible = true;
+            rbpBaoCaoThongKe.Visible = true;
         }
 
         private void OpenForm<T>()
@@ -114,13 +140,13 @@ namespace QuanLySieuThi.Presentation
 
         private void checkUser(object sender, FormClosingEventArgs e)
         {
-            if(ProjectUltil.HoTenNhanVien != "")
+            if (ProjectUltil.HoTenNhanVien != "")
             {
                 lblNhanVien.Text = ProjectUltil.HoTenNhanVien;
                 bbtDangNhap.Enabled = false;
                 bbtDangXuat.Enabled = true;
             }
-            if(ProjectUltil.MaChucVu != 0)
+            if (ProjectUltil.MaChucVu != 0)
             {
                 switch (ProjectUltil.MaChucVu)
                 {
@@ -166,7 +192,7 @@ namespace QuanLySieuThi.Presentation
             rbpGiaoDien.Visible = false;
             rbpThayDoiQuyDinh.Visible = false;
             rbpBaoCaoThongKe.Visible = false;
-           
+
             rbpQuanLy.Visible = false;
             rbpNghiepVu.Visible = false;
             rbpHangHoa.Visible = false;
@@ -177,10 +203,10 @@ namespace QuanLySieuThi.Presentation
 
             rbpBanHang.Visible = false;
             rbpKhachHangThanThiet.Visible = false;
-           
+
             rbpNhanVien.Visible = false;
             rbpChucVu.Visible = false;
-          
+
             rbpBaoCaoThongKe.Visible = false;
 
             //tabbedView1.Documents.Clear();
@@ -188,7 +214,7 @@ namespace QuanLySieuThi.Presentation
             {
                 tabbedView1.Documents[i].Form.Close();
             }
-            tabbedView1.Documents.Clear();   
+            tabbedView1.Documents.Clear();
         }
 
         private void ribbonControl1_Click(object sender, EventArgs e)
@@ -198,12 +224,15 @@ namespace QuanLySieuThi.Presentation
 
         private void bbtDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            reSet();
-            ProjectUltil.logout();
-            lblNhanVien.Text = "";
-            bbtDangNhap.Enabled = true;
-            bbtDangXuat.Enabled = false;
-            MessageBox.Show("Đã logout!");
+            if (MessageBox.Show("Xác nhận đăng xuất?", "Xác Nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                reSet();
+                ProjectUltil.logout();
+                lblNhanVien.Text = "";
+                bbtDangNhap.Enabled = true;
+                bbtDangXuat.Enabled = false;
+                MessageBox.Show("Đã logout!");
+            }
         }
 
         private void bbtBaoCaoTonKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -223,7 +252,7 @@ namespace QuanLySieuThi.Presentation
 
         private void btnTraCuuChungLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            OpenForm<frmLoaiHangSearch>();
+            OpenForm<frmChungLoaiHangSearch>();
         }
 
         private void btnTraCuuDonViTinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -245,6 +274,72 @@ namespace QuanLySieuThi.Presentation
         private void bbtTraCuuHangHoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenForm<frmHangHoaSearch>();
+        }
+
+        private void bbtTTPhanMem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            MessageBox.Show("PHẦN MỀM QUẢN LÝ SIÊU THỊ TNS\nVersion: 1.0\nGiảng viên hướng dẫn: ThS Phạm Thi Vương\nMôn học: Phương pháp phát triển phần mềm hướng đối tượng (SE100.H12)", "Thông Tin Phần Mềm");
+        }
+
+        private void bbtTTNhom_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            MessageBox.Show("Nhóm sinh viên thực hiện:\n\n\tHUỲNH NGỌC THẮNG - 13520775\n\tNGUYỄN VĂN NGUYỆN - 13520567\n\tLÊ HOÀNG SINH - 13520703", "Thông Tin Nhóm Thực Hiện");
+        }
+
+        private void bbtBackupDatabase_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            bool bBackUpStatus = true;
+
+            Cursor.Current = Cursors.WaitCursor;
+
+            if (Directory.Exists(@"D:\SQLBackup"))
+            {
+                if (File.Exists(@"D:\SQLBackup\QuanLySieuThi.bak"))
+                {
+                    if (MessageBox.Show(@"Do you want to replace it?", "Back", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        File.Delete(@"D:\SQLBackup\QuanLySieuThi.bak");
+                    }
+                    else
+                        bBackUpStatus = false;
+                }
+            }
+            else
+                Directory.CreateDirectory(@"D:\SQLBackup");
+
+            if (bBackUpStatus)
+            {
+                if (BackupDatabaseService.BackupDatabase())
+                {
+                    MessageBox.Show("Backup thành công");
+                }
+                else { MessageBox.Show("Backup thất bại"); }
+            }
+
+        }
+
+        private void bbtRestoreDatabase_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+
+            try
+            {
+                if (File.Exists(@"D:\SQLBackup\QuanLySieuThi.bak"))
+                {
+                    if (MessageBox.Show("Are you sure you restore?", "Back", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (BackupDatabaseService.RestoreDatabase())
+                        {
+                            MessageBox.Show("Restore thành công");
+                        }
+                        else { MessageBox.Show("Restore thất bại"); }
+                    }
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
         }
     }
 }

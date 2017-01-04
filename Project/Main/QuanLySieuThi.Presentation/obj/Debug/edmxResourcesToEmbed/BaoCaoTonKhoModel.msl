@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BaoCaoTonKhoModelStoreContainer" CdmEntityContainer="BaoCaoTonKhoEntities">
+    <EntitySetMapping Name="BaoCaoTonKhoViews">
+      <EntityTypeMapping TypeName="BaoCaoTonKhoModel.BaoCaoTonKhoView">
+        <MappingFragment StoreEntitySet="BaoCaoTonKhoView">
+          <ScalarProperty Name="MaBaoCaoTonKho" ColumnName="MaBaoCaoTonKho" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="Nam" ColumnName="Nam" />
+          <ScalarProperty Name="Thang" ColumnName="Thang" />
+          <ScalarProperty Name="TenHangHoa" ColumnName="TenHangHoa" />
+          <ScalarProperty Name="SoLuongDauKy" ColumnName="SoLuongDauKy" />
+          <ScalarProperty Name="SoLuongNhap" ColumnName="SoLuongNhap" />
+          <ScalarProperty Name="SoLuongXuat" ColumnName="SoLuongXuat" />
+          <ScalarProperty Name="SoLuongCuoiKy" ColumnName="SoLuongCuoiKy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
