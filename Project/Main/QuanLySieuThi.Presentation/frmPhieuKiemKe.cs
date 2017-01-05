@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using QuanLySieuThi.DataBussiness;
 using QuanLySieuThi.DataModel;
 using DevExpress.XtraEditors;
-using QuanLySieuThi.Common;
 
 namespace QuanLySieuThi.Presentation
 {
@@ -86,12 +85,11 @@ namespace QuanLySieuThi.Presentation
         private void frmPhieuKiemKe_Load(object sender, EventArgs e)
         {
             isSaved = false;
-            txtNhanVien.Text = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
             txtNhanVien.ReadOnly = true;
-            txtMaPhieu.ReadOnly = true;
+            txtSoPhieu.ReadOnly = true;
             btnXoa.Enabled = false;
             btnLuu.Enabled = false;
-            txtMaPhieu.Text = PhieuKiemKeService.AutoGenerateId();
+            txtSoPhieu.Text = PhieuKiemKeService.AutoGenerateId();
             deNgayLap.DateTime = DateTime.Now;
             lueHangHoa.Properties.ValueMember = "MaHangHoa";
             lueHangHoa.Properties.DisplayMember = "TenHangHoa";
@@ -134,15 +132,15 @@ namespace QuanLySieuThi.Presentation
         private void btnLuu_Click(object sender, EventArgs e) 
         {
             PhieuKiemKe pkk = new PhieuKiemKe();
-            pkk.MaNhanVien = (ProjectUltil.MaNhanVien != "") ? ProjectUltil.MaNhanVien : "NV0001";
-            pkk.SoPhieuKiemKe = txtMaPhieu.Text.Trim();
+            pkk.MaNhanVien = "NV0001";
+            pkk.SoPhieuKiemKe = txtSoPhieu.Text.Trim();
             pkk.NgayLap = deNgayLap.DateTime;
             if(PhieuKiemKeService.Insert(pkk))
             {
                 for(int i=0;i<grvPhieuKiemKe.RowCount;i++)
                 {
                     ChiTietKiemKe ctkk = new ChiTietKiemKe();
-                    ctkk.SoPhieuKiemKe = pkk.SoPhieuKiemKe;
+                    ctkk.MaPhieuKiemKe = pkk.SoPhieuKiemKe;
                     ctkk.MaHangHoa = grvPhieuKiemKe.GetRowCellValue(i, "MaHangHoa").ToString();
                     ctkk.SLTonTrenQuay = Convert.ToInt32(grvPhieuKiemKe.GetRowCellValue(i, "SLTonTrenQuay").ToString());
                     ctkk.SLTonTrongKho = Convert.ToInt32(grvPhieuKiemKe.GetRowCellValue(i, "SLTonTrongKho").ToString());
@@ -196,7 +194,7 @@ namespace QuanLySieuThi.Presentation
                     return;
                 }
             }
-            txtMaPhieu.Text = PhieuKiemKeService.AutoGenerateId();
+            txtSoPhieu.Text = PhieuKiemKeService.AutoGenerateId();
             deNgayLap.DateTime = DateTime.Now;
             txtSLTrenQuay.ResetText();
             txtSLTrongKho.ResetText();

@@ -645,3 +645,7 @@ D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.PhieuNhapReport.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.PhieuXuatReport.resources
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.BaoCaoTonKhoReport.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmChiTietKiemKe_Them.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.frmTraCuuHoaDon.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.FrmTraCuuKhachHangThanThiet.resources
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.Presentation\obj\Debug\QuanLySieuThi.Presentation.FrmTraCuuPhieuKiemKe.resources

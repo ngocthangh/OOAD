@@ -40,6 +40,10 @@ namespace QuanLySieuThi.DataBussiness
         {
             return Controller.SearchMaKhachHang(key);
         }
+        public static DataTable Search(string key)
+        {
+            return Controller.Search(key);
+        }
         public static KhachHangThanThiet GetDataFromRowSelected(string ID)
         {
             return Controller.GetDataFromRowSelected(ID);

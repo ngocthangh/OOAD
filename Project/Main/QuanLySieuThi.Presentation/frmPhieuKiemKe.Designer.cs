@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuKiemKe));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.deNgayLap = new DevExpress.XtraEditors.DateEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtNhanVien = new DevExpress.XtraEditors.TextEdit();
-            this.txtMaPhieu = new DevExpress.XtraEditors.TextEdit();
+            this.txtSoPhieu = new DevExpress.XtraEditors.TextEdit();
             this.lbMaHoaDon = new DevExpress.XtraEditors.LabelControl();
             this.txtSLTrenQuay = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -60,7 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.deNgayLap.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deNgayLap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaPhieu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoPhieu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSLTrenQuay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSLTrongKho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -78,116 +77,100 @@
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.txtNhanVien);
-            this.panelControl1.Controls.Add(this.txtMaPhieu);
+            this.panelControl1.Controls.Add(this.txtSoPhieu);
             this.panelControl1.Controls.Add(this.lbMaHoaDon);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(755, 39);
+            this.panelControl1.Size = new System.Drawing.Size(564, 39);
             this.panelControl1.TabIndex = 1;
             // 
             // deNgayLap
             // 
             this.deNgayLap.EditValue = null;
-            this.deNgayLap.Location = new System.Drawing.Point(446, 9);
+            this.deNgayLap.Location = new System.Drawing.Point(452, 9);
             this.deNgayLap.Name = "deNgayLap";
-            this.deNgayLap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.deNgayLap.Properties.Appearance.Options.UseFont = true;
             this.deNgayLap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deNgayLap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deNgayLap.Size = new System.Drawing.Size(104, 22);
+            this.deNgayLap.Size = new System.Drawing.Size(104, 20);
             this.deNgayLap.TabIndex = 7;
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl4.Location = new System.Drawing.Point(188, 12);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(82, 17);
+            this.labelControl4.Size = new System.Drawing.Size(65, 13);
             this.labelControl4.TabIndex = 6;
             this.labelControl4.Text = "Nhân viên lập";
             this.labelControl4.Click += new System.EventHandler(this.labelControl4_Click);
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl5.Location = new System.Drawing.Point(387, 12);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(53, 17);
+            this.labelControl5.Size = new System.Drawing.Size(42, 13);
             this.labelControl5.TabIndex = 6;
             this.labelControl5.Text = "Ngày lập";
             // 
             // txtNhanVien
             // 
-            this.txtNhanVien.Location = new System.Drawing.Point(276, 9);
+            this.txtNhanVien.Location = new System.Drawing.Point(259, 9);
             this.txtNhanVien.Name = "txtNhanVien";
-            this.txtNhanVien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtNhanVien.Properties.Appearance.Options.UseFont = true;
-            this.txtNhanVien.Size = new System.Drawing.Size(99, 22);
+            this.txtNhanVien.Size = new System.Drawing.Size(99, 20);
             this.txtNhanVien.TabIndex = 7;
             // 
-            // txtMaPhieu
+            // txtSoPhieu
             // 
-            this.txtMaPhieu.Location = new System.Drawing.Point(72, 9);
-            this.txtMaPhieu.Name = "txtMaPhieu";
-            this.txtMaPhieu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtMaPhieu.Properties.Appearance.Options.UseFont = true;
-            this.txtMaPhieu.Size = new System.Drawing.Size(100, 22);
-            this.txtMaPhieu.TabIndex = 7;
+            this.txtSoPhieu.Location = new System.Drawing.Point(64, 9);
+            this.txtSoPhieu.Name = "txtSoPhieu";
+            this.txtSoPhieu.Size = new System.Drawing.Size(100, 20);
+            this.txtSoPhieu.TabIndex = 7;
             // 
             // lbMaHoaDon
             // 
-            this.lbMaHoaDon.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lbMaHoaDon.Location = new System.Drawing.Point(12, 12);
             this.lbMaHoaDon.Name = "lbMaHoaDon";
-            this.lbMaHoaDon.Size = new System.Drawing.Size(54, 17);
+            this.lbMaHoaDon.Size = new System.Drawing.Size(41, 13);
             this.lbMaHoaDon.TabIndex = 6;
-            this.lbMaHoaDon.Text = "Mã phiếu";
+            this.lbMaHoaDon.Text = "Số phiếu";
             // 
             // txtSLTrenQuay
             // 
-            this.txtSLTrenQuay.Location = new System.Drawing.Point(313, 29);
+            this.txtSLTrenQuay.Location = new System.Drawing.Point(301, 29);
             this.txtSLTrenQuay.Name = "txtSLTrenQuay";
-            this.txtSLTrenQuay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtSLTrenQuay.Properties.Appearance.Options.UseFont = true;
-            this.txtSLTrenQuay.Size = new System.Drawing.Size(57, 22);
+            this.txtSLTrenQuay.Size = new System.Drawing.Size(57, 20);
             this.txtSLTrenQuay.TabIndex = 5;
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl3.Location = new System.Drawing.Point(188, 32);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(119, 17);
+            this.labelControl3.Size = new System.Drawing.Size(92, 13);
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "Số lượng trên quầy";
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl1.Location = new System.Drawing.Point(12, 32);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(54, 16);
+            this.labelControl1.Size = new System.Drawing.Size(46, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Hàng hóa";
             // 
             // txtSLTrongKho
             // 
-            this.txtSLTrongKho.Location = new System.Drawing.Point(513, 29);
+            this.txtSLTrongKho.Location = new System.Drawing.Point(501, 29);
             this.txtSLTrongKho.Name = "txtSLTrongKho";
-            this.txtSLTrongKho.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtSLTrongKho.Properties.Appearance.Options.UseFont = true;
-            this.txtSLTrongKho.Size = new System.Drawing.Size(55, 22);
+            this.txtSLTrongKho.Size = new System.Drawing.Size(55, 20);
             this.txtSLTrongKho.TabIndex = 3;
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelControl2.Location = new System.Drawing.Point(387, 32);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(120, 17);
+            this.labelControl2.Size = new System.Drawing.Size(91, 13);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Số lượng trong kho";
             // 
@@ -202,20 +185,18 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 39);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(755, 62);
+            this.groupControl1.Size = new System.Drawing.Size(564, 62);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Thông tin sản phẩm kiểm kê";
             // 
             // lueHangHoa
             // 
-            this.lueHangHoa.Location = new System.Drawing.Point(72, 29);
+            this.lueHangHoa.Location = new System.Drawing.Point(64, 29);
             this.lueHangHoa.Name = "lueHangHoa";
-            this.lueHangHoa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lueHangHoa.Properties.Appearance.Options.UseFont = true;
             this.lueHangHoa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueHangHoa.Properties.NullText = "Hàng hóa";
-            this.lueHangHoa.Size = new System.Drawing.Size(100, 22);
+            this.lueHangHoa.Size = new System.Drawing.Size(100, 20);
             this.lueHangHoa.TabIndex = 6;
             // 
             // panelControl2
@@ -228,15 +209,12 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 101);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(755, 39);
+            this.panelControl2.Size = new System.Drawing.Size(564, 39);
             this.panelControl2.TabIndex = 3;
             // 
             // btnThoat
             // 
-            this.btnThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnThoat.Appearance.Options.UseFont = true;
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(313, 5);
+            this.btnThoat.Location = new System.Drawing.Point(288, 6);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(63, 25);
             this.btnThoat.TabIndex = 4;
@@ -245,21 +223,15 @@
             // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnLamMoi.Appearance.Options.UseFont = true;
-            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
-            this.btnLamMoi.Location = new System.Drawing.Point(219, 5);
+            this.btnLamMoi.Location = new System.Drawing.Point(219, 6);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(88, 25);
+            this.btnLamMoi.Size = new System.Drawing.Size(63, 25);
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnLuu
             // 
-            this.btnLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnLuu.Appearance.Options.UseFont = true;
-            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.Location = new System.Drawing.Point(150, 6);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(63, 25);
@@ -269,9 +241,6 @@
             // 
             // btnThem
             // 
-            this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnThem.Appearance.Options.UseFont = true;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(11, 6);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(64, 25);
@@ -281,9 +250,6 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnXoa.Appearance.Options.UseFont = true;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.Location = new System.Drawing.Point(81, 6);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(63, 25);
@@ -297,7 +263,7 @@
             this.grcPhieuKiemKe.Location = new System.Drawing.Point(0, 140);
             this.grcPhieuKiemKe.MainView = this.grvPhieuKiemKe;
             this.grcPhieuKiemKe.Name = "grcPhieuKiemKe";
-            this.grcPhieuKiemKe.Size = new System.Drawing.Size(755, 206);
+            this.grcPhieuKiemKe.Size = new System.Drawing.Size(564, 167);
             this.grcPhieuKiemKe.TabIndex = 4;
             this.grcPhieuKiemKe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvPhieuKiemKe});
@@ -359,7 +325,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 346);
+            this.ClientSize = new System.Drawing.Size(564, 307);
             this.Controls.Add(this.grcPhieuKiemKe);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.groupControl1);
@@ -374,7 +340,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.deNgayLap.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deNgayLap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaPhieu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoPhieu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSLTrenQuay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSLTrongKho.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -393,7 +359,7 @@
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.TextEdit txtSLTrongKho;
-        private DevExpress.XtraEditors.TextEdit txtMaPhieu;
+        private DevExpress.XtraEditors.TextEdit txtSoPhieu;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl lbMaHoaDon;
         private DevExpress.XtraEditors.TextEdit txtSLTrenQuay;

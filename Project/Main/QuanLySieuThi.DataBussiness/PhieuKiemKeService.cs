@@ -40,5 +40,9 @@ namespace QuanLySieuThi.DataBussiness
         {
             return Controller.Delete(maphieukiemke);
         }
+        public static DataTable Search(string key = null, Nullable<DateTime> dateStart = null, Nullable<DateTime> dateEnd = null)
+        {
+            return Controller.Search(key, dateStart, dateEnd);
+        }
     }
 }

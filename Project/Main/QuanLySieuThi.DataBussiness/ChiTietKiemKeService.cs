@@ -15,6 +15,10 @@ namespace QuanLySieuThi.DataBussiness
         {
             return Controller.GetByAll();
         }
+        public static DataTable GetById(string id)
+        {
+            return Controller.GetById(id);
+        }
         public static bool SaveChanges(DataTable dt)
         {
             if (dt == null) return false;

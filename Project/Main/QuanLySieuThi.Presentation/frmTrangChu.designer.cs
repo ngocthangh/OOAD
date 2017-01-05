@@ -53,7 +53,7 @@
             this.bbtTraCuuHangHoa = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtTraCuuKHTT = new DevExpress.XtraBars.BarButtonItem();
             this.btnTraCuuNhaCungCap = new DevExpress.XtraBars.BarButtonItem();
             this.bbtBaoCaoTonKho = new DevExpress.XtraBars.BarButtonItem();
             this.bbtDoanhThu = new DevExpress.XtraBars.BarButtonItem();
@@ -110,6 +110,8 @@
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.lblNhanVien = new DevExpress.XtraEditors.LabelControl();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbtTraCuuPKK = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -146,7 +148,7 @@
             this.bbtTraCuuHangHoa,
             this.barButtonItem18,
             this.barButtonItem19,
-            this.barButtonItem20,
+            this.bbtTraCuuKHTT,
             this.btnTraCuuNhaCungCap,
             this.bbtBaoCaoTonKho,
             this.bbtDoanhThu,
@@ -166,9 +168,10 @@
             this.barButtonItem12,
             this.barButtonItem33,
             this.bbtChucVu,
-            this.bbtRestoreDatabase});
+            this.bbtRestoreDatabase,
+            this.bbtTraCuuPKK});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 46;
+            this.ribbonControl1.MaxItemId = 47;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -348,13 +351,14 @@
             this.barButtonItem19.LargeWidth = 80;
             this.barButtonItem19.Name = "barButtonItem19";
             // 
-            // barButtonItem20
+            // bbtTraCuuKHTT
             // 
-            this.barButtonItem20.Caption = "Tra Cứu Khách Hàng Thân Thiết";
-            this.barButtonItem20.Id = 20;
-            this.barButtonItem20.LargeGlyph = global::QuanLySieuThi.Presentation.Properties.Resources.users_search_icon;
-            this.barButtonItem20.LargeWidth = 130;
-            this.barButtonItem20.Name = "barButtonItem20";
+            this.bbtTraCuuKHTT.Caption = "Tra Cứu Khách Hàng Thân Thiết";
+            this.bbtTraCuuKHTT.Id = 20;
+            this.bbtTraCuuKHTT.LargeGlyph = global::QuanLySieuThi.Presentation.Properties.Resources.users_search_icon;
+            this.bbtTraCuuKHTT.LargeWidth = 130;
+            this.bbtTraCuuKHTT.Name = "bbtTraCuuKHTT";
+            this.bbtTraCuuKHTT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtTraCuuKHTT_ItemClick);
             // 
             // btnTraCuuNhaCungCap
             // 
@@ -407,6 +411,7 @@
             this.bbtTraCuuHoaDon.LargeGlyph = global::QuanLySieuThi.Presentation.Properties.Resources.search_b_icon;
             this.bbtTraCuuHoaDon.LargeWidth = 80;
             this.bbtTraCuuHoaDon.Name = "bbtTraCuuHoaDon";
+            this.bbtTraCuuHoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtTraCuuHoaDon_ItemClick);
             // 
             // barButtonItem27
             // 
@@ -646,7 +651,8 @@
             this.ribbonPageGroup17,
             this.ribbonPageGroup20,
             this.ribbonPageGroup21,
-            this.ribbonPageGroup24});
+            this.ribbonPageGroup24,
+            this.ribbonPageGroup2});
             this.rbpTraCuu.Name = "rbpTraCuu";
             this.rbpTraCuu.Text = "Tra Cứu";
             this.rbpTraCuu.Visible = false;
@@ -659,7 +665,7 @@
             // 
             // ribbonPageGroup15
             // 
-            this.ribbonPageGroup15.ItemLinks.Add(this.barButtonItem20);
+            this.ribbonPageGroup15.ItemLinks.Add(this.bbtTraCuuKHTT);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             this.ribbonPageGroup15.Text = "Khách Hàng Thân Thiết";
             // 
@@ -784,6 +790,19 @@
             this.lblNhanVien.Size = new System.Drawing.Size(0, 15);
             this.lblNhanVien.TabIndex = 3;
             // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.bbtTraCuuPKK);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            // 
+            // bbtTraCuuPKK
+            // 
+            this.bbtTraCuuPKK.Caption = "Tra Cứu Phiếu Kiểm Kê";
+            this.bbtTraCuuPKK.Id = 46;
+            this.bbtTraCuuPKK.Name = "bbtTraCuuPKK";
+            this.bbtTraCuuPKK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtTraCuuPKK_ItemClick);
+            // 
             // frmTrangChu
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -851,7 +870,7 @@
         private DevExpress.XtraBars.BarButtonItem bbtTraCuuHangHoa;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private DevExpress.XtraBars.BarButtonItem barButtonItem19;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
+        private DevExpress.XtraBars.BarButtonItem bbtTraCuuKHTT;
         private DevExpress.XtraBars.BarButtonItem btnTraCuuNhaCungCap;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpKiemKe;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
@@ -893,6 +912,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpChucVu;
         private DevExpress.XtraEditors.LabelControl lblNhanVien;
         private DevExpress.XtraBars.BarButtonItem bbtRestoreDatabase;
+        private DevExpress.XtraBars.BarButtonItem bbtTraCuuPKK;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }
 

@@ -21,6 +21,10 @@ namespace QuanLySieuThi.DataBussiness
             if (dt == null) return false;
             return Controller.SaveChanges(dt);
         }
+        public static DataTable GetById(string id)
+        {
+            return Controller.GetById(id);
+        }
         public static bool Insert(ChiTietHoaDon cthd)
         {
             return Controller.Insert(cthd);

@@ -22,3 +22,4 @@ D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataModel\bi
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataModel\bin\Debug\es\DevExpress.Xpo.v15.1.resources.dll
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataModel\bin\Debug\ja\DevExpress.Xpo.v15.1.resources.dll
 D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataModel\bin\Debug\ru\DevExpress.Xpo.v15.1.resources.dll
+D:\HOCTAP\HocKy7\OOAD\SVN\OOAD.git\trunk\Project\Main\QuanLySieuThi.DataModel\obj\Debug\QuanLySieuThi.DataModel.csprojResolveAssemblyReference.cache

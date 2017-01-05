@@ -67,5 +67,9 @@ namespace QuanLySieuThi.DataAccess
             _connect.close();
             return khtt;
         }
+        public DataTable Search(string key)
+        {
+            return _connect.Search("SP_KHACHHANGTHANTHIET_SEARCH", key);
+        }
     }
 }

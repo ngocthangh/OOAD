@@ -10,9 +10,6 @@ using System.Windows.Forms;
 using QuanLySieuThi.DataBussiness;
 using DevExpress.XtraEditors;
 using QuanLySieuThi.DataModel;
-using QuanLySieuThi.Common;
-using DevExpress.XtraReports.UI;
-
 namespace QuanLySieuThi.Presentation
 {
     public partial class frmHoaDon : Form
@@ -40,6 +37,7 @@ namespace QuanLySieuThi.Presentation
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
             Init();
+            seSoLuong.Enabled = false;
             txtDiemTichLuy.ReadOnly = true;
             txtTienGiam.ReadOnly = true;
             txtThanhTien.ReadOnly = true;
@@ -50,8 +48,9 @@ namespace QuanLySieuThi.Presentation
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaHangHoa", 50, "Mã Hàng Hóa"));
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenHangHoa", 100, "Tên Hàng Hóa"));
             lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GiaBan", 100, "Giá"));
+            lueHangHoa.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SoLuongQuay",50,"SL"));
             lueHangHoa.Properties.DataSource = HangHoaService.LoadDataTable();
-            txtNhanVien.Text = (ProjectUltil.HoTenNhanVien != "") ? ProjectUltil.HoTenNhanVien : "";
+           
         }
         public void Init()
         {
@@ -68,13 +67,13 @@ namespace QuanLySieuThi.Presentation
             btnLuu.Enabled = false;
             btnKiemTra.Enabled = false;
             txtMaKhachHang.Enabled = false;
-            txtSoHoaDon.Text = HoaDonService.AutoGenerateId();
+            SoMaHoaDon.Text = HoaDonService.AutoGenerateId();
             deNgayLap.DateTime = DateTime.Now;
         }
         public bool validateForm()
         {
             int check;
-            if (lueHangHoa.Text.Trim() == "Hàng hóa")
+            if (lueHangHoa.Text.Trim() == "")
             {
                 XtraMessageBox.Show("Bạn chưa điền đủ thông tin!\nVui lòng chọn hàng hóa!");
                 lueHangHoa.Focus();
@@ -85,6 +84,19 @@ namespace QuanLySieuThi.Presentation
                 XtraMessageBox.Show("Bạn chưa điền đủ thông tin!\nVui lòng nhập số lượng hàng hóa!");
                 seSoLuong.Focus();
                 return false;
+            }
+            else
+            {
+                int sl1,sl2;
+                sl1 = Convert.ToInt32(seSoLuong.Text.Trim());
+                DataRowView row = lueHangHoa.Properties.GetDataSourceRowByKeyValue(lueHangHoa.EditValue) as DataRowView;
+                sl2= Convert.ToInt32(row.Row["SoLuongQuay"].ToString());
+                if (sl1 > sl2)
+                {
+                    XtraMessageBox.Show("Bạn nhập số lượng hàng hóa không hợp lệ! Vui lòng xem lại số lượng hàng hóa trên quầy");
+                    seSoLuong.Focus();
+                    return false;
+                }
             }
             try
             {
@@ -110,7 +122,7 @@ namespace QuanLySieuThi.Presentation
             if(validateForm())
             {
                 DataRowView row = lueHangHoa.Properties.GetDataSourceRowByKeyValue(lueHangHoa.EditValue) as DataRowView;
-                Int32 SL = Convert.ToInt32(seSoLuong.Text.ToString()); ;
+                Int32 SL = Convert.ToInt32(seSoLuong.Text.ToString()); 
                 decimal Gia = 0;
                 try
                 {
@@ -126,13 +138,17 @@ namespace QuanLySieuThi.Presentation
                 {
                     if (lueHangHoa.EditValue.ToString().Equals(dtCTHD.Rows[i][0].ToString()))
                     {
+                        TongTien = TongTien + SL * Gia; ;
+                        DiemThuong = Convert.ToInt32(TongTien / 15000);
+                        txtDiemThuong.Text = DiemThuong.ToString();
                         SL += Convert.ToInt32(dtCTHD.Rows[i][2].ToString());
                         dtCTHD.Rows[i][2] = SL;
                         dtCTHD.Rows[i][4] = Gia * SL;
+
                         break;
                     }
                 }
-                if (i == dtCTHD.Rows.Count)
+                if (i==dtCTHD.Rows.Count)
                 {
                     DataRow dr = dtCTHD.NewRow();
                     dr[0] = lueHangHoa.EditValue;
@@ -231,9 +247,9 @@ namespace QuanLySieuThi.Presentation
             if (TongTien >= TienGiam) DiemTichLuyCapNhat = DiemThuong;
             else DiemTichLuyCapNhat = Convert.ToInt32(TongTien / 1000) + DiemThuong;
             HoaDon hd = new HoaDon();
-            hd.SoHoaDon = txtSoHoaDon.Text.Trim();
+            hd.SoHoaDon = SoMaHoaDon.Text.Trim();
             hd.MaKhachHang = txtMaKhachHang.Text.Trim();
-            hd.MaNhanVien = (ProjectUltil.MaNhanVien != "") ? ProjectUltil.MaNhanVien : "NV0001";
+            hd.MaNhanVien = "NV0001";
             hd.NgayLap=deNgayLap.DateTime;
             hd.TongTien = TienThanhToan;
             hd.TienGiam = TienGiam;
@@ -246,6 +262,9 @@ namespace QuanLySieuThi.Presentation
                 {
                     cthd.MaHangHoa = grvHoaDon.GetRowCellValue(i, "MaHangHoa").ToString();
                     cthd.SoLuong = Convert.ToInt32(grvHoaDon.GetRowCellValue(i, "SoLuong").ToString());
+                    DataRowView row = lueHangHoa.Properties.GetDataSourceRowByKeyValue(cthd.MaHangHoa) as DataRowView;
+                    cthd.DonGia = Convert.ToDecimal(row.Row["GiaBan"].ToString());
+                    cthd.ThanhTien = cthd.SoLuong * cthd.DonGia;
                     if (!ChiTietHoaDonService.Insert(cthd))
                     {
                         XtraMessageBox.Show("Lưu thất bại!");
@@ -261,11 +280,16 @@ namespace QuanLySieuThi.Presentation
                         else XtraMessageBox.Show("Roll back không thành công!");
                         return;
                     }
+                    DataTable dtHH = HangHoaService.GetById(cthd.MaHangHoa);
+                    int SL =Convert.ToInt32(dtHH.Rows[0][5].ToString());
+                    dtHH.Rows[0][5] =SL - cthd.SoLuong;
+                    if (!HangHoaService.SaveChanges(dtHH)) XtraMessageBox.Show("Không update được hàng hóa");
                 }
                 if (hd.MaKhachHang != "KH0000")
                 {
                     DataTable dtKT = KhachHangThanThietService.SearchMaKhachHang(hd.MaKhachHang);
                     dtKT.Rows[0][5] = DiemTichLuyCapNhat;
+                    if(!KhachHangThanThietService.SaveChanges(dtKT)) XtraMessageBox.Show("Không update được khách hàng thân thiết");
                 }
                 XtraMessageBox.Show("Lưu thành công!");
                 isSaved = true;
@@ -321,17 +345,10 @@ namespace QuanLySieuThi.Presentation
           
         }
 
-        private void btnInHoaDon_Click(object sender, EventArgs e)
+        private void lueHangHoa_EditValueChanged(object sender, EventArgs e)
         {
-            
-            DataTable dt = HoaDonService.GetById("HD0002");
-            if(dt.Rows.Count > 0)
-            {
-                HoaDonThanhToanReport hdtt = new HoaDonThanhToanReport();
-                hdtt.DataSource = dt;
-                hdtt.ShowPreviewDialog();
-            }
-            
+            if (lueHangHoa.Text == "") seSoLuong.Enabled = false;
+            else seSoLuong.Enabled = true;
         }
     }
 }

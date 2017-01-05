@@ -23,7 +23,10 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.LoadData("SP_CHITIETKIEMKE_GETALL");
         }
-
+        public DataTable GetById(string maphieukiemke)
+        {
+            return _connect.LoadData("SP_CHITIETKIEMKE_GETBYID", new[] { "SoPhieuKiemKe" }, new object[] { maphieukiemke }, 1);
+        }
         public bool SaveChanges(DataTable dt)
         {
             return _connect.SaveChanges(dt);
@@ -42,7 +45,7 @@ namespace QuanLySieuThi.DataAccess
         }
         public bool Delete(string maphieukiemke)
         {
-            return _connect.Delete("SP_CHITIETKIEMKE_DEL", "MaPhieuKiemKe", maphieukiemke);
+            return _connect.Delete("SP_CHITIETKIEMKE_DEL", "SoPhieuKiemKe", maphieukiemke);
         }
     }
 }

@@ -341,5 +341,20 @@ namespace QuanLySieuThi.Presentation
                 MessageBox.Show(exp.Message);
             }
         }
+
+        private void bbtTraCuuKHTT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<FrmTraCuuKhachHangThanThiet>();
+        }
+
+        private void bbtTraCuuHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<frmTraCuuHoaDon>();
+        }
+
+        private void bbtTraCuuPKK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm<FrmTraCuuPhieuKiemKe>();
+        }
     }
 }

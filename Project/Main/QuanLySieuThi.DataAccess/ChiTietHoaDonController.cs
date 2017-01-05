@@ -24,7 +24,10 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.LoadData("SP_CHITIETHOADON_GETALL");
         }
-
+        public DataTable GetById(string mahoadon)
+        {
+            return _connect.LoadData("SP_CHITIETHOADON_GETBYID", new[] { "SoHoaDon" }, new object[] { mahoadon }, 1);
+        }
         public bool SaveChanges(DataTable dt)
         {
             return _connect.SaveChanges(dt);
@@ -43,7 +46,7 @@ namespace QuanLySieuThi.DataAccess
         }
         public bool Delete(string mahoadon)
         {
-            return _connect.Delete("SP_CHITIETHOADON_DEL", "MaHoaDon", mahoadon);
+            return _connect.Delete("SP_CHITIETHOADON_DEL", "SoHoaDon", mahoadon);
         }
     
     }

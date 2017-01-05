@@ -23,9 +23,9 @@ namespace QuanLySieuThi.DataAccess
         {
             return _connect.LoadData("SP_HOADON_GETALL");
         }
-        public DataTable GetById(string sohoadon)
+        public DataTable GetById(string mahoadon)
         {
-            return _connect.LoadData("SP_HOADON_GETBYID", new[] { "@SoHoaDon" }, new object[] { sohoadon }, 1);
+            return _connect.LoadData("SP_HOADON_GETBYID", new[] { "SoHoaDon" }, new object[] { mahoadon }, 1);
         }
         public bool SaveChanges(DataTable dt)
         {
@@ -45,7 +45,7 @@ namespace QuanLySieuThi.DataAccess
         }
         public bool Delete(string mahoadon)
         {
-            return _connect.Delete("SP_CHITIETHOADON_DEL", "MaHoaDon", mahoadon);
+            return _connect.Delete("SP_CHITIETHOADON_DEL", "SoHoaDon", mahoadon);
         }
         public DataTable Search(string key = null, Nullable<DateTime> dateStart = null, Nullable<DateTime> dateEnd = null)
         {
